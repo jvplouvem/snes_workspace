@@ -1,0 +1,3895 @@
+C0833D LDA $21 [$000021]               
+C0833F BIT #$03                        
+C08341 BEQ igual_C0834A                
+C0834A LDA $21 [$000021]               
+C0834C AND #$08                        
+C0834E BEQ $C08362                     
+C08362 LDA $21 [$000021]               
+C08364 BIT #$40                        
+C08366 BEQ $C08374                     
+C08374 LDA $21 [$000021]               
+C08376 BIT #$04                        
+C08378 BEQ $C08381                     
+C08381 LDA $21 [$000021]               
+C08383 CMP #$00                        
+C08385 BNE $C0838C                     
+C08387 STZ $00 [$000000]               
+C08389 JMP $838D [$C0838D]             
+C0838D LDA $14 [$000014]               
+C0838F CMP #$04                        
+C08391 BEQ $C08396                     
+C08393 BRL $C084CC                     
+C084CC LDA #$03                        
+C084CE XBA                             
+C084CF LDA #$00                        
+C084D1 TCD                             
+C084D2 LDA #$80                        
+C084D4 STA $88 [$000388]               
+C084D6 STA $8C [$00038C]               
+C084D8 STA $90 [$000390]               
+C084DA STA $94 [$000394]               
+C084DC REP #$20                        
+C084DE LDA $0722 [$000722]             
+C084E1 CMP #$2100                      
+C084E4 BEQ $C084E9                     
+C084E6 BRL $C0852F                     
+C0852F SEP #$20                        
+C08531 LDA #$00                        
+C08533 XBA                             
+C08534 LDA #$00                        
+C08536 TCD                             
+C08537 RTS                             
+C087DD JSR $8C7F [jsr_8C7F]            
+C08C7F JSL JSL_C10000                  
+C10000 PHD                             
+C10001 REP #$20                        
+C10003 LDA #$4300                      
+C10006 TCD                             
+C10007 SEP #$20                        
+C10009 LDA #$20                        
+C1000B STA $2121 [CGADD]               
+C1000E STZ $420B [MDMAEN]              
+C10011 LDX #$321E                      
+C10014 STX $02 [A1T0L]                 
+C10016 LDX #$0080                      
+C10019 STX $05 [DAS0L]                 
+C1001B LDA #$C1                        
+C1001D STA $04 [A1B0]                  
+C1001F LDA #$00                        
+C10021 STA $00 [DMAP0]                 
+C10023 LDA #$22                        
+C10025 STA $01 [BBAD0]                 
+C10027 LDA #$01                        
+C10029 STA $420B [MDMAEN]              
+C1002C LDA #$60                        
+C1002E STA $2121 [CGADD]               
+C10031 STZ $420B [MDMAEN]              
+C10034 LDX #$6C7E                      
+C10037 STX $02 [A1T0L]                 
+C10039 LDX #$0060                      
+C1003C STX $05 [DAS0L]                 
+C1003E LDA #$C1                        
+C10040 STA $04 [A1B0]                  
+C10042 LDA #$00                        
+C10044 STA $00 [DMAP0]                 
+C10046 LDA #$22                        
+C10048 STA $01 [BBAD0]                 
+C1004A LDA #$01                        
+C1004C STA $420B [MDMAEN]              
+C1004F LDA #$00                        
+C10051 STA $2121 [CGADD]               
+C10054 STZ $420B [MDMAEN]              
+C10057 LDX #$ACBE                      
+C1005A STX $02 [A1T0L]                 
+C1005C LDX #$0040                      
+C1005F STX $05 [DAS0L]                 
+C10061 LDA #$C1                        
+C10063 STA $04 [A1B0]                  
+C10065 LDA #$00                        
+C10067 STA $00 [DMAP0]                 
+C10069 LDA #$22                        
+C1006B STA $01 [BBAD0]                 
+C1006D LDA #$01                        
+C1006F STA $420B [MDMAEN]              
+C10072 LDA #$80                        
+C10074 STA $2121 [CGADD]               
+C10077 STZ $420B [MDMAEN]              
+C1007A LDX #$E8C2                      
+C1007D STX $02 [A1T0L]                 
+C1007F LDX #$0020                      
+C10082 STX $05 [DAS0L]                 
+C10084 LDA #$C1                        
+C10086 STA $04 [A1B0]                  
+C10088 LDA #$00                        
+C1008A STA $00 [DMAP0]                 
+C1008C LDA #$22                        
+C1008E STA $01 [BBAD0]                 
+C10090 LDA #$01                        
+C10092 STA $420B [MDMAEN]              
+C10095 LDA #$90                        
+C10097 STA $2121 [CGADD]               
+C1009A STZ $420B [MDMAEN]              
+C1009D LDX #$E6C0                      
+C100A0 STX $02 [A1T0L]                 
+C100A2 LDX #$0080                      
+C100A5 STX $05 [DAS0L]                 
+C100A7 LDA #$C1                        
+C100A9 STA $04 [A1B0]                  
+C100AB LDA #$00                        
+C100AD STA $00 [DMAP0]                 
+C100AF LDA #$22                        
+C100B1 STA $01 [BBAD0]                 
+C100B3 LDA #$01                        
+C100B5 STA $420B [MDMAEN]              
+C100B8 LDA #$80                        
+C100BA STA $2115 [VMAIN]               
+C100BD LDX #$0000                      
+C100C0 STX $2116 [VMADDL]              
+C100C3 LDA #$01                        
+C100C5 STA $00 [DMAP0]                 
+C100C7 LDA #$18                        
+C100C9 STA $01 [BBAD0]                 
+C100CB LDX #$019E                      
+C100CE STX $02 [A1T0L]                 
+C100D0 LDA #$C1                        
+C100D2 STA $04 [A1B0]                  
+C100D4 LDX #$3800                      
+C100D7 STX $05 [DAS0L]                 
+C100D9 LDA #$01                        
+C100DB STA $420B [MDMAEN]              
+C100DE LDA #$80                        
+008117 JML JML_C087B8                  
+C087B8 SEI                             
+C087B9 CLC                             
+C087BA XCE                             
+C087BB REP #$38                        
+C087BD LDX #$1FFF                      
+C087C0 TXS                             
+C087C1 JSL reset                       
+008000 PHK                             
+008001 PLB                             
+008002 LDA #$5B00                      
+008005 LDX $1FFD [$001FFD]             
+008008 STX $4372 [A1T7L]               
+00800B LDX $1FFF [$001FFF]             
+00800E STX $4374 [A1B7]                
+008011 SEP #$20                        
+008013 LDA #$8F                        
+008015 STA $2100 [INIDISP]             
+008018 LDX #$2101                      
+00801B STZ $00,X [OBSEL]               
+00801D INX                             
+00801E CPX #$210D                      
+008021 BNE $00801B                     
+00801B STZ $00,X [OAMADDL]             
+00801D INX                             
+00801E CPX #$210D                      
+008021 BNE $00801B                     
+00801B STZ $00,X [OAMADDH]             
+00801D INX                             
+00801E CPX #$210D                      
+008021 BNE $00801B                     
+00801B STZ $00,X [OAMDATA]             
+00801D INX                             
+00801E CPX #$210D                      
+008021 BNE $00801B                     
+00801B STZ $00,X [BGMODE]              
+00801D INX                             
+00801E CPX #$210D                      
+008021 BNE $00801B                     
+00801B STZ $00,X [MOSAIC]              
+00801D INX                             
+00801E CPX #$210D                      
+008021 BNE $00801B                     
+00801B STZ $00,X [BG1SC]               
+00801D INX                             
+00801E CPX #$210D                      
+008021 BNE $00801B                     
+00801B STZ $00,X [BG2SC]               
+00801D INX                             
+00801E CPX #$210D                      
+008021 BNE $00801B                     
+00801B STZ $00,X [BG3SC]               
+00801D INX                             
+00801E CPX #$210D                      
+008021 BNE $00801B                     
+00801B STZ $00,X [BG4SC]               
+00801D INX                             
+00801E CPX #$210D                      
+008021 BNE $00801B                     
+00801B STZ $00,X [BG12NBA]             
+00801D INX                             
+00801E CPX #$210D                      
+008021 BNE $00801B                     
+00801B STZ $00,X [BG34NBA]             
+00801D INX                             
+00801E CPX #$210D                      
+008021 BNE $00801B                     
+008023 STZ $00,X [BG1HOFS]             
+008025 STZ $00,X [BG1HOFS]             
+008027 INX                             
+008028 CPX #$2115                      
+00802B BNE $008023                     
+008023 STZ $00,X [BG1VOFS]             
+008025 STZ $00,X [BG1VOFS]             
+008027 INX                             
+008028 CPX #$2115                      
+00802B BNE $008023                     
+008023 STZ $00,X [BG2HOFS]             
+008025 STZ $00,X [BG2HOFS]             
+008027 INX                             
+008028 CPX #$2115                      
+00802B BNE $008023                     
+008023 STZ $00,X [BG2VOFS]             
+008025 STZ $00,X [BG2VOFS]             
+008027 INX                             
+008028 CPX #$2115                      
+00802B BNE $008023                     
+008023 STZ $00,X [BG3HOFS]             
+008025 STZ $00,X [BG3HOFS]             
+008027 INX                             
+008028 CPX #$2115                      
+00802B BNE $008023                     
+008023 STZ $00,X [BG3VOFS]             
+008025 STZ $00,X [BG3VOFS]             
+008027 INX                             
+008028 CPX #$2115                      
+00802B BNE $008023                     
+008023 STZ $00,X [BG4HOFS]             
+008025 STZ $00,X [BG4HOFS]             
+008027 INX                             
+008028 CPX #$2115                      
+00802B BNE $008023                     
+008023 STZ $00,X [BG4VOFS]             
+008025 STZ $00,X [BG4VOFS]             
+008027 INX                             
+008028 CPX #$2115                      
+00802B BNE $008023                     
+00802D LDA #$80                        
+00802F STA $2115 [VMAIN]               
+008032 STZ $2116 [VMADDL]              
+008035 STZ $2117 [VMADDH]              
+008038 STZ $211A [M7SEL]               
+00803B LDX #$211B                      
+00803E STZ $00,X [M7A]                 
+008040 STZ $00,X [M7A]                 
+008042 INX                             
+008043 CPX #$2121                      
+008046 BNE $00803E                     
+00803E STZ $00,X [M7B]                 
+008040 STZ $00,X [M7B]                 
+008042 INX                             
+008043 CPX #$2121                      
+008046 BNE $00803E                     
+00803E STZ $00,X [M7C]                 
+008040 STZ $00,X [M7C]                 
+008042 INX                             
+008043 CPX #$2121                      
+008046 BNE $00803E                     
+00803E STZ $00,X [M7D]                 
+008040 STZ $00,X [M7D]                 
+008042 INX                             
+008043 CPX #$2121                      
+008046 BNE $00803E                     
+00803E STZ $00,X [M7X]                 
+008040 STZ $00,X [M7X]                 
+008042 INX                             
+008043 CPX #$2121                      
+008046 BNE $00803E                     
+00803E STZ $00,X [M7Y]                 
+008040 STZ $00,X [M7Y]                 
+008042 INX                             
+008043 CPX #$2121                      
+008046 BNE $00803E                     
+008048 LDX #$2123                      
+00804B STZ $00,X [W12SEL]              
+00804D INX                             
+00804E CPX #$2134                      
+008051 BNE $00804B                     
+00804B STZ $00,X [W34SEL]              
+00804D INX                             
+00804E CPX #$2134                      
+008051 BNE $00804B                     
+00804B STZ $00,X [WOBJSEL]             
+00804D INX                             
+00804E CPX #$2134                      
+008051 BNE $00804B                     
+00804B STZ $00,X [WH0]                 
+00804D INX                             
+00804E CPX #$2134                      
+008051 BNE $00804B                     
+00804B STZ $00,X [WH1]                 
+00804D INX                             
+00804E CPX #$2134                      
+008051 BNE $00804B                     
+00804B STZ $00,X [WH2]                 
+00804D INX                             
+00804E CPX #$2134                      
+008051 BNE $00804B                     
+00804B STZ $00,X [WH3]                 
+00804D INX                             
+00804E CPX #$2134                      
+008051 BNE $00804B                     
+00804B STZ $00,X [WBGLOG]              
+00804D INX                             
+00804E CPX #$2134                      
+008051 BNE $00804B                     
+00804B STZ $00,X [WOBJLOG]             
+00804D INX                             
+00804E CPX #$2134                      
+008051 BNE $00804B                     
+00804B STZ $00,X [TM]                  
+00804D INX                             
+00804E CPX #$2134                      
+008051 BNE $00804B                     
+00804B STZ $00,X [TS]                  
+00804D INX                             
+00804E CPX #$2134                      
+008051 BNE $00804B                     
+00804B STZ $00,X [TMW]                 
+00804D INX                             
+00804E CPX #$2134                      
+008051 BNE $00804B                     
+00804B STZ $00,X [TSW]                 
+00804D INX                             
+00804E CPX #$2134                      
+008051 BNE $00804B                     
+00804B STZ $00,X [CGWSEL]              
+00804D INX                             
+00804E CPX #$2134                      
+008051 BNE $00804B                     
+00804B STZ $00,X [CGADSUB]             
+00804D INX                             
+00804E CPX #$2134                      
+008051 BNE $00804B                     
+00804B STZ $00,X [COLDATA]             
+00804D INX                             
+00804E CPX #$2134                      
+008051 BNE $00804B                     
+00804B STZ $00,X [SETINI]              
+00804D INX                             
+00804E CPX #$2134                      
+008051 BNE $00804B                     
+008053 STZ $213E [STAT77]              
+008056 STZ $4200 [NMITIMEN]            
+008059 LDA #$FF                        
+00805B STA $4201 [WRIO]                
+00805E STZ $420B [MDMAEN]              
+008061 STZ $420C [HDMAEN]              
+008064 STZ $420D [MEMSEL]              
+008067 LDA $4210 [RDNMI]               
+00806A JSR $80CE [$0080CE]             
+0080CE PHA                             
+0080CF PHX                             
+0080D0 PHP                             
+0080D1 REP #$30                        
+0080D3 SEP #$20                        
+0080D5 LDA #$80                        
+0080D7 STA $2115 [VMAIN]               
+0080DA LDX #$1809                      
+0080DD STX $4300 [DMAP0]               
+0080E0 LDX #$0000                      
+0080E3 STX $2116 [VMADDL]              
+0080E6 STX $00 [$000000]               
+0080E8 STX $4302 [A1T0L]               
+0080EB LDA #$00                        
+0080ED STA $4304 [A1B0]                
+0080F0 LDX #$FFFF                      
+0080F3 STX $4305 [DAS0L]               
+0080F6 LDA #$01                        
+0080F8 STA $420B [MDMAEN]              
+0080FB STZ $2119 [VMDATAH]             
+0080FE PLP                             
+0080FF PLX                             
+008100 PLA                             
+008101 RTS                             
+00806D JSR $8102 [$008102]             
+008102 PHX                             
+008103 PHP                             
+008104 REP #$30                        
+008106 SEP #$20                        
+008108 STZ $2121 [CGADD]               
+00810B LDX #$0100                      
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+00810E STZ $2122 [CGDATA]              
+008111 DEX                             
+008112 BNE $00810E                     
+008114 PLP                             
+008115 PLX                             
+008116 RTS                             
+008070 STZ $2102 [OAMADDL]             
+008073 STZ $2103 [OAMADDH]             
+008076 LDX #$0080                      
+008079 LDA #$F0                        
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00807B STA $2104 [OAMDATA]             
+00807E STA $2104 [OAMDATA]             
+008081 STZ $2104 [OAMDATA]             
+008084 STZ $2104 [OAMDATA]             
+008087 DEX                             
+008088 BNE $00807B                     
+00808A LDX #$0020                      
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+00808D STZ $2104 [OAMDATA]             
+008090 DEX                             
+008091 BNE $00808D                     
+008093 STZ $2181 [WMADDL]              
+008096 STZ $2182 [WMADDM]              
+008099 STZ $2183 [WMADDH]              
+00809C LDX #$8008                      
+00809F STX $4300 [DMAP0]               
+0080A2 LDX #$80CD                      
+0080A5 STX $4302 [A1T0L]               
+0080A8 LDA #$C0                        
+0080AA STA $4304 [A1B0]                
+0080AD LDX #$0000                      
+0080B0 STX $4305 [DAS0L]               
+0080B3 LDA #$01                        
+0080B5 STA $420B [MDMAEN]              
+0080B8 LDA #$01                        
+0080BA STA $420B [MDMAEN]              
+0080BD PHK                             
+0080BE PLB                             
+0080BF CLI                             
+0080C0 LDX $4372 [A1T7L]               
+0080C3 STX $1FFD [$001FFD]             
+0080C6 LDA $4374 [A1B7]                
+0080C9 STA $1FFF [$001FFF]             
+0080CC RTL                             
+C087C5 SEP #$20                        
+C087C7 JSR $896C [$C0896C]             
+C0896C PHP                             
+C0896D REP #$30                        
+C0896F LDX #$0180                      
+C08972 LDA #$0181                      
+C08975 STA $0180,X [$000300]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000304]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000308]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00030C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000310]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000314]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000318]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00031C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000320]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000324]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000328]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00032C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000330]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000334]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000338]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00033C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000340]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000344]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000348]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00034C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000350]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000354]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000358]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00035C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000360]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000364]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000368]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00036C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000370]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000374]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000378]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00037C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000380]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000384]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000388]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00038C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000390]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000394]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000398]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00039C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0003A0]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0003A4]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0003A8]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0003AC]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0003B0]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0003B4]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0003B8]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0003BC]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0003C0  
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000510]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000514]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000518]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$00051C]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000520]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000524]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000528]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$00052C]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000530]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000534]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000538]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$00053C]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000540]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000544]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000548]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$00054C]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000550]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000554]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000558]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$00055C]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000560]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000564]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000568]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$00056C]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000570]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000574]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000578]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$00057C]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000580]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000584]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000588]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$00058C]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000590]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000594]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000598]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$00059C]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005A0]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005A4]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005A8]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005AC]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005B0]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005B4]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005B8]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005BC]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005C0]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005C4]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005C8]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005CC]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005D0]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005D4]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005D8]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005DC]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005E0]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005E4]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005E8]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005EC]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005F0]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005F4]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005F8]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$0005FC]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000600]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000604]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000608]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$00060C]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000610]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000614]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000618]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$00061C]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000620]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000624]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000628]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$00062C]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000630]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000634]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000638]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$00063C]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000640]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000644]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000648]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$00064C]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000650]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000654]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000658]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$00065C]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000660]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000664]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000668]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$00066C]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000670]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000674]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$000678]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08975  STA $0180,X [$00067C]   
+C08978  INX                     
+C08979  INX                     
+C0897A  INX                     
+C0897B  INX                     
+C0897C  CPX #$0500              
+C0897F  BNE _loop_1             
+C08981  LDA #$5555              
+C08984  STA $00,X [$000500]     
+C08986  INX                     
+C08987  INX                     
+C08988  CPX #$0520              
+C0898B  BNE _loop_2             
+C08984  STA $00,X [$000502]     
+C08986  INX                     
+C08987  INX                     
+C08988  CPX #$0520              
+C0898B  BNE _loop_2             
+C08984  STA $00,X [$000504]     
+C08986  INX                     
+C08987  INX                     
+C08988  CPX #$0520              
+C0898B  BNE _loop_2             
+C08984  STA $00,X [$000506]     
+C08986  INX                     
+C08987  INX                     
+C08988  CPX #$0520              
+C0898B  BNE _loop_2             
+C08984  STA $00,X [$000508]     
+C08986  INX                     
+C08987  INX                     
+C08988  CPX #$0520              
+C0898B  BNE _loop_2             
+C08984  STA $00,X [$00050A]     
+C08986  INX                     
+C08987  INX                     
+C08988  CPX #$0520              
+C0898B  BNE _loop_2             
+C08984  STA $00,X [$00050C]     
+C08986  INX                     
+C08987  INX                     
+C08988  CPX #$0520              
+C0898B  BNE _loop_2             
+C08984  STA $00,X [$00050E]     
+C08986  INX                     
+C08987  INX                     
+C08988  CPX #$0520              
+C0898B  BNE _loop_2             
+C08984  STA $00,X [$000510]     
+C08986  INX                     
+C08987  INX                     
+C08988  CPX #$0520              
+C0898B  BNE _loop_2             
+C08984  STA $00,X [$000512]     
+C08986  INX                     
+C08987  INX                     
+C08988  CPX #$0520              
+C0898B  BNE _loop_2             
+C08984  STA $00,X [$000514]     
+C08986  INX                     
+C08987  INX                     
+C08988  CPX #$0520              
+C0898B  BNE _loop_2             
+C08984  STA $00,X [$000516]     
+C08986  INX                     
+C08987  INX                     
+C08988  CPX #$0520              
+C0898B  BNE _loop_2             
+C08984  STA $00,X [$000518]     
+C08986  INX                     
+C08987  INX                     
+C08988  CPX #$0520              
+C0898B  BNE _loop_2             
+C08984  STA $00,X [$00051A]     
+C08986  INX                     
+C08987  INX                     
+C08988  CPX #$0520              
+C0898B  BNE _loop_2             
+C08984  STA $00,X [$00051C]     
+C08986  INX                     
+C08987  INX                     
+C08988  CPX #$0520              
+C0898B  BNE _loop_2             
+C08984  STA $00,X [$00051E]     
+C08986  INX                     
+C08987  INX                     
+C08988  CPX #$0520              
+C0898B  BNE _loop_2             
+C0898D  REP #$10                
+C0898F  SEP #$20                
+C08991  LDA #$70                
+C08993  STA $0380 [$000380]     
+C08996  LDA #$60                
+C08998  STA $0381 [$000381]     
+C0899B  LDA #$00                
+C0899D  STA $0382 [$000382]     
+C089A0  LDA #$30                
+C089A2  STA $0383 [$000383]     
+C089A5  LDA #$32                
+C089A7  STA $038B [$00038B]     
+C089AA  LDA #$5A                
+C089AC  STA $0508 [$000508]     
+C089AF  LDA #$01                
+C089B1  STA $60 [$000060]       
+C089B3  PLP                     
+C089B4  RTS                     
+C087CA  LDA #$01                
+C087CC  STA $420D [MEMSEL]      
+C087CF  LDA #$FF                
+C087D1  STA $E2 [$0000E2]       
+C087D3  STZ $E3 [$0000E3]       
+C087D5  LDA #$FF                
+C087D7  STA $0734 [$000734]     
+C087DA  JSR $8313 [label_jsr_1] 
+C08313  LDA $074A [$00074A]     
+C08316  CMP #$01                
+C08318  BNE diferente_de_um_00  
+C08321  LDA $073E [$00073E]     
+C08324  CMP #$01                
+C08326  BNE diferente_de_um_01  
+C0832F  LDA $073E [$00073E]     
+C08332  CMP #$02                
+C08334  BNE diferente_de_dois_00
+                            
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000524]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000528]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00052C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000530]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000534]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000538]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00053C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000540]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000544]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000548]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00054C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000550]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000554]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000558]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00055C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000560]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000564]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000568]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00056C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000570]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000574]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000578]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00057C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000580]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000584]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000588]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00058C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000590]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000594]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000598]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00059C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005A0]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005A4]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005A8]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005AC]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005B0]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005B4]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005B8]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005BC]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005C0]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005C4]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005C8]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005CC]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005D0]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005D4]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005D8]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005DC]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005E0]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005E4]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005E8]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005EC]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005F0]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005F4]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005F8]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$0005FC]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000600]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000604]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000608]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00060C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000610]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000614]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000618]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00061C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000620]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000624]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000628]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00062C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000630]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000634]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000638]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00063C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000640]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000644]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000648]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00064C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000650]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000654]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000658]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00065C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000660]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000664]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000668]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00066C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000670]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000674]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$000678]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08975 STA $0180,X [$00067C]           
+C08978 INX                             
+C08979 INX                             
+C0897A INX                             
+C0897B INX                             
+C0897C CPX #$0500                      
+C0897F BNE _loop_1                     
+C08981 LDA #$5555                      
+C08984 STA $00,X [$000500]             
+C08986 INX                             
+C08987 INX                             
+C08988 CPX #$0520                      
+C0898B BNE _loop_2                     
+C08984 STA $00,X [$000502]             
+C08986 INX                             
+C08987 INX                             
+C08988 CPX #$0520                      
+C0898B BNE _loop_2                     
+C08984 STA $00,X [$000504]             
+C08986 INX                             
+C08987 INX                             
+C08988 CPX #$0520                      
+C0898B BNE _loop_2                     
+C08984 STA $00,X [$000506]             
+C08986 INX                             
+C08987 INX                             
+C08988 CPX #$0520                      
+C0898B BNE _loop_2                     
+C08984 STA $00,X [$000508]             
+C08986 INX                             
+C08987 INX                             
+C08988 CPX #$0520                      
+C0898B BNE _loop_2                     
+C08984 STA $00,X [$00050A]             
+C08986 INX                             
+C08987 INX                             
+C08988 CPX #$0520                      
+C0898B BNE _loop_2                     
+C08984 STA $00,X [$00050C]             
+C08986 INX                             
+C08987 INX                             
+C08988 CPX #$0520                      
+C0898B BNE _loop_2                     
+C08984 STA $00,X [$00050E]             
+C08986 INX                             
+C08987 INX                             
+C08988 CPX #$0520                      
+C0898B BNE _loop_2                     
+C08984 STA $00,X [$000510]             
+C08986 INX                             
+C08987 INX                             
+C08988 CPX #$0520                      
+C0898B BNE _loop_2                     
+C08984 STA $00,X [$000512]             
+C08986 INX                             
+C08987 INX                             
+C08988 CPX #$0520                      
+C0898B BNE _loop_2                     
+C08984 STA $00,X [$000514]             
+C08986 INX                             
+C08987 INX                             
+C08988 CPX #$0520                      
+C0898B BNE _loop_2                     
+C08984 STA $00,X [$000516]             
+C08986 INX                             
+C08987 INX                             
+C08988 CPX #$0520                      
+C0898B BNE _loop_2                     
+C08984 STA $00,X [$000518]             
+C08986 INX                             
+C08987 INX                             
+C08988 CPX #$0520                      
+C0898B BNE _loop_2                     
+C08984 STA $00,X [$00051A]             
+C08986 INX                             
+C08987 INX                             
+C08988 CPX #$0520                      
+C0898B BNE _loop_2                     
+C08984 STA $00,X [$00051C]             
+C08986 INX                             
+C08987 INX                             
+C08988 CPX #$0520                      
+C0898B BNE _loop_2                     
+C08984 STA $00,X [$00051E]             
+C08986 INX                             
+C08987 INX                             
+C08988 CPX #$0520                      
+C0898B BNE _loop_2                     
+C0898D REP #$10                        
+C0898F SEP #$20                        
+C08991 LDA #$70                        
+C08993 STA $0380 [$000380]             
+C08996 LDA #$60                        
+C08998 STA $0381 [$000381]             
+C0899B LDA #$00                        
+C0899D STA $0382 [$000382]             
+C089A0 LDA #$30                        
+C089A2 STA $0383 [$000383]             
+C089A5 LDA #$32                        
+C089A7 STA $038B [$00038B]             
+C089AA LDA #$5A                        
+C089AC STA $0508 [$000508]             
+C089AF LDA #$01                        
+C089B1 STA $60 [$000060]               
+C089B3 PLP                             
+C089B4 RTS                             
+C087CA LDA #$01                        
+C087CC STA $420D [MEMSEL]              
+C087CF LDA #$FF                        
+C087D1 STA $E2 [$0000E2]               
+C087D3 STZ $E3 [$0000E3]               
+C087D5 LDA #$FF                        
+C087D7 STA $0734 [$000734]             
+C087DA JSR $8313 [label_jsr_1]         
+C08313 LDA $074A [$00074A]             
+C08316 CMP #$01                        
+C08318 BNE diferente_de_um_00          
+C08321 LDA $073E [$00073E]             
+C08324 CMP #$01                        
+C08326 BNE diferente_de_um_01          
+C0832F LDA $073E [$00073E]             
+C08332 CMP #$02                        
+C08334 BNE diferente_de_dois_00

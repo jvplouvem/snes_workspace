@@ -1,0 +1,6 @@
+.include "fans-registers.asm"
+.include "fans-constants.asm"
+.include "fans-variables.asm"
+.include "fans-macros.asm"
+.include "fans-init.asm"
+.include "fans-header.asm"

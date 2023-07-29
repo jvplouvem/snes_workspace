@@ -1,0 +1,6 @@
+.include "../../framework/asm/includes/ca65/fans-registers.asm"
+.include "../../framework/asm/includes/ca65/fans-constants.asm"
+.include "../../framework/asm/includes/ca65/fans-variables.asm"
+.include "../../framework/asm/includes/ca65/fans-macros.asm"
+.include "../../framework/asm/includes/ca65/fans-init.asm"
+.include "../../framework/asm/includes/ca65/fans-header.asm"
