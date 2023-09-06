@@ -1538,6 +1538,206 @@
           "Comment": "HDMA Line Counter",
           "Flags": "None",
           "Length": 1
+        },
+        {
+          "Address": 32744,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "abort native not used *",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32748,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "RESET native",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32758,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " not used",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32756,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "fff4 - emulation mode vectors\r\ncop emulation **",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32740,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "ffe4 - native mode vectors\r\ncop native **",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32764,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "RESET emulation",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32762,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "nmi emulation",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32766,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "irq/brk emulation **",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32746,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "nmi native ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32760,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "abort not used *",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32736,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "ffe0 not used",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32742,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "brk native **",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32752,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "fff0 not used",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32750,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "irq native",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 12,
+          "MemoryType": "SnesWorkRam",
+          "Label": "current_line",
+          "Comment": " offset_linha_vram: .res 4",
+          "Flags": "None",
+          "Length": 4
+        },
+        {
+          "Address": 10,
+          "MemoryType": "SnesWorkRam",
+          "Label": "pad2_new",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 2
+        },
+        {
+          "Address": 8,
+          "MemoryType": "SnesWorkRam",
+          "Label": "pad2",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 2
+        },
+        {
+          "Address": 6,
+          "MemoryType": "SnesWorkRam",
+          "Label": "pad1_new",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 2
+        },
+        {
+          "Address": 4,
+          "MemoryType": "SnesWorkRam",
+          "Label": "pad1",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 2
+        },
+        {
+          "Address": 2,
+          "MemoryType": "SnesWorkRam",
+          "Label": "temp1",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 2
+        },
+        {
+          "Address": 1312,
+          "MemoryType": "SnesWorkRam",
+          "Label": "oam_buffer_end",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1280,
+          "MemoryType": "SnesWorkRam",
+          "Label": "oam_hi_buffer",
+          "Comment": "high table",
+          "Flags": "None",
+          "Length": 32
+        },
+        {
+          "Address": 768,
+          "MemoryType": "SnesWorkRam",
+          "Label": "palette_buffer_end",
+          "Comment": "low table",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 256,
+          "MemoryType": "SnesWorkRam",
+          "Label": "palette_buffer",
+          "Comment": "palette",
+          "Flags": "None",
+          "Length": 512
+        },
+        {
+          "Address": 0,
+          "MemoryType": "SnesWorkRam",
+          "Label": "in_nmi",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 2
         }
       ],
       "Breakpoints": [
@@ -1559,7 +1759,7 @@
           "BreakOnRead": false,
           "BreakOnWrite": false,
           "BreakOnExec": true,
-          "Enabled": true,
+          "Enabled": false,
           "MarkEvent": false,
           "MemoryType": "SnesPrgRom",
           "StartAddress": 33362,
@@ -1573,7 +1773,7 @@
           "BreakOnRead": false,
           "BreakOnWrite": false,
           "BreakOnExec": true,
-          "Enabled": true,
+          "Enabled": false,
           "MarkEvent": false,
           "MemoryType": "SnesPrgRom",
           "StartAddress": 33256,
@@ -1587,7 +1787,7 @@
           "BreakOnRead": false,
           "BreakOnWrite": false,
           "BreakOnExec": true,
-          "Enabled": true,
+          "Enabled": false,
           "MarkEvent": false,
           "MemoryType": "SnesPrgRom",
           "StartAddress": 33312,
@@ -1601,7 +1801,7 @@
           "BreakOnRead": false,
           "BreakOnWrite": false,
           "BreakOnExec": true,
-          "Enabled": true,
+          "Enabled": false,
           "MarkEvent": false,
           "MemoryType": "SnesPrgRom",
           "StartAddress": 33303,
@@ -1618,8 +1818,8 @@
           "Enabled": true,
           "MarkEvent": false,
           "MemoryType": "SnesPrgRom",
-          "StartAddress": 561,
-          "EndAddress": 561,
+          "StartAddress": 558,
+          "EndAddress": 558,
           "CpuType": "Snes",
           "AnyAddress": false,
           "IsAssert": false,
@@ -1632,8 +1832,8 @@
           "Enabled": true,
           "MarkEvent": false,
           "MemoryType": "SnesPrgRom",
-          "StartAddress": 585,
-          "EndAddress": 585,
+          "StartAddress": 621,
+          "EndAddress": 621,
           "CpuType": "Snes",
           "AnyAddress": false,
           "IsAssert": false,

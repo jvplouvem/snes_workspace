@@ -153,3 +153,77 @@
 .macro initScreen
 	ldaSta #INIDISPConstants_FULL_BRIGHT, INIDISP
 .endmacro
+
+
+
+; multiplies the accumulator by various constant values
+; <= 255 works with both 8-bit and 16-bit accumulator
+; >= 256 requires 16-bit accumulator
+.macro multiplyBy by
+	.if by = 0
+		sta #0
+	.elseif by = 1
+		; do nothing
+	.elseif by = 2
+		asl
+	.elseif by = 3
+		pha ; put current accumulator value on stack
+		asl ; value = value * 2
+		add {$01,s} ; value = value + stack_value
+		;sta $01,s
+		pla
+	.elseif by == 4
+		asl #2
+	.elseif by == 256
+		and #$00ff
+		xba
+	.endif
+.endmacro
+
+
+.macro add by
+	clc
+	adc by
+.endmacro
+
+TOTAL_BYSTES_LINHA_VRAM = 512 ; total de bytes de cada linha da VRAM
+_5_BLOCOS_VRAM = 32*5
+OFFSET_LINHA_VRAM = 256 ; 100 em hex
+
+.macro teste vramAddress, linhaVram
+	ldxStx vramAddress+(OFFSET_LINHA_VRAM*linhaVram), VMADDL
+
+    ldx #TOTAL_BYSTES_LINHA_VRAM*linhaVram
+	:
+		lda f:sprites_tiles,x
+		sta VMDATAL
+		inx
+	
+		lda f:sprites_tiles,x
+		sta VMDATAH
+		inx
+		cpx #((TOTAL_BYSTES_LINHA_VRAM*linhaVram)+_5_BLOCOS_VRAM) ; 4 blocos na VRAM, 128 bytes
+		bne :-
+.endmacro
+
+
+.macro teste2 vramAddress, linhaVram, tilesLabel
+	ldxStx vramAddress+(OFFSET_LINHA_VRAM*linhaVram), VMADDL
+
+    ldx #TOTAL_BYSTES_LINHA_VRAM*linhaVram
+	:
+		lda f:tilesLabel,x
+		sta VMDATAL
+		inx
+	
+		lda f:tilesLabel,x
+		sta VMDATAH
+		inx
+		cpx #((TOTAL_BYSTES_LINHA_VRAM*linhaVram)+_5_BLOCOS_VRAM) ; 4 blocos na VRAM, 128 bytes
+		bne :-
+.endmacro
+
+
+.macro teste3 paramTeste
+	ldx paramTeste
+.endmacro

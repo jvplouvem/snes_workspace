@@ -4388,7 +4388,7 @@
     "RewindBufferSize": 300,
     "AlwaysOnTop": false,
     "AutoHideMenu": false,
-    "ShowFps": false,
+    "ShowFps": true,
     "ShowFrameCounter": false,
     "ShowGameTimer": false,
     "ShowLagCounter": false,
@@ -7091,16 +7091,16 @@
         "ColorCode": 4292394968
       },
       "HighlightBreakpoints": false,
-      "MemoryType": "SnesPrgRom",
+      "MemoryType": "SnesVideoRam",
       "WindowSize": {
-        "Width": 960,
-        "Height": 1027
+        "Width": 886,
+        "Height": 972
       },
       "WindowLocation": {
-        "X": 353,
-        "Y": 0
+        "X": 14,
+        "Y": 10
       },
-      "WindowIsMaximized": true
+      "WindowIsMaximized": false
     },
     "EventViewer": {
       "ShowSettingsPanel": true,
@@ -7507,6 +7507,15 @@
                         "ToolTypeName": "DisassemblyViewModel",
                         "SelectedIndex": 0,
                         "Children": null
+                      },
+                      {
+                        "Type": "Tool",
+                        "Proportion": 0,
+                        "Orientation": "Horizontal",
+                        "Name": "Source View",
+                        "ToolTypeName": "SourceViewViewModel",
+                        "SelectedIndex": 0,
+                        "Children": null
                       }
                     ]
                   },
@@ -7569,15 +7578,6 @@
                             "Orientation": "Horizontal",
                             "Name": "Labels",
                             "ToolTypeName": "LabelListViewModel",
-                            "SelectedIndex": 0,
-                            "Children": null
-                          },
-                          {
-                            "Type": "Tool",
-                            "Proportion": 0,
-                            "Orientation": "Horizontal",
-                            "Name": "Functions",
-                            "ToolTypeName": "FunctionListViewModel",
                             "SelectedIndex": 0,
                             "Children": null
                           },
@@ -7802,12 +7802,12 @@
       ],
       "FindResultColumnWidths": [],
       "WindowSize": {
-        "Width": 1219,
-        "Height": 1018
+        "Width": 958,
+        "Height": 1023
       },
       "WindowLocation": {
-        "X": 632,
-        "Y": 29
+        "X": 303,
+        "Y": 34
       },
       "WindowIsMaximized": false
     },
@@ -7840,15 +7840,15 @@
       "ShowSettingsPanel": true,
       "ImageScale": 3,
       "ShowTileGrid": true,
-      "SelectedPreset": "PPU",
+      "SelectedPreset": "OAM1",
       "Source": "SnesVideoRam",
       "Format": "Bpp4",
       "Layout": "Normal",
       "Filter": "None",
       "Background": "Default",
-      "RowCount": 128,
+      "RowCount": 16,
       "ColumnCount": 16,
-      "StartAddress": 0,
+      "StartAddress": 32768,
       "UseGrayscalePalette": false,
       "RefreshTiming": {
         "RefreshOnBreakPause": true,
@@ -7861,8 +7861,8 @@
         "Height": 1018
       },
       "WindowLocation": {
-        "X": 447,
-        "Y": 228
+        "X": 641,
+        "Y": 146
       },
       "WindowIsMaximized": false
     },
@@ -7894,8 +7894,8 @@
         "Height": 600
       },
       "WindowLocation": {
-        "X": 660,
-        "Y": 236
+        "X": 807,
+        "Y": 398
       },
       "WindowIsMaximized": false
     },
@@ -8083,6 +8083,14 @@
     "Items": [
       {
         "RomFile": {
+          "Path": "C:\\ambiente_desenvolvimento\\test\\snes_workspace\\output\\rom.sfc",
+          "InnerFile": "",
+          "InnerFileIndex": 0
+        },
+        "PatchFile": null
+      },
+      {
+        "RomFile": {
           "Path": "C:\\ambiente_desenvolvimento\\test\\asssembly_workspace\\output\\rom.sfc",
           "InnerFile": "",
           "InnerFileIndex": 0
@@ -8152,14 +8160,6 @@
           "InnerFileIndex": 0
         },
         "PatchFile": null
-      },
-      {
-        "RomFile": {
-          "Path": "C:\\ambiente_desenvolvimento\\test\\snes-lab\\snes-lab\\ambiente_georgjz\\04_displaying_your_first_sprite\\SpriteDemo.smc",
-          "InnerFile": "",
-          "InnerFileIndex": 0
-        },
-        "PatchFile": null
       }
     ]
   },
@@ -8219,8 +8219,8 @@
       "Height": 697
     },
     "WindowLocation": {
-      "X": 616,
-      "Y": 273
+      "X": 361,
+      "Y": 312
     },
     "WindowIsMaximized": false
   },
