@@ -3,6 +3,10 @@
 cls
 set output_folder=..\..\output
 
+
+del %output_folder%\rom.sym 
+del %output_folder%\rom.dbg
+
 ca65 -g %main_file%.asm
 REM ld65 -C lorom.cfg -o %source_code_path%\rom.sfc %source_code_path%\main.o -Ln labels.txt --dbgfile %source_code_path%\rom.dbg
 

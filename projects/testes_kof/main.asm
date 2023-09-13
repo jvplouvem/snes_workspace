@@ -68,7 +68,11 @@ main:
     ;     cmp #8
     ;     bmi loop_teste
 
-    ldaSta #0, current_line
+
+    
+    
+
+    ;ldaSta #0, current_line
 
     setObjectAndCharacterSize #$02
     setBGMode #BgModeConstants_MODE1
@@ -89,29 +93,26 @@ infinite_loop:
     ;dmaToVram #VRAM_ADDRESS, tiles_buffer, #(tiles_buffer_end - tiles_buffer)
 
 
-    teste2 #VRAM_ADDRESS, current_line, sprites_tiles
-    lda current_line    ; a = current_line
-    inc                 ; a++
-    sta current_line    ; current_line = a
-    cmp #4
-    beq reset_current_line
-
-    
+    ; teste2 #VRAM_ADDRESS, current_line, sprites_tiles
+    ; lda current_line    ; a = current_line
+    ; inc                 ; a++
+    ; sta current_line    ; current_line = a
+    ; cmp #4
+    ; beq reset_current_line
 
     ; ; === send to vram by loop =========================================
-    ; ; VRAM address
-    ; ldxStx address, VMADDL
-    ; ldx #$0000
-	
-	; @charset_loop:
-	; 	ldaSta TILES_LABEL,x,  VMDATAL
+    ; ldxStx #VRAM_ADDRESS, VMADDL
+    ; @charset_loop:
+    ;     lda #$11
+	; 	sta VMDATAL
 	; 	inx
 		
-	; 	ldaSta TILES_LABEL,x,  VMDATAH
+	; 	sta #$11,  VMDATAH
+    ;     l
 	; 	inx
-	; 	cpx TILES_LENGTH;
+	; 	cpx #$4010;
 	;     bne @charset_loop
-    ; ; ==================================================================
+    ; ==================================================================
 
     ; stx VMADDL
     ;dma tiles_buffer, VMDATAL, #(tiles_buffer_end - tiles_buffer), #$01

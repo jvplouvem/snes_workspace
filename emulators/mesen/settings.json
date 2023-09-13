@@ -7097,8 +7097,8 @@
         "Height": 972
       },
       "WindowLocation": {
-        "X": 14,
-        "Y": 10
+        "X": 671,
+        "Y": 0
       },
       "WindowIsMaximized": false
     },
@@ -7806,8 +7806,8 @@
         "Height": 1023
       },
       "WindowLocation": {
-        "X": 303,
-        "Y": 34
+        "X": 35,
+        "Y": 54
       },
       "WindowIsMaximized": false
     },
@@ -7848,7 +7848,7 @@
       "Background": "Default",
       "RowCount": 16,
       "ColumnCount": 16,
-      "StartAddress": 32768,
+      "StartAddress": 16384,
       "UseGrayscalePalette": false,
       "RefreshTiming": {
         "RefreshOnBreakPause": true,
@@ -7858,11 +7858,11 @@
       },
       "WindowSize": {
         "Width": 958,
-        "Height": 1018
+        "Height": 749
       },
       "WindowLocation": {
-        "X": 641,
-        "Y": 146
+        "X": 986,
+        "Y": 170
       },
       "WindowIsMaximized": false
     },
@@ -8083,6 +8083,46 @@
     "Items": [
       {
         "RomFile": {
+          "Path": "C:\\ambiente_desenvolvimento\\test\\spritetest\\spritetest.sfc",
+          "InnerFile": "",
+          "InnerFileIndex": 0
+        },
+        "PatchFile": null
+      },
+      {
+        "RomFile": {
+          "Path": "C:\\ambiente_desenvolvimento\\test\\SideScoller-main\\SideScroller.smc",
+          "InnerFile": "",
+          "InnerFileIndex": 0
+        },
+        "PatchFile": null
+      },
+      {
+        "RomFile": {
+          "Path": "C:\\ambiente_desenvolvimento\\test\\SNES-starterkit\\hello.fig",
+          "InnerFile": "",
+          "InnerFileIndex": 0
+        },
+        "PatchFile": null
+      },
+      {
+        "RomFile": {
+          "Path": "C:\\ambiente_desenvolvimento\\test\\SNES-starterkit\\show.fig",
+          "InnerFile": "",
+          "InnerFileIndex": 0
+        },
+        "PatchFile": null
+      },
+      {
+        "RomFile": {
+          "Path": "C:\\ambiente_desenvolvimento\\test\\SNES-starterkit\\walker.fig",
+          "InnerFile": "",
+          "InnerFileIndex": 0
+        },
+        "PatchFile": null
+      },
+      {
+        "RomFile": {
           "Path": "C:\\ambiente_desenvolvimento\\test\\snes_workspace\\output\\rom.sfc",
           "InnerFile": "",
           "InnerFileIndex": 0
@@ -8116,46 +8156,6 @@
       {
         "RomFile": {
           "Path": "C:\\ambiente_desenvolvimento\\test\\MagicianLordTestes\\Show.fig",
-          "InnerFile": "",
-          "InnerFileIndex": 0
-        },
-        "PatchFile": null
-      },
-      {
-        "RomFile": {
-          "Path": "C:\\ambiente_desenvolvimento\\test\\fans\\fans-devkit\\output\\rom.sfc",
-          "InnerFile": "",
-          "InnerFileIndex": 0
-        },
-        "PatchFile": null
-      },
-      {
-        "RomFile": {
-          "Path": "C:\\Users\\joao.louvem\\Downloads\\qwakSNES.sfc",
-          "InnerFile": "",
-          "InnerFileIndex": 0
-        },
-        "PatchFile": null
-      },
-      {
-        "RomFile": {
-          "Path": "C:\\Users\\joao.louvem\\Downloads\\snes-sprite-tutorial\\sprite\\sprite.smc",
-          "InnerFile": "",
-          "InnerFileIndex": 0
-        },
-        "PatchFile": null
-      },
-      {
-        "RomFile": {
-          "Path": "C:\\Users\\joao.louvem\\Downloads\\tic-tac-toe-tutorial\\done.smc",
-          "InnerFile": "",
-          "InnerFileIndex": 0
-        },
-        "PatchFile": null
-      },
-      {
-        "RomFile": {
-          "Path": "C:\\ambiente_desenvolvimento\\test\\snes-lab\\snes-lab\\roms\\mk3.smc",
           "InnerFile": "",
           "InnerFileIndex": 0
         },
@@ -8219,8 +8219,8 @@
       "Height": 697
     },
     "WindowLocation": {
-      "X": 361,
-      "Y": 312
+      "X": 174,
+      "Y": 212
     },
     "WindowIsMaximized": false
   },
