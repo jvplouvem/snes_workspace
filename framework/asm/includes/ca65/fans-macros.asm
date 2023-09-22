@@ -6,27 +6,27 @@
 
 
 .macro a8Bit
-	sep #$20
+	sep #$20 ; a8Bit
 .endmacro
 
 .macro a16Bit
-	rep #$20
+	rep #$20 ; a16Bit
 .endmacro
 
 .macro axy8Bit
-	sep #$30
+	sep #$30 ; axy8Bit
 .endmacro
 
 .macro axy16Bit
-	rep #$30
+	rep #$30 ; axy16Bit
 .endmacro
 
 .macro xy8Bit
-	sep #$10
+	sep #$10 ; xy8Bit
 .endmacro
 
 .macro xy16Bit
-	rep #$10
+	rep #$10 ; xy16Bit
 .endmacro
 
 
@@ -68,18 +68,27 @@
 .endmacro
 
 .macro dmaToCgram source, address, length
-	ldaSta address, CGADD
+	ldaSta address, f:CGADD
 	dma source, CGDATA, length, #$00
 .endmacro
 
 .macro dmaToOam source, address, length
-	ldxStx address, OAMADDL
+	ldxStx address, a:OAMADDL
 	dma source, OAMDATA, length, #$00
 .endmacro
 
 .macro dmaToVram source, address, length
-	ldxStx address, VMADDL
+	ldxStx address, a:VMADDL
 	dma source, VMDATAL, length, #$01
+.endmacro
+
+.macro dma source, target, length, transferMode
+	ldaSta transferMode, f:DMAPx
+	ldaSta #.lobyte(target), f:BBADx ; TARGET
+	ldxStx #.loword(source), a:A1TxL; $004302 SOURCE
+	ldaSta #^source, f:A1Bx ; BANK
+	ldxStx length, a:DASxL;$004305 ;DASxL
+	ldaSta #%1, f:MDMAEN
 .endmacro
 
 .macro sendToVramByLoop vramAddress, tilesLabel, tilesOffset, length
@@ -102,56 +111,47 @@
 	    bne :-
 .endmacro
 
-.macro dma source, target, length, transferMode
-	ldaSta transferMode, DMAPx
-	ldaSta #.lobyte(target), BBADx ; target
-	ldxStx #.loword(source), A1TxL ; source
-	ldaSta #^source, A1Bx ; bank
-	ldxStx length, DASxL
-	ldaSta #%1, MDMAEN
-.endmacro
-
 .macro setObjectAndCharacterSize value
-	ldaSta value, OBSEL
+	ldaSta value, f:OBSEL
 .endmacro
 
 .macro setBGMode value
-	ldaSta value, BGMODE
+	ldaSta value, f:BGMODE
 .endmacro
 
 
 .macro setBG1TilemapAddress value
-	ldaSta value, BG1SC
+	ldaSta value, f:BG1SC
 .endmacro
 
 .macro setBG2TilemapAddress value
-	ldaSta value, BG2SC
+	ldaSta value, f:BG2SC
 .endmacro
 
 .macro setBG3TilemapAddress value
-	ldaSta value, BG3SC
+	ldaSta value, f:BG3SC
 .endmacro
 
 
 .macro setBG1And2CharacterAddress value
-	ldaSta value, BG12NBA
+	ldaSta value, f:BG12NBA
 .endmacro
 
 .macro setBG3And4CharacterAddress value
-	ldaSta value, BG34NBA
+	ldaSta value, f:BG34NBA
 .endmacro
 
 .macro enableMainScreenDesignation value
-	ldaSta value, TM
+	ldaSta value, f:TM
 .endmacro
 
 
 .macro enableNmiAndAutoJoypadRead
-	ldaSta #NMITIMENConstants_ENABLE_NMI_AND_AUTO_JOYPAD_READ, NMITIMEN
+	ldaSta #NMITIMENConstants_ENABLE_NMI_AND_AUTO_JOYPAD_READ, f:NMITIMEN
 .endmacro
 
 .macro initScreen
-	ldaSta #INIDISPConstants_FULL_BRIGHT, INIDISP
+	ldaSta #INIDISPConstants_FULL_BRIGHT, f:INIDISP
 .endmacro
 
 

@@ -26,7 +26,8 @@
     "NtscQFilterLength": 50,
     "FullscreenForceIntegerScale": false,
     "UseExclusiveFullscreen": false,
-    "ExclusiveFullscreenRefreshRate": 60,
+    "ExclusiveFullscreenRefreshRateNtsc": 60,
+    "ExclusiveFullscreenRefreshRatePal": 50,
     "ExclusiveFullscreenResolution": "Default",
     "ScreenRotation": "None"
   },
@@ -1102,13 +1103,14 @@
     "HideBgLayer4": false,
     "HideSprites": false,
     "DisableFrameSkipping": false,
+    "ForceFixedResolution": false,
     "Overscan": {
       "Left": 0,
       "Right": 0,
       "Top": 7,
       "Bottom": 8
     },
-    "EnableCubicInterpolation": false,
+    "InterpolationType": "Gauss",
     "Channel1Vol": 100,
     "Channel2Vol": 100,
     "Channel3Vol": 100,
@@ -1120,6 +1122,7 @@
     "EnableRandomPowerOnState": false,
     "EnableStrictBoardMappings": false,
     "RamPowerOnState": "AllZeros",
+    "SpcClockSpeedAdjustment": 40,
     "PpuExtraScanlinesBeforeNmi": 0,
     "PpuExtraScanlinesAfterNmi": 0,
     "GsuClockSpeed": 100,
@@ -3016,6 +3019,7 @@
     "ForceSpritesFirstColumn": false,
     "RemoveSpriteLimit": false,
     "AdaptiveSpriteLimit": false,
+    "EnablePalBorders": false,
     "UseCustomVsPalette": false,
     "NtscOverscan": {
       "Left": 0,
@@ -3036,10 +3040,12 @@
     "DisablePpu2004Reads": false,
     "EnablePpu2000ScrollGlitch": false,
     "EnablePpu2006ScrollGlitch": false,
+    "RestrictPpuAccessOnFirstFrame": false,
     "ConsoleType": "Nes001",
     "DisablePpuReset": false,
     "AllowInvalidInput": false,
     "DisableGameGenieBusConflicts": false,
+    "DisableFlashSaves": false,
     "RandomizeMapperPowerOnState": false,
     "RandomizeCpuPpuAlignment": false,
     "RamPowerOnState": "AllZeros",
@@ -3244,7 +3250,9 @@
     "GbcAdjustColors": true,
     "DisableBackground": false,
     "DisableSprites": false,
+    "HideSgbBorders": false,
     "RamPowerOnState": "Random",
+    "AllowInvalidInput": false,
     "BgColors": [
       4294967295,
       4289769648,
@@ -3842,6 +3850,7 @@
     "DisableBackground": false,
     "DisableBackgroundVdc2": false,
     "DisableFrameSkipping": false,
+    "ForceFixedResolution": false,
     "Overscan": {
       "Left": 18,
       "Right": 18,
@@ -4373,6 +4382,7 @@
     "AllowBackgroundInput": false,
     "PauseOnMovieEnd": true,
     "ShowMovieIcons": true,
+    "ShowTurboRewindIcons": true,
     "ConfirmExitResetPower": false,
     "AssociateSnesRomFiles": false,
     "AssociateSnesMusicFiles": false,
@@ -4395,6 +4405,7 @@
     "ShowTitleBarInfo": false,
     "ShowDebugInfo": false,
     "DisableOsd": false,
+    "HudSize": "Fixed",
     "GameSelectionScreenMode": "ResumeState",
     "FontAntialiasing": "SubPixelAntialias",
     "MesenFont": {
@@ -5783,6 +5794,71 @@
           "Key2": 0,
           "Key3": 0
         }
+      },
+      {
+        "Shortcut": "SetScale7x",
+        "KeyCombination": {
+          "Key1": 120,
+          "Key2": 41,
+          "Key3": 0
+        },
+        "KeyCombination2": {
+          "Key1": 0,
+          "Key2": 0,
+          "Key3": 0
+        }
+      },
+      {
+        "Shortcut": "SetScale8x",
+        "KeyCombination": {
+          "Key1": 120,
+          "Key2": 42,
+          "Key3": 0
+        },
+        "KeyCombination2": {
+          "Key1": 0,
+          "Key2": 0,
+          "Key3": 0
+        }
+      },
+      {
+        "Shortcut": "SetScale9x",
+        "KeyCombination": {
+          "Key1": 120,
+          "Key2": 43,
+          "Key3": 0
+        },
+        "KeyCombination2": {
+          "Key1": 0,
+          "Key2": 0,
+          "Key3": 0
+        }
+      },
+      {
+        "Shortcut": "SetScale10x",
+        "KeyCombination": {
+          "Key1": 120,
+          "Key2": 34,
+          "Key3": 0
+        },
+        "KeyCombination2": {
+          "Key1": 0,
+          "Key2": 0,
+          "Key3": 0
+        }
+      },
+      {
+        "Shortcut": "ResetLagCounter",
+        "KeyCombination": {
+          "Key1": 0,
+          "Key2": 0,
+          "Key3": 0
+        },
+        "KeyCombination2": {
+          "Key1": 0,
+          "Key2": 0,
+          "Key3": 0
+        }
       }
     ],
     "OverrideGameFolder": false,
@@ -6871,6 +6947,111 @@
             "Modifiers": "None",
             "ShortcutKey": "F2"
           }
+        },
+        {
+          "Shortcut": "CodeWindow_EditComment",
+          "KeyBinding": {
+            "Modifiers": "None",
+            "ShortcutKey": "OemSemicolon"
+          }
+        },
+        {
+          "Shortcut": "CodeWindow_NavigateBack",
+          "KeyBinding": {
+            "Modifiers": "Control",
+            "ShortcutKey": "OemMinus"
+          }
+        },
+        {
+          "Shortcut": "CodeWindow_NavigateForward",
+          "KeyBinding": {
+            "Modifiers": "Control, Shift",
+            "ShortcutKey": "OemMinus"
+          }
+        },
+        {
+          "Shortcut": "BreakpointList_ViewInMemoryViewer",
+          "KeyBinding": {
+            "Modifiers": "None",
+            "ShortcutKey": "None"
+          }
+        },
+        {
+          "Shortcut": "BreakpointList_EnableBreakpoint",
+          "KeyBinding": {
+            "Modifiers": "None",
+            "ShortcutKey": "None"
+          }
+        },
+        {
+          "Shortcut": "BreakpointList_DisableBreakpoint",
+          "KeyBinding": {
+            "Modifiers": "None",
+            "ShortcutKey": "None"
+          }
+        },
+        {
+          "Shortcut": "SaveRom",
+          "KeyBinding": {
+            "Modifiers": "None",
+            "ShortcutKey": "None"
+          }
+        },
+        {
+          "Shortcut": "TileEditor_RotateLeft",
+          "KeyBinding": {
+            "Modifiers": "Control",
+            "ShortcutKey": "Left"
+          }
+        },
+        {
+          "Shortcut": "TileEditor_RotateRight",
+          "KeyBinding": {
+            "Modifiers": "Control",
+            "ShortcutKey": "Right"
+          }
+        },
+        {
+          "Shortcut": "TileEditor_FlipHorizontal",
+          "KeyBinding": {
+            "Modifiers": "Control",
+            "ShortcutKey": "Up"
+          }
+        },
+        {
+          "Shortcut": "TileEditor_FlipVertical",
+          "KeyBinding": {
+            "Modifiers": "Control",
+            "ShortcutKey": "Down"
+          }
+        },
+        {
+          "Shortcut": "TileEditor_TranslateLeft",
+          "KeyBinding": {
+            "Modifiers": "Shift",
+            "ShortcutKey": "Left"
+          }
+        },
+        {
+          "Shortcut": "TileEditor_TranslateRight",
+          "KeyBinding": {
+            "Modifiers": "Shift",
+            "ShortcutKey": "Right"
+          }
+        },
+        {
+          "Shortcut": "TileEditor_TranslateUp",
+          "KeyBinding": {
+            "Modifiers": "Shift",
+            "ShortcutKey": "Up"
+          }
+        },
+        {
+          "Shortcut": "TileEditor_TranslateDown",
+          "KeyBinding": {
+            "Modifiers": "Shift",
+            "ShortcutKey": "Down"
+          }
         }
       ]
     },
@@ -7091,7 +7272,7 @@
         "ColorCode": 4292394968
       },
       "HighlightBreakpoints": false,
-      "MemoryType": "SnesVideoRam",
+      "MemoryType": "SnesWorkRam",
       "WindowSize": {
         "Width": 886,
         "Height": 972
@@ -7120,9 +7301,12 @@
         77,
         68,
         50,
+        416,
         416
       ],
       "ShowToolbar": true,
+      "ShowListView": true,
+      "ListViewHeight": 200,
       "SnesConfig": {
         "PpuRegisterCgramWrites": {
           "Visible": false,
@@ -7274,6 +7458,10 @@
         "DmcDmaReads": {
           "Visible": true,
           "Color": 4291428349
+        },
+        "OtherDmaReads": {
+          "Visible": true,
+          "Color": 4294953469
         },
         "SpriteZeroHit": {
           "Visible": true,
@@ -7570,7 +7758,7 @@
                         "Orientation": "Horizontal",
                         "Name": "",
                         "ToolTypeName": "",
-                        "SelectedIndex": 0,
+                        "SelectedIndex": 1,
                         "Children": [
                           {
                             "Type": "Tool",
@@ -7620,11 +7808,11 @@
                 "Orientation": "Horizontal",
                 "Name": "",
                 "ToolTypeName": "",
-                "SelectedIndex": 0,
+                "SelectedIndex": 2,
                 "Children": [
                   {
                     "Type": "ToolDock",
-                    "Proportion": 0.33333333333333337,
+                    "Proportion": 0.5,
                     "Orientation": "Horizontal",
                     "Name": "",
                     "ToolTypeName": "",
@@ -7652,7 +7840,7 @@
                   },
                   {
                     "Type": "ToolDock",
-                    "Proportion": 0.33333333333333337,
+                    "Proportion": 0.5,
                     "Orientation": "Horizontal",
                     "Name": "",
                     "ToolTypeName": "",
@@ -7664,34 +7852,6 @@
                         "Orientation": "Horizontal",
                         "Name": "Breakpoints",
                         "ToolTypeName": "BreakpointListViewModel",
-                        "SelectedIndex": 0,
-                        "Children": null
-                      }
-                    ]
-                  },
-                  {
-                    "Type": "Splitter",
-                    "Proportion": 0,
-                    "Orientation": "Horizontal",
-                    "Name": "",
-                    "ToolTypeName": "",
-                    "SelectedIndex": 0,
-                    "Children": null
-                  },
-                  {
-                    "Type": "ToolDock",
-                    "Proportion": 0.33333333333333337,
-                    "Orientation": "Horizontal",
-                    "Name": "",
-                    "ToolTypeName": "",
-                    "SelectedIndex": 0,
-                    "Children": [
-                      {
-                        "Type": "Tool",
-                        "Proportion": 0,
-                        "Orientation": "Horizontal",
-                        "Name": "Call Stack",
-                        "ToolTypeName": "CallStackViewModel",
                         "SelectedIndex": 0,
                         "Children": null
                       }
@@ -7725,7 +7885,8 @@
         "BreakOnBusConflict": false,
         "BreakOnDecayedOamRead": false,
         "BreakOnPpu2000ScrollGlitch": false,
-        "BreakOnPpu2006ScrollGlitch": false
+        "BreakOnPpu2006ScrollGlitch": false,
+        "NesBreakOnExtOutputMode": true
       },
       "Gameboy": {
         "GbBreakOnInvalidOamAccess": false,
@@ -7783,7 +7944,11 @@
         80,
         100
       ],
-      "FunctionListColumnWidths": [],
+      "FunctionListColumnWidths": [
+        100,
+        80,
+        80
+      ],
       "BreakpointListColumnWidths": [
         22,
         22,
@@ -7800,23 +7965,28 @@
         90,
         90
       ],
-      "FindResultColumnWidths": [],
+      "FindResultColumnWidths": [
+        100,
+        300
+      ],
       "WindowSize": {
-        "Width": 958,
-        "Height": 1023
+        "Width": 960,
+        "Height": 1027
       },
       "WindowLocation": {
-        "X": 35,
-        "Y": 54
+        "X": 7,
+        "Y": 0
       },
-      "WindowIsMaximized": false
+      "WindowIsMaximized": true
     },
     "TilemapViewer": {
       "ShowSettingsPanel": true,
       "ImageScale": 1,
       "ShowGrid": false,
-      "ShowAltGrid": false,
       "ShowScrollOverlay": false,
+      "NesShowAttributeGrid": false,
+      "NesShowAttributeByteGrid": false,
+      "NesShowTilemapGrid": false,
       "TileHighlightMode": "None",
       "AttributeHighlightMode": "None",
       "DisplayMode": "Default",
@@ -7848,7 +8018,7 @@
       "Background": "Default",
       "RowCount": 16,
       "ColumnCount": 16,
-      "StartAddress": 16384,
+      "StartAddress": 0,
       "UseGrayscalePalette": false,
       "RefreshTiming": {
         "RefreshOnBreakPause": true,
@@ -7861,10 +8031,10 @@
         "Height": 749
       },
       "WindowLocation": {
-        "X": 986,
-        "Y": 170
+        "X": 433,
+        "Y": 98
       },
-      "WindowIsMaximized": false
+      "WindowIsMaximized": true
     },
     "PaletteViewer": {
       "ShowSettingsPanel": true,
@@ -7881,13 +8051,14 @@
         "Height": 400
       },
       "WindowLocation": {
-        "X": 136,
-        "Y": 130
+        "X": 983,
+        "Y": 152
       },
       "WindowIsMaximized": false
     },
     "TileEditor": {
       "ImageScale": 8,
+      "ShowGrid": false,
       "Background": "Transparent",
       "WindowSize": {
         "Width": 600,
@@ -8083,6 +8254,30 @@
     "Items": [
       {
         "RomFile": {
+          "Path": "C:\\ambiente_desenvolvimento\\test\\snes_workspace\\output\\rom.sfc",
+          "InnerFile": "",
+          "InnerFileIndex": 0
+        },
+        "PatchFile": null
+      },
+      {
+        "RomFile": {
+          "Path": "C:\\ambiente_desenvolvimento\\test\\wla_snes_workspace\\projects\\magician-lord\\rom.sfc",
+          "InnerFile": "",
+          "InnerFileIndex": 0
+        },
+        "PatchFile": null
+      },
+      {
+        "RomFile": {
+          "Path": "C:\\ambiente_desenvolvimento\\test\\snes-lab\\snes-lab\\ambiente_nesdoug\\roms\\rom.sfc",
+          "InnerFile": "",
+          "InnerFileIndex": 0
+        },
+        "PatchFile": null
+      },
+      {
+        "RomFile": {
           "Path": "C:\\ambiente_desenvolvimento\\test\\spritetest\\spritetest.sfc",
           "InnerFile": "",
           "InnerFileIndex": 0
@@ -8123,14 +8318,6 @@
       },
       {
         "RomFile": {
-          "Path": "C:\\ambiente_desenvolvimento\\test\\snes_workspace\\output\\rom.sfc",
-          "InnerFile": "",
-          "InnerFileIndex": 0
-        },
-        "PatchFile": null
-      },
-      {
-        "RomFile": {
           "Path": "C:\\ambiente_desenvolvimento\\test\\asssembly_workspace\\output\\rom.sfc",
           "InnerFile": "",
           "InnerFileIndex": 0
@@ -8144,28 +8331,14 @@
           "InnerFileIndex": 0
         },
         "PatchFile": null
-      },
-      {
-        "RomFile": {
-          "Path": "C:\\ambiente_desenvolvimento\\test\\MagicianLordSNES-main\\Show.fig",
-          "InnerFile": "",
-          "InnerFileIndex": 0
-        },
-        "PatchFile": null
-      },
-      {
-        "RomFile": {
-          "Path": "C:\\ambiente_desenvolvimento\\test\\MagicianLordTestes\\Show.fig",
-          "InnerFile": "",
-          "InnerFileIndex": 0
-        },
-        "PatchFile": null
       }
     ]
   },
   "VideoRecord": {
     "Codec": "CSCD",
-    "CompressionLevel": 6
+    "CompressionLevel": 6,
+    "RecordSystemHud": false,
+    "RecordInputHud": false
   },
   "MovieRecord": {
     "RecordFrom": "CurrentState",
@@ -8202,7 +8375,7 @@
     "ServerPassword": ""
   },
   "HistoryViewer": {
-    "Scale": 2,
+    "Volume": 100,
     "WindowSize": {
       "Width": 0,
       "Height": 0
@@ -8219,8 +8392,8 @@
       "Height": 697
     },
     "WindowLocation": {
-      "X": 174,
-      "Y": 212
+      "X": 539,
+      "Y": 310
     },
     "WindowIsMaximized": false
   },

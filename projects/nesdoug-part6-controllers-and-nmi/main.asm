@@ -14,28 +14,27 @@ VRAM_ADDRESS = $4000
 main:
     a8Bit
     xy16Bit
-    phk
-    plb
-    phb
+    ; phk
+    ; plb
+    ; phb
 
     ; bg_palette -> palette_buffer
-    blockMove (bg_palette_end-bg_palette), bg_palette, palette_buffer
+    blockMove #(bg_palette_end - bg_palette), bg_palette, palette_buffer
 
     ; palette_buffer -> CGDATA
-    dmaToCgram #CGRAM_ADDRESS, palette_buffer, (palette_buffer_end - palette_buffer)
+    dmaToCgram palette_buffer, #CGRAM_ADDRESS, #(palette_buffer_end - palette_buffer)
 
-    blockMove (sprites_end-sprites), sprites, oam_lo_buffer
+    blockMove #(sprites_end-sprites), sprites, oam_lo_buffer
 
     ldaSta #$6A, oam_hi_buffer
-
-    stz OAMADDL
+	
     ; oam_lo_buffer -> OAMDATA
-    dmaToOam oam_lo_buffer, (oam_buffer_end - oam_lo_buffer)
+    dmaToOam oam_lo_buffer, #$0000, #(oam_buffer_end - oam_lo_buffer)
 
     ldaSta #VMainConstants_INCREMENT_MODE_BY_1, VMAIN
 
     ; sprites_tiles -> VMDATAL
-    dmaToVram #VRAM_ADDRESS, sprites_tiles, (sprites_tiles_end - sprites_tiles)
+    dmaToVram sprites_tiles, #VRAM_ADDRESS, #(sprites_tiles_end - sprites_tiles)
 
     setObjectAndCharacterSize #$02
     setBGMode #BgModeConstants_MODE1
@@ -50,7 +49,7 @@ infinite_loop:
     
     ; V-Blank begin
     ; oam_lo_buffer -> OAMDATA
-    dmaToOam oam_lo_buffer, (oam_buffer_end-oam_lo_buffer)
+    dmaToOam oam_lo_buffer, #$0000, #(oam_buffer_end-oam_lo_buffer)
     
     jsr pad_poll
     jsr read_joypad1
@@ -128,7 +127,6 @@ read_joypad1:
 
     joy1_not_right:
         a16Bit
-        a16Bit
         lda pad1
         and #$0800
         a8Bit
@@ -142,7 +140,6 @@ read_joypad1:
         a16Bit
 
     joy1_not_up:
-        a16Bit
         a16Bit
         lda pad1
         and #$0400
@@ -158,14 +155,15 @@ read_joypad1:
 
     joy1_not_down:
 
+    RTS
 
+.segment "RODATA1"
 sprites:
 .byte $80, $80, $00, $20
 .byte $80, $90, $20, $20
 .byte $7c, $90, $22, $20
 sprites_end:
 
-.segment "RODATA1"
 bg_palette:
 .incbin "includes/gfx/default.pal"
 .incbin "includes/gfx/sprite.pal"

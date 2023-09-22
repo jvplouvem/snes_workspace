@@ -1,125 +1,124 @@
 
 MagicianSprite:
+	PHD
+	rep #$20
+	LDA #$0300    ; DP no $0300
+	TCD           ; Transferir do A 16 bits ao Direct Page 
+	sep #$20
 
-PHD
-rep #$20
-LDA #$0300    ; DP no $0300
-TCD           ; Transferir do A 16 bits ao Direct Page 
-sep #$20
 
+	;direita
+	lda $7E0021 ;Joy1Press ... DP esta no 0300 agora, vamos ter que ser diretos ao usar RAM de 1 so byte fora da DP
+	and #$02
+	beq :+
+	lda #%01000000   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
+	TSB $83          ; seta apenas o que for 1 em A para a RAM
+	dec $80
+	:
+	;esquerda
+	lda $7E0021 ;Joy1Press
+	and #$01
+	beq :+
+	lda #%01000000   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
+	TRB $83          ; zera apenas o que for 1 em A para a RAM
+	inc $80
+	:
 
-;direita
-lda $7E0021 ;Joy1Press ... DP está no 0300 agora, vamos ter que ser diretos ao usar RAM de 1 só byte fora da DP
-and #$02
-beq :+
-lda #%01000000   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
-TSB $83          ; seta apenas o que for 1 em A para a RAM
-dec $80
-:
-;esquerda
-lda $7E0021 ;Joy1Press
-and #$01
-beq :+
-lda #%01000000   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
-TRB $83          ; zera apenas o que for 1 em A para a RAM
-inc $80
-:
+	lda #$30
+	sta $82           ; Starting tile #
 
-lda #$30
-sta $82           ; Starting tile #
+	lda #%01011010  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
+	sta $0508
 
-lda #%01011010  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
-sta $0508
+	;reseta obj extra 2 se não usado
+	lda #%01010101  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
+	sta $0509
+	;--------------------------------------------------
+	;obj extra
+	;------------------
+	LDA $80
+	STA $84
 
-;reseta obj extra 2 se não usado
-lda #%01010101  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
-sta $0509
-;--------------------------------------------------
-;obj extra
-;------------------
-LDA $80
-STA $84
+	LDA $81
+	CLC
+	ADC #$20
+	STA $85
 
-LDA $81
-CLC
-ADC #$20
-STA $85
+	LDA $83
+	STA $87
 
-LDA $83
-STA $87
+	lda #$34
+	sta $86           ; Starting tile #
 
-lda #$34
-sta $86           ; Starting tile #
+	;===========;
+	;;;Colisão;;;
+	;===========;
+	STZ $074A
+	; horizontal
+	LDA $050C   ; Inimigo esta em tela?
+	and #%0000001
+	BNE :+
 
-;===========;
-;;;Colisão;;;
-;===========;
-STZ $074A
-; horizontal
-LDA $050C   ; Inimigo está em tela?
-and #%0000001
-BNE :+
+	lda $84   ; Posicão horizontal do player
+	SEC
+	sbc $C0   ; Posicão horizontal do inimigo
+	sbc #$14    ; Tamanho horizontal do player (- C)
+	CLC
+	adc #$20+10 ; Soma do tamanho do player com o inimigo (- 10). O Carry ativara se colidirem.
+	BCC :+       ;Pula se carry não for ativado
 
-lda $84   ; Posição horizontal do player
-SEC
-sbc $C0   ; Posição horizontal do inimigo
-sbc #$14    ; Tamanho horizontal do player (- C)
-CLC
-adc #$20+10 ; Soma do tamanho do player com o inimigo (- 10). O Carry ativará se colidirem.
-BCC :+       ;Pula se carry não for ativado
+	; vertical
+	lda $85   ; Posicão vertical do player
+	SEC
+	sbc $C1   ; Posicão vertical do inimigo
+	sbc #$30    ; Tamanho vertical do player (- 10)
+	CLC
+	adc #$30+10 ; Soma do tamanho do player (- 10) com o inimigo (- 10). O Carry ativara se colidirem.
+	BCC :+       ;Pula se carry não for ativado
+	LDA #$01
+	STA $074A   ; Player esta levando dano 
+	:
 
-; vertical
-lda $85   ; Posição vertical do player
-SEC
-sbc $C1   ; Posição vertical do inimigo
-sbc #$30    ; Tamanho vertical do player (- 10)
-CLC
-adc #$30+10 ; Soma do tamanho do player (- 10) com o inimigo (- 10). O Carry ativará se colidirem.
-BCC :+       ;Pula se carry não for ativado
-LDA #$01
-STA $074A   ; Player está levando dano 
-:
+	; chamar projétil
 
-; chamar projétil
+	lda $0742
+	CMP #$00
+	BNE :+++
+	rep #$20
+	LDA $0722
+	CMP #$2100
+	bNE :+++
+	Sep #$20
 
-lda $0742
-CMP #$00
-BNE :+++
-rep #$20
-LDA $0722
-CMP #$2100
-bNE :+++
-Sep #$20
+	LDA $83
+	BIT #%01000000
+	BNE :+
+	LDA $80
+	CLC 
+	ADC #$1C
+	STA $0745 ;horizontal temporario
+	LDA #$01
+	STA $0749
+	BRA :++
+	;++
+	:
+	STZ $0749
+	LDA $80
+	STA $0745 ;horizontal temporario espelhado
+	:
+	LDA $81
+	CLC 
+	ADC #$0E
+	STA $0746 ;vertical temporario
 
-LDA $83
-BIT #%01000000
-BNE :+
-LDA $80
-CLC 
-ADC #$1C
-STA $0745 ;horizontal temporário
-LDA #$01
-STA $0749
-BRA :++
-;++
-:
-STZ $0749
-LDA $80
-STA $0745 ;horizontal temporário espelhado
-:
-LDA $81
-CLC 
-ADC #$0E
-STA $0746 ;vertical temporário
+	LDA #$01
+	STA $0742
 
-LDA #$01
-STA $0742
+	:
+	PLD     ; DP = 0000
 
-:
-PLD     ; DP = 0000
-
-Sep #$20
-RTS
+	Sep #$20
+	RTS
 
 MagicianMETA1h:
 .BYTE $1c, $24, $1c, $24
@@ -145,7 +144,7 @@ STA $03A4
 STA $03A8
 STA $03AC
 lda #%01010101  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
-sta $050A         ; PROJÉTIL NÃO UTILIZADO
+sta $050A         ; PROJETIL NÃO UTILIZADO
 RTS
 :
 
@@ -160,8 +159,8 @@ TCD        ; DP é 0700
 ;;;;;;
 LDA $49
 BEQ projetilespelhado
-:
-LDA projetilh,y      ;Endereço horizontal temporário do projétil 
+; :
+LDA projetilh,y      ;Endereco horizontal temporario do projétil 
 CLC
 ADC $45
 STA $43
@@ -209,8 +208,8 @@ INC $44
 BRA projetilnaoespelhado
 ;;;;;;
 projetilespelhado:
-:
-LDA projetilhESPELHO,y      ;Endereço horizontal temporário do projétil 
+; :
+LDA projetilhESPELHO,y      ;Endereco horizontal temporario do projétil 
 CLC
 ADC $45
 STA $43
@@ -295,30 +294,30 @@ RTS
 ;===========;
 
 ; horizontal
-LDA $050C   ; Inimigo está em tela?
+LDA $050C   ; Inimigo esta em tela?
 and #%0000001
 Bne :+++
-LDA $0749   ; O projétil está espelhado?
+LDA $0749   ; O projétil esta espelhado?
 beq :+
-lda $03A0   ; Posição horizontal do projétil normal
+lda $03A0   ; Posicão horizontal do projétil normal
 BRA :++
 :
-lda $03A4   ; Posição horizontal do projétil espelhado
+lda $03A4   ; Posicão horizontal do projétil espelhado
 :
 SEC
-sbc $03C0   ; Posição horizontal do inimigo
+sbc $03C0   ; Posicão horizontal do inimigo
 sbc #$18    ; Tamanho horizontal do projétil (+ 8)
 CLC
-adc #$18+10 ; Soma do tamanho do projétil (+ 8) com o inimigo (- 10). O Carry ativará se colidirem.
+adc #$18+10 ; Soma do tamanho do projétil (+ 8) com o inimigo (- 10). O Carry ativara se colidirem.
 BCC :+++       ;Pula se carry não for ativado
 
 ; vertical
-lda $03A1   ; Posição horizontal do projétil espelhado
+lda $03A1   ; Posicão horizontal do projétil espelhado
 SEC
-sbc $03C1   ; Posição horizontal do inimigo
+sbc $03C1   ; Posicão horizontal do inimigo
 sbc #$18    ; Tamanho horizontal do projétil (+ 8)
 CLC
-adc #$18+10 ; Soma do tamanho do projétil (+ 8) com o inimigo (- 10). O Carry ativará se colidirem.
+adc #$18+10 ; Soma do tamanho do projétil (+ 8) com o inimigo (- 10). O Carry ativara se colidirem.
 BCC :+++       ;Pula se carry não for ativado
 LDA #$02
 STA $07C0   ; Inimigo fica no modo morto
@@ -342,9 +341,8 @@ projetilv:
 ;
 ;;=======================================================================================================
 MagicianDMA:
-
 ;====================
-;Controles = animação
+;Controles = animacão
 ;====================
 
 LDA $074A     ;Player levando dano
@@ -355,14 +353,14 @@ sta $00
 JMP Animation
 :
 
-LDA $073e     ;TIMER ATÉ ACABAR A ANIMAÇÃO, NÃO TOCAR OUTRA ANIMAÇÃO
+LDA $073e     ;TIMER ATE ACABAR A ANIMACÃO, NÃO TOCAR OUTRA ANIMACÃO
 CMP #$01
 BNE :+
 lda #$03
 sta $00
 JMP Animation
 :
-LDA $073e     ;TIMER ATÉ ACABAR A ANIMAÇÃO, NÃO TOCAR OUTRA ANIMAÇÃO
+LDA $073e     ;TIMER ATE ACABAR A ANIMACÃO, NÃO TOCAR OUTRA ANIMACÃO
 CMP #$02
 BNE :+
 lda #$02
@@ -372,7 +370,7 @@ JMP Animation
 
 
 ;direita/esquerda
-lda $21 ;Joy1Press ... DP está no 0300 agora, vamos ter que ser diretos ao usar RAM de 1 só byte fora da DP
+lda $21 ;Joy1Press ... DP esta no 0300 agora, vamos ter que ser diretos ao usar RAM de 1 so byte fora da DP
 bit #%00000011
 beq :+
 LDA #$01
@@ -381,32 +379,32 @@ JMP Animation
 :
 
 ;ataque cima
-lda $21 ;Joy1Press ... DP está no 0300 agora, vamos ter que ser diretos ao usar RAM de 1 só byte fora da DP
+lda $21 ;Joy1Press ... DP esta no 0300 agora, vamos ter que ser diretos ao usar RAM de 1 so byte fora da DP
 AND #$08
 bEQ :+
-lda $21 ;Joy1Press ... DP está no 0300 agora, vamos ter que ser diretos ao usar RAM de 1 só byte fora da DP
+lda $21 ;Joy1Press ... DP esta no 0300 agora, vamos ter que ser diretos ao usar RAM de 1 so byte fora da DP
 AND #$40
 bEQ :+
 lda #$02
-sta $073e     ;TIMER ATÉ ACABAR A ANIMAÇÃO, NÃO TOCAR OUTRA ANIMAÇÃO
+sta $073e     ;TIMER ATE ACABAR A ANIMACÃO, NÃO TOCAR OUTRA ANIMACÃO
 lda #$02
 sta $00
 JMP Animation
 :
 
 ;ataque terreo
-lda $21 ;Joy1Press ... DP está no 0300 agora, vamos ter que ser diretos ao usar RAM de 1 só byte fora da DP
+lda $21 ;Joy1Press ... DP esta no 0300 agora, vamos ter que ser diretos ao usar RAM de 1 so byte fora da DP
 bit #$40
 beq :+
 lda #$01
-sta $073e     ;TIMER ATÉ ACABAR A ANIMAÇÃO, NÃO TOCAR OUTRA ANIMAÇÃO
+sta $073e     ;TIMER ATE ACABAR A ANIMACÃO, NÃO TOCAR OUTRA ANIMACÃO
 lda #$03
 sta $00
 JMP Animation
 :
 
 ;abaixado
-lda $21 ;Joy1Press ... DP está no 0300 agora, vamos ter que ser diretos ao usar RAM de 1 só byte fora da DP
+lda $21 ;Joy1Press ... DP esta no 0300 agora, vamos ter que ser diretos ao usar RAM de 1 so byte fora da DP
 bit #$04
 beq :+
 lda #$04
@@ -424,7 +422,7 @@ JMP Animation
 RTS
 
 ;====================
-;Animação
+;Animacão
 ;====================
 Animation:
 LDA $14
@@ -438,15 +436,23 @@ XBA
 LDA $00
 ASL A
 TAX
-JMP (PointersANISTATE,x)
+;JMP (PointersANISTATE,x)
+JMP PointersANISTATE
 
 PointersANISTATE:
-.WORD PARADO
-.WORD ANDAR
-.WORD ATACARCIMA
-.WORD ATACARTERREO
-.WORD ABAIXADO
-.WORD DANO
+;.WORD PARADO
+;.WORD ANDAR
+;.WORD ATACARCIMA
+;.WORD ATACARTERREO
+;.WORD ABAIXADO
+;.WORD DANO
+
+jmp PARADO
+jmp ANDAR
+jmp ATACARCIMA
+jmp ATACARTERREO
+jmp ABAIXADO
+jmp DANO
 
 PARADO:
 rep #$20
@@ -471,7 +477,7 @@ BMI :+
 STZ $0740
 :
 sep #$20
-:
+; :
 BRL DyRAM
 
 ATACARTERREO:
@@ -491,7 +497,7 @@ STZ $0725
 STZ $073e 
 :
 sep #$20
-:
+; :
 BRA DyRAM
 
 ATACARCIMA:
@@ -510,7 +516,7 @@ STZ $0740
 STZ $073e 
 :
 sep #$20
-:
+; :
 BRA DyRAM
 
 ABAIXADO:
@@ -531,7 +537,7 @@ BRA DyRAM
 
 ;======================
 ; Setup para DMA de sprite de 32 pixels verticais.
-; Aqui há uma tabela que será mandada para a RAM e depois usada pelo DMA.
+; Aqui ha uma tabela que sera mandada para a RAM e depois usada pelo DMA.
 ;======================
 DyRAM:
 
@@ -574,7 +580,7 @@ LDX #$0008
 Graficosdeandar:
 LDA Sprite32dmaORIGEM,x
 CLC
-ADC #DMAMagician
+ADC #.loword(DMAMagician)
 CLC 
 ADC $22
 STA $10,x ; Adress where our data is.
@@ -584,7 +590,7 @@ DEX
 DEX
 BPL Graficosdeandar
 SEP #$20
-:
+; :
   
 ;======================
 ; DMA em 4 passos para completar um sprite com 32 pixels verticais
@@ -598,7 +604,7 @@ SEP #$20
 LDA #$80            ; \ Increase on $2119 write.
 STA $2115           ; /
 	
-LDX $0731   ; Counter de repetições + número de offset dos endereços 
+LDX $0731   ; Counter de repeticões + número de offset dos enderecos 
 DEX
 DEX 
 
@@ -614,7 +620,7 @@ STA $04      ; Bank where our data is. (4304)
 LDY $0700,x
 STY $2116    ; Local da VRAM
 LDY $0710,x
-STY $02      ; Endereço dos nossos dados. (4302)
+STY $02      ; Endereco dos nossos dados. (4302)
 LDY $0720
 STY $05      ; Tamanho dos nossos dados. (4305)
 LDA #$01
@@ -629,85 +635,82 @@ STX $0733
 ;STA $0748  ; sinalizar que o sprite teve DMA nesse frame
 ;BRA +
 Animeframerate:
+	;STZ $0748 
+	;+
 
-;STZ $0748 
-;+
+	;--------------------------------------------------
+	;obj extra 2
+	; Checando se a animacão processada é a que necessita da OBJExtra2 
+	;------------------
+	LDA #$03
+	XBA
+	LDA #$00
+	TCD           ; Transferir do A 16 bits ao Direct Page 
+	;manter off-screen se não utilizado
+	LDA #$80
+	STA $88
+	STA $8C
+	STA $90
+	STA $94
+	;----
+	rep #$20
+	LDA $0722
+	CMP #$2100
+	Beq :+
+	brl :++++
+	:
+	SEP #$20 ; a8Bit
 
+	ldy #$0000
+	ldx #$0000
+	; : LABEL COMENTADO
 
-;--------------------------------------------------
-;obj extra 2
-; Checando se a animação processada é a que necessita da OBJExtra2 
-;------------------
-LDA #$03
-XBA
-LDA #$00
-TCD           ; Transferir do A 16 bits ao Direct Page 
-;manter off-screen se não utilizado
-LDA #$80
-STA $88
-STA $8C
-STA $90
-STA $94
-;----
-rep #$20
-LDA $0722
-CMP #$2100
-Beq :+
-brl :++++
-:
-SEP #$20
+	LDA $83
+	BIT #%01000000
+	BNE :+
+	LDA MagicianMETA1h,y
+	CLC
+	ADC $80
+	STA $88,x
+	BRA :++
+	:
+	LDA MagicianMETA1hESPELHO,y
+	CLC
+	ADC $80
+	STA $88,x
+	:
 
-ldy #$0000
-ldx #$0000
-:
+	LDA MagicianMETA1v,y
+	CLC
+	ADC $81
+	STA $89,x
 
-LDA $83
-BIT #%01000000
-BNE :+
-LDA MagicianMETA1h,y
-CLC
-ADC $80
-STA $88,x
-BRA :++
-:
-LDA MagicianMETA1hESPELHO,y
-CLC
-ADC $80
-STA $88,x
-:
+	LDA $83
+	STA $8B,x
+	TYA
+	CLC
+	ADC #$70
+	sta $8A,x           ; Starting tile #
+	INX
+	INX
+	INX
+	INX
+	INY
+	CPY #$0004
+	BNE :-
 
-LDA MagicianMETA1v,y
-CLC
-ADC $81
-STA $89,x
-
-LDA $83
-STA $8B,x
-TYA
-CLC
-ADC #$70
-sta $8A,x           ; Starting tile #
-INX
-INX
-INX
-INX
-INY
-CPY #$0004
-BNE :-
-
-lda #%00001010  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
-sta $0508
-lda #%01010000  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
-sta $0509
-:
-
-SEP #$20
-LDA #$00      ; DP no $0000
-XBA
-LDA #$00
-TCD           ; Transferir do A 16 bits ao Direct Page 
-
-RTS
+	lda #%00001010  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
+	sta $0508
+	lda #%01010000  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
+	sta $0509
+	
+	:
+	SEP #$20
+	LDA #$00      ; DP no $0000
+	XBA
+	LDA #$00
+	TCD           ; Transferir do A 16 bits ao Direct Page 
+	RTS
 	
 Sprite32dmaORIGEM:
 .word $0600, $0400, $0200, $0000, $FE00, $FC00

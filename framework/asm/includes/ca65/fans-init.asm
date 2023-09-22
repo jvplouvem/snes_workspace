@@ -1,9 +1,9 @@
-.segment "CODE"
+.segment "LIBSFX"
 
-NMI:
-bit $4210 ;RDNMI
-inc in_nmi
-rti
+; NMI:
+; bit $4210 ;RDNMI
+; inc in_nmi
+; rti
 
 IRQ:
 bit $4211 ;TIMEUP

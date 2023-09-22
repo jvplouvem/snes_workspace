@@ -3,16 +3,16 @@
 ;------------------------------------------------------------------------
 ;-  Escrito por Maxwel Olinda, aproveitando exemplos do Neviksti.
 ;- 
-;-  A área "Action:" até "RTS" é onde você vai escrever seu código e brincar
+;-  A area "Action:" até "RTS" é onde você vai escrever seu codigo e brincar
 ;-  de ser programador de Super Nintendo.
-;-  A área "RodaUMAvez" até "RTS" rodará apenas uma vez.
+;-  A area "RodaUMAvez" até "RTS" rodara apenas uma vez.
 ;------------------------------------------------------------------------
 
 ;==============================================================================
-; Aqui é incluído arquivos de fora, isso inclui o "show.inc" que possui informações
+; Aqui é incluído arquivos de fora, isso inclui o "show.inc" que possui informacões
 ; da header.
 ; O "InitSNES.asm" prepara registros e zera todas as RAMs, pois o SNES inicia com valores
-; aleatórios.
+; aleatorios.
 ;==============================================================================
 
 
@@ -30,7 +30,7 @@
 .INCLUDE "2input.asm"
 
 ;=== Espelhos para a RAM ===
-;.ENUM $40                  ; Isso vai usar da RAM $D0 em sequencia para inserir essas variáveis. Uma função legal desse debugger. :)
+;.ENUM $40                  ; Isso vai usar da RAM $D0 em sequencia para inserir essas variaveis. Uma funcão legal desse debugger. :)
 ;Ativaomedidor   db
 ;DesativaFastROM db
 ;.ENDE
@@ -41,65 +41,67 @@ DesativaFastROM = $41
 
 
 ;==============================================================================
-; É aqui que o código de verdade começa... mas a parte legal eu deixei para depois do primeiro NMI.
-; O que tem aqui é só um loop que dura até chegar na scanline 225, daí repete o que está em "VBlank" e volta pro loop.
+; E aqui que o codigo de verdade comeca... mas a parte legal eu deixei para depois do primeiro NMI.
+; O que tem aqui é so um loop que dura até chegar na scanline 225, daí repete o que esta em "VBlank" e volta pro loop.
 ;==============================================================================
 
 main:
 JML Faster
-;.BASE $C0        ; Pular para banco rápido
-.org $C0
+;.BASE $C0        ; Pular para banco rapido
+;.org $C0
 .INCLUDE "Sprite/Magician.asm"
 .INCLUDE "Sprite/Inimigo.asm"
 Faster:
 	;InitializeSNES
-JSR IniciarSprites
-	
-lda #$01
-sta $420d ;FastROM
+;main:
+	JSR IniciarSprites
 
-lda #$ff
-sta $E2   ;começa pixelado	
+	a8Bit
+	lda #$01
+	sta $420d ;FastROM
 
-stz $E3   ;começa com tela escura	
+	lda #$ff
+	sta $E2   ;comeca pixelado	
 
-LDA #$FF
-STA $0734 ; Comparador de animação diferente da inicial para ativar DMA do player
-JSR MagicianDMA
+	stz $E3   ;comeca com tela escura	
 
-    JSR RodaUMAvez ;Seu código vai rodar nessa sub-rotina apenas uma vez.
-    JSR JoyInit		;ativa os controles
+	LDA #$FF
+	STA $0734 ; Comparador de animacão diferente da inicial para ativar DMA do player
 
-;==============
-;BG config
+	JSR MagicianDMA
+	JSR RodaUMAvez ;$C00BED Seu codigo vai rodar nessa sub-rotina apenas uma vez.
+	JSR JoyInit		;ativa os controles
+
+	;==============
+	;BG config
 	lda #$01		;Set video mode 1, 8x8 tiles
-      sta $2105         
+	sta $2105         
 
 	lda #$54		;Set BG1's Tile Map VRAM offset
-      sta $2107		;   and the Tile Map size to 32 tiles x 32 tiles
+	sta $2107		;   and the Tile Map size to 32 tiles x 32 tiles
 
 	lda #$58		;Set BG2's Tile Map VRAM offset
-      sta $2108		;   and the Tile Map size to 32 tiles x 32 tiles
+	sta $2108		;   and the Tile Map size to 32 tiles x 32 tiles
 
 	lda #$50		;Set BG3's Tile Map VRAM offset
-      sta $2109		;   and the Tile Map size to 32 tiles x 32 tiles
+	sta $2109		;   and the Tile Map size to 32 tiles x 32 tiles
 
 	lda #$20		;Set BG1's Character VRAM offset (word address)
-      sta $210B		;Set BG2's Character VRAM offset (word address)
+	sta $210B		;Set BG2's Character VRAM offset (word address)
 	lda #$04		;Set BG3's Character VRAM offset (word address)
-      sta $210C		;Set BG4's Character VRAM offset (word address)
+	sta $210C		;Set BG4's Character VRAM offset (word address)
 
 	lda #%00010111		;Turn on BG1
-      sta $212C
-	  
-	lda #$02		;Turn on BG2
-      sta $212d
-	  
-	lda #%00100011		;Sprite VRAM = Sprites 16x16/32x32 e VRAM 6000
-      sta $2101
+	sta $212C
 
-    LDA #%00100000
-    STA ColorMath1
+	lda #$02		;Turn on BG2
+	sta $212d
+
+	lda #%00100011		;Sprite VRAM = Sprites 16x16/32x32 e VRAM 6000
+	sta $2101
+
+	LDA #%00100000
+	STA ColorMath1
 
     LDA #$FF
     STA BG1Vlow
@@ -109,19 +111,19 @@ JSR MagicianDMA
 ;Gradiente HDMA 
 	LDX #$3200
 	STX $4330
-	LDX #RedTable
+	LDX #.loword(RedTable) ; #$88F7
 	STX $4332
 	LDA #$C0
 	STA $4334
 	LDX #$3200
 	STX $4340
-	LDX #GreenTable
+	LDX #.loword(GreenTable)
 	STX $4342
 	LDA #$C0
 	STA $4344
 	LDX #$3200
 	STX $4350
-	LDX #BlueTable
+	LDX #.loword(BlueTable)
 	STX $4352
 	LDA #$C0
 	STA $4354
@@ -138,7 +140,7 @@ SEP #$30
   LDA #$C0
   STA $4364  ;Source banco
 REP #$30
-  LDA #Corslot  ;Source
+  LDA #.loword(Corslot)  ;Source
   STA $4362
   SEP #$30
   
@@ -149,7 +151,7 @@ REP #$30
   LDA #$C0
   STA $4374  ;Source banco
 REP #$30
-  LDA #Corhdma  ;Source
+  LDA #.loword(Corhdma)  ;Source
   STA $4372
   LDA #%11000000
   TSB $0D9F
@@ -178,6 +180,7 @@ Corslot:
 .byte $14, $80, $83
 .byte $01, $02, $03
 .byte $00
+Corslot_end:
 
 
 Corhdma:   ;16 bits
@@ -193,6 +196,7 @@ Corhdma:   ;16 bits
 .byte $14, $00, $00, $83 ;Setup
 .byte $2B, $5A, $12, $73, $76, $7B
 .byte $00
+Corhdma_end:
 
 
 RedTable:           ; 
@@ -215,6 +219,7 @@ RedTable:           ;
 .byte $05,  $37   ; 
 .byte $69,  $27   ; 
 .byte $00            ; 
+RedTable_end:
 
 GreenTable:         ; 
 .byte $3F,  $50   ; 
@@ -237,6 +242,7 @@ GreenTable:         ;
 .byte $06,  $4B   ; 
 .byte $69,  $47   ; 
 .byte $00            ; 
+GreenTable_end:
 
 BlueTable:          ; 
 .byte $3F,  $95   ; 
@@ -259,7 +265,8 @@ BlueTable:          ;
 .byte $0C,  $8A   ; 
 .byte $06,  $8B   ; 
 .byte $69,  $8B   ; 
-.byte $00            ; 
+.byte $00         ; 
+BlueTable_end:
 
 
 
@@ -316,8 +323,7 @@ sta $0508
 
 lda #$01
 sta SP1DMAframe
-
-    plp
+plp
 RTS
 
 
@@ -325,12 +331,12 @@ RTS
 
 
 ;==========================================================================================
-; Quando o NMI for ativado, isto é, chegar na scanline 225, tudo será interrompido para rodar isso:
+; Quando o NMI for ativado, isto é, chegar na scanline 225, tudo sera interrompido para rodar isso:
 ;==========================================================================================
 
 VBlank:
 JML FasterVBLANK
-.org $C0        ; Pular para banco rápido
+;.org $C0        ; Pular para banco rapido
 FasterVBLANK:
 	rep #$30		;A/Mem=16bits, X/Y=16bits
 	phb       ;preserva o banco de antes de chegar aqui
@@ -351,7 +357,7 @@ JSR GetInput  ;rotina dos controles
 
 JSR RotinadeSprites
 
-JSR Action    ;Seu código vai rodar nessa sub-rotina em todos os frames.
+JSR Action    ;Seu codigo vai rodar nessa sub-rotina em todos os frames.
 
 
 	lda $4210		;limpar flag NMI
@@ -362,7 +368,7 @@ JSR Action    ;Seu código vai rodar nessa sub-rotina em todos os frames.
 	plx        ; que foi
 	pla        ; preservado
 	plb        ; anteriormente...
-      rti      ; Retorna do interrupt (ele vai voltar lá naquele loop ali em cima)
+      rti      ; Retorna do interrupt (ele vai voltar la naquele loop ali em cima)
 
 
 SetupVideo:
@@ -569,7 +575,7 @@ STA $50,x           ; Ir adicionando o valor da tabela em H a cada loop (levemen
 LDA #$AC
 CLC
 ADC $1000,y
-STA $51,x           ; Adicionar o valor da tabela na posição Y e incrementar
+STA $51,x           ; Adicionar o valor da tabela na posicão Y e incrementar
 tya
 clc
 adc #$80
@@ -579,7 +585,7 @@ STA $53,x          ;
 LDA $436B
 CLC
 ADC #$08
-STA $436B           ; Adiciona 8 para o próximo loop
+STA $436B           ; Adiciona 8 para o proximo loop
 INX
 INX
 INX           ; incrementar counters
@@ -617,7 +623,7 @@ STA $C8,x           ; Ir adicionando o valor da tabela em H a cada loop (levemen
 LDA #$BC
 CLC
 ADC $1020,y
-STA $C9,x           ; Adicionar o valor da tabela na posição Y e incrementar
+STA $C9,x           ; Adicionar o valor da tabela na posicão Y e incrementar
 tya
 clc
 adc #$A0
@@ -627,7 +633,7 @@ STA $CB,x          ;
 LDA $436B
 CLC
 ADC #$08
-STA $436B           ; Adiciona 8 para o próximo loop
+STA $436B           ; Adiciona 8 para o proximo loop
 INX
 INX
 INX           ; incrementar counters
@@ -653,107 +659,105 @@ rts
 ; AQUI ESTÁ!
 ;----------------------------------------------------------------------------
 Action:
-PHP
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;transição mosaico com brilho
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-lda Counter
-and #$03  ;dividir frames
-beq :+
-ldx $E3
-lda $E2
-cmp #$0f
-beq :+
-sec
-sbc #$10
-sta $E2
-inx
-stx $E3
-:
+	PHP
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;transicão mosaico com brilho
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	lda Counter
+	and #$03  ;dividir frames
+	beq :+
+	ldx $E3
+	lda $E2
+	cmp #$0f
+	beq :+
+	sec
+	sbc #$10
+	sta $E2
+	inx
+	stx $E3
+	:
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;Reviver inimigo
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-lda $20
-and #$20 
-beq :+
-STZ $07C0
-:
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;Reviver inimigo
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	lda $20
+	and #$20 
+	beq :+
+	STZ $07C0
+	:
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;Medidor de CPU
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-lda $21
-bit #%00100000
-beq :+
-LDA #$01
-STA Ativaomedidor
-:
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;Medidor de CPU
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	lda $21
+	bit #%00100000
+	beq :+
+	LDA #$01
+	STA Ativaomedidor
+	:
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;Modo SlowROM
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-lda $20
-bit #$10
-beq :+
-LDA #$01
-STA DesativaFastROM
-:
-LDA DesativaFastROM
-BEQ :+
-STZ $420D
-:
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;Movimento de câmera ligada ao sprite jogável
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-lda $0380
-cmp #$78
-bmi :+
-REP #$20
-inc BG1Hlow 
-SEP #$20
-dec $0380   ;parar sprite de ir pra direita
-dec $0384
-:
-lda $0380
-cmp #$68
-bpl :+
-REP #$20
-DEC BG1Hlow 
-SEP #$20
-inc $0380   ;parar sprite de ir pra esquerda
-inc $0384
-:
-
-; Animação do offset de sprite 
-; Mover tabela da ROM para a RAM
-;
-REP #A_8BIT
-LDA #Onda
-CLC
-ADC $F1            ; Adicionar valor à tabela
-STA $F3            ; Colocar valor da tabela + adição em RAM 
-
-PHB                ; Preservar data bank
-LDA #$002F         ;Counter (-1)
-LDX $F3            ;Source
-LDY #$1000           ;Destino
-MVN $c0, $7e       ;Banco da Source/Banco do Destino
-PLB                ; Recuperar data bank
-
-INC $F1            ; Incrementa para o próximo frame
-LDA $F1 
-CMP #$0020         ; Quantas vezes incrementar tabela até zerar
-BNE :+
-STZ $f1
-:
-SEP #A_8BIT
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;Modo SlowROM
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	lda $20
+	bit #$10
+	beq :+
+	LDA #$01
+	STA DesativaFastROM
+	:
+	LDA DesativaFastROM
+	BEQ :+
+	STZ $420D
+	:
 
 
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;Movimento de câmera ligada ao sprite jogavel
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	lda $0380
+	cmp #$78
+	bmi :+
+	REP #$20
+	inc BG1Hlow 
+	SEP #$20
+	dec $0380   ;parar sprite de ir pra direita
+	dec $0384
+	:
+	lda $0380
+	cmp #$68
+	bpl :+
+	REP #$20
+	DEC BG1Hlow 
+	SEP #$20
+	inc $0380   ;parar sprite de ir pra esquerda
+	inc $0384
+	:
+
+	; Animacão do offset de sprite 
+	; Mover tabela da ROM para a RAM
+	;
+	REP #A_8BIT
+	LDA #.loword(Onda)
+	CLC
+	ADC $F1            ; Adicionar valor à tabela
+	STA $F3            ; Colocar valor da tabela + adicão em RAM 
+
+	PHB                ; Preservar data bank
+	LDA #$002F         ;Counter (-1)
+	LDX $F3            ;Source
+	LDY #$1000           ;Destino
+	MVN $c0, $7e       ;Banco da Source/Banco do Destino
+	PLB                ; Recuperar data bank
+
+	INC $F1            ; Incrementa para o proximo frame
+	LDA $F1 
+	CMP #$0020         ; Quantas vezes incrementar tabela até zerar
+	BNE :+
+	STZ $f1
+	:
+	SEP #A_8BIT
 	PLP
-RTS                  ;/  
+	RTS
 
 Onda:
 .byte $01, $02, $02, $03, $04, $05, $06, $07
@@ -766,12 +770,11 @@ Onda:
 .byte $06, $05, $04, $03, $02, $02, $01, $01
 .byte $01, $02, $02, $03, $04, $05, $06, $07
 .byte $08, $09, $0A, $0B, $0C, $0C, $0D, $0D
+Onda_end:
 
 RodaUMAvez:
-
-
-JSL lanooutrobanco    ; Vamos mudar de banco e adicionar nossos arquivos grandes lá.
-RTS                   ; Em HI-ROM cada banco tem 64 KB.
+	JSL lanooutrobanco    ; Vamos mudar de banco e adicionar nossos arquivos grandes la.
+	RTS                   ; Em HI-ROM cada banco tem 64 KB.
 ;.ENDS
 
 ;.BANK 1 SLOT 0
@@ -779,108 +782,107 @@ RTS                   ; Em HI-ROM cada banco tem 64 KB.
 ;.SECTION "BancodosGraficos" SEMIFREE
 .segment "RODATA1"
 lanooutrobanco:
+	;===========================
+	; Vou botar meus DMA e HDMA aqui hihi
+	; -------------------------------------
+	;----------------------------
+	PHD
+	REP #$20
+	LDA #$4300 ; DP é 4200
+	TCD 
+	SEP #$20
 
-;===========================
-; Vou botar meus DMA e HDMA aqui hihi
-; -------------------------------------
-;----------------------------
-PHD
-REP #$20
-LDA #$4300 ; DP é 4200
-TCD 
-SEP #$20
-
-;DMA DE CORES PARA A CGRAM
-lda #$20
-sta $2121	;start at XX color
-stz $420B	;Clear the DMA control register
-ldx #grafico7CORES
-stx $02	;Store the data offset into DMA source offset
-ldx #$0080
-stx $05   ;Store the size of the data block
-lda #$C1
-sta $04	;Store the data bank holding the tile data
-lda #$00	;Set the DMA mode (byte, normal increment)
-sta $00       
-lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
-sta $01      
-lda #$01    ;Initiate the DMA transfer
-sta $420B
-
-
-;BG2
-lda #$60
-sta $2121	;start at XX color
-stz $420B	;Clear the DMA control register
-ldx #bg2CORES
-stx $02	;Store the data offset into DMA source offset
-ldx #$0060
-stx $05   ;Store the size of the data block
-lda #$C1
-sta $04	;Store the data bank holding the tile data
-lda #$00	;Set the DMA mode (byte, normal increment)
-sta $00       
-lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
-sta $01      
-lda #$01    ;Initiate the DMA transfer
-sta $420B
-
-;BG3
-lda #$00
-sta $2121	;start at XX color
-stz $420B	;Clear the DMA control register
-ldx #graficosbg3CORES
-stx $02	;Store the data offset into DMA source offset
-ldx #$0040
-stx $05   ;Store the size of the data block
-lda #$C1
-sta $04	;Store the data bank holding the tile data
-lda #$00	;Set the DMA mode (byte, normal increment)
-sta $00       
-lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
-sta $01      
-lda #$01    ;Initiate the DMA transfer
-sta $420B
-
-;---
-;sprite
-lda #$80
-sta $2121	;start at XX color
-stz $420B	;Clear the DMA control register
-ldx #dmaCORESsprite2
-stx $02	;Store the data offset into DMA source offset
-ldx #$0020
-stx $05   ;Store the size of the data block
-lda #$C1
-sta $04	;Store the data bank holding the tile data
-lda #$00	;Set the DMA mode (byte, normal increment)
-sta $00       
-lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
-sta $01      
-lda #$01    ;Initiate the DMA transfer
-sta $420B
-
-;HUD
-lda #$90
-sta $2121	;start at XX color
-stz $420B	;Clear the DMA control register
-ldx #spriteHUDcor
-stx $02	;Store the data offset into DMA source offset
-ldx #$0080
-stx $05   ;Store the size of the data block
-lda #$C1
-sta $04	;Store the data bank holding the tile data
-lda #$00	;Set the DMA mode (byte, normal increment)
-sta $00       
-lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
-sta $01      
-lda #$01    ;Initiate the DMA transfer
-sta $420B
+	;DMA DE CORES PARA A CGRAM
+	lda #$20
+	sta $2121	;start at XX color
+	stz $420B	;Clear the DMA control register
+	ldx #.loword(grafico7CORES)
+	stx $02	;Store the data offset into DMA source offset
+	ldx #$0080
+	stx $05   ;Store the size of the data block
+	lda #$C1
+	sta $04	;Store the data bank holding the tile data
+	lda #$00	;Set the DMA mode (byte, normal increment)
+	sta $00       
+	lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
+	sta $01      
+	lda #$01    ;Initiate the DMA transfer
+	sta $420B
 
 
-;----------------------------
-;DMA DE GRÁFICOS PARA A VRAM
-;BG1
+	;BG2
+	lda #$60
+	sta $2121	;start at XX color
+	stz $420B	;Clear the DMA control register
+	ldx #.loword(bg2CORES)
+	stx $02	;Store the data offset into DMA source offset
+	ldx #$0060
+	stx $05   ;Store the size of the data block
+	lda #$C1
+	sta $04	;Store the data bank holding the tile data
+	lda #$00	;Set the DMA mode (byte, normal increment)
+	sta $00       
+	lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
+	sta $01      
+	lda #$01    ;Initiate the DMA transfer
+	sta $420B
+
+	;BG3
+	lda #$00
+	sta $2121	;start at XX color
+	stz $420B	;Clear the DMA control register
+	ldx #.loword(graficosbg3CORES)
+	stx $02	;Store the data offset into DMA source offset
+	ldx #$0040
+	stx $05   ;Store the size of the data block
+	lda #$C1
+	sta $04	;Store the data bank holding the tile data
+	lda #$00	;Set the DMA mode (byte, normal increment)
+	sta $00       
+	lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
+	sta $01      
+	lda #$01    ;Initiate the DMA transfer
+	sta $420B
+
+	;---
+	;sprite
+	lda #$80
+	sta $2121	;start at XX color
+	stz $420B	;Clear the DMA control register
+	ldx #.loword(dmaCORESsprite2)
+	stx $02	;Store the data offset into DMA source offset
+	ldx #$0020
+	stx $05   ;Store the size of the data block
+	lda #$C1
+	sta $04	;Store the data bank holding the tile data
+	lda #$00	;Set the DMA mode (byte, normal increment)
+	sta $00       
+	lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
+	sta $01      
+	lda #$01    ;Initiate the DMA transfer
+	sta $420B
+
+	;HUD
+	lda #$90
+	sta $2121	;start at XX color
+	stz $420B	;Clear the DMA control register
+	ldx #.loword(spriteHUDcor)
+	stx $02	;Store the data offset into DMA source offset
+	ldx #$0080
+	stx $05   ;Store the size of the data block
+	lda #$C1
+	sta $04	;Store the data bank holding the tile data
+	lda #$00	;Set the DMA mode (byte, normal increment)
+	sta $00       
+	lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
+	sta $01      
+	lda #$01    ;Initiate the DMA transfer
+	sta $420B
+
+
+	;----------------------------
+	;DMA DE GRÁFICOS PARA A VRAM
+	;BG1
 	LDA #$80            ; \ Increase on $2119 write.
 	STA $2115           ; /
 	LDX #$0000			; \ Set where to write in VRAM...
@@ -889,7 +891,7 @@ sta $420B
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 
 	STA $01           ;/ Writing to $2118 AND $2119.
-	LDX #graficos7       ;\  Adress where our data is.
+	LDX #.loword(graficos7)       ;\  Adress where our data is.
 	STX $02          				 ; | 
 	LDA #$C1   ; | Bank where our data is.
 	STA $04          				 ;/
@@ -897,8 +899,8 @@ sta $420B
 	STX $05           ;/
 	LDA #$01	   ;\ Start DMA transfer on channel 0.
 	STA $420B	   ;/
-	
-;BG2
+
+	;BG2
 	LDA #$80            ; \ Increase on $2119 write.
 	STA $2115           ; /
 	LDX #$2000			; \ Set where to write in VRAM...
@@ -907,7 +909,7 @@ sta $420B
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 
 	STA $01           ;/ Writing to $2118 AND $2119.
-	LDX #bg2tiles       ;\  Adress where our data is.
+	LDX #.loword(bg2tiles)       ;\  Adress where our data is.
 	STX $02          				 ; | 
 	LDA #$C1   ; | Bank where our data is.
 	STA $04          				 ;/
@@ -915,8 +917,8 @@ sta $420B
 	STX $05           ;/
 	LDA #$01	   ;\ Start DMA transfer on channel 0.
 	STA $420B	   ;/	
-	
-;BG3 + tilemap
+
+	;BG3 + tilemap
 	LDA #$80            ; \ Increase on $2119 write.
 	STA $2115           ; /
 	LDX #$4000			; \ Set where to write in VRAM...
@@ -925,7 +927,7 @@ sta $420B
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 
 	STA $01           ;/ Writing to $2118 AND $2119.
-	LDX #graficosbg3       ;\  Adress where our data is.
+	LDX #.loword(graficosbg3)       ;\  Adress where our data is.
 	STX $02          				 ; | 
 	LDA #$C1   ; | Bank where our data is.
 	STA $04          				 ;/
@@ -934,7 +936,7 @@ sta $420B
 	LDA #$01	   ;\ Start DMA transfer on channel 0.
 	STA $420B	   ;/
 
-;sprite 
+	;sprite 
 	LDA #$80            ; \ Increase on $2119 write.
 	STA $2115           ; /
 	LDX #$6000			; \ Set where to write in VRAM...
@@ -943,7 +945,7 @@ sta $420B
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 
 	STA $01           ;/ Writing to $2118 AND $2119.
-	LDX #graficosprite1       ;\  Adress where our data is.
+	LDX #.loword(graficosprite1)       ;\  Adress where our data is.
 	STX $02          				 ; | 
 	LDA #$C1   ; | Bank where our data is.
 	STA $04          				 ;/
@@ -952,8 +954,8 @@ sta $420B
 	LDA #$01	   ;\ Start DMA transfer on channel 0.
 	STA $420B	   ;/
 
-;----------------------------
-;DMA DA TILEMAP PARA A VRAM
+	;----------------------------
+	;DMA DA TILEMAP PARA A VRAM
 	LDA #$80            ; \ Increase on $2119 write.
 	STA $2115           ; /
 	LDX #$5400			; \ Set where to write in VRAM...
@@ -962,7 +964,7 @@ sta $420B
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 
 	STA $01           ;/ Writing to $2118 AND $2119.
-	LDX #graficos1tilemap       ;\  Adress where our data is.
+	LDX #.loword(graficos1tilemap)       ;\  Adress where our data is.
 	STX $02          				 ; | 
 	LDA #$C1   ; | Bank where our data is.
 	STA $04          				 ;/
@@ -971,7 +973,7 @@ sta $420B
 	LDA #$01	   ;\ Start DMA transfer on channel 0.
 	STA $420B	   ;/
 
-;DMA BG2
+	;DMA BG2
 	LDA #$80            ; \ Increase on $2119 write.
 	STA $2115           ; /
 	LDX #$5800			; \ Set where to write in VRAM...
@@ -980,7 +982,7 @@ sta $420B
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 
 	STA $01           ;/ Writing to $2118 AND $2119.
-	LDX #bg2tilemap       ;\  Adress where our data is.
+	LDX #.loword(bg2tilemap)       ;\  Adress where our data is.
 	STX $02          				 ; | 
 	LDA #$C1   ; | Bank where our data is.
 	STA $04          				 ;/
@@ -988,10 +990,9 @@ sta $420B
 	STX $05           ;/
 	LDA #$01	   ;\ Start DMA transfer on channel 0.
 	STA $420B	   ;/
-PLD
+	PLD
+	RTL                ; Retorna da sub-rotina para o banco anterior
 
-
-RTL                ; Retorna da sub-rotina para o banco anterior
 ;Background 1
 graficos7:
 .incbin "GFX/maglordBG188.pic"
@@ -1042,10 +1043,16 @@ dmaCORESsprite2:
 ;.ORG 0
 ;.SECTION "BancodosGraficos2" SEMIFREE
 
-.segment "RODATA33"
+.segment "RODATA2"
 DMAMagician:
 .incbin "GFX/MLmagocompacto.bin"
 
 DMAExplosao:
 .incbin "GFX/Explosao.bin"
+DMAExplosao_end:
 ;.ENDS
+
+
+;.segment "CODE1"
+; .INCLUDE "Sprite/Magician.asm"
+; .INCLUDE "Sprite/Inimigo.asm"

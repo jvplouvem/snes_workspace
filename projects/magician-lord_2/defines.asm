@@ -1,6 +1,6 @@
 ;==================================================
 ; Definir nomes para os espelhamento de registros.
-; Nada necessário, mas facilita a leitura do código.
+; Nada necessario, mas facilita a leitura do codigo.
 ;==================================================
 
  XY_8BIT  = $10
@@ -43,7 +43,7 @@
  SP1DMAsourceOffset  = $62
 ; stx  = $64 = Tamanho do DMA por passos (quantas tiles) - 16 bits
  SP1DMAtilestotransfer  = $64
-; stx  = $66 = Local do destino para os gráficos enviados - 16 bits
+; stx  = $66 = Local do destino para os graficos enviados - 16 bits
  SP1DMAdestinoOffset  = $66
 
 

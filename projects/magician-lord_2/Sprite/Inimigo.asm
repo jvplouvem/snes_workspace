@@ -1,39 +1,38 @@
 
 Inimigo1:
+    a16Bit
+    LDA $07C0   ; Nao processa sprite 
+    CMP #$01
+    BNE :+
+    RTS
 
-LDA $07C0   ; Não processa sprite 
-CMP #$01
-BNE :+
-RTS
 :
-LDA $07C0   ; Inicia processo de matar sprite 
-CMP #$02
-BNE :+
-BRL morreu
+    LDA $07C0   ; Inicia processo de matar sprite 
+    CMP #$02
+    BNE :+
+    BRL morreu
 :
+    a8Bit
+    LDA #$C0
+    STA $03C0
 
-LDA #$C0
-STA $03C0
+    LDA #$60
+    INC $03C1
 
-LDA #$60
-INC $03C1
+    lda #%00110111   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
+    STA $03C3          ; seta apenas o que for 1 em A para a RAM TSB
 
-lda #%00110111   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
-STA $03C3          ; seta apenas o que for 1 em A para a RAM TSB
+    lda #%01010110  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
+    sta $050C
 
-lda #%01010110  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
-sta $050C
-
-;Acompanha layer 1
-LDA $03C0
-rep #$20
-sec 
-sbc BG1Hlow
-sep #$20
-STA $03C0
-
-
-
+    ;Acompanha layer 1
+    LDA $03C0
+    rep #$20
+    sec 
+    sbc BG1Hlow
+    ;sep #$20
+    a8Bit
+    STA $03C0
 
 ;Animatione
 LDA $13
@@ -50,38 +49,36 @@ sta $03C2           ; Starting tile #
 RTS
 
 morreu:
+    ; Chama explosão
+    LDX $03C0
+    JSR ExplosaoPos
 
-; Chama explosão
-LDX $03C0
-JSR ExplosaoPos
-
-; Exclui sprite
-lda #%00000001  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
-TSB $050C
-LDA #$80
-STA $03C0
-LDA #$01
-STA $07C0
-
-RTS
+    ; Exclui sprite
+    lda #%00000001  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
+    TSB $050C
+    LDA #$80
+    STA $03C0
+    LDA #$01
+    STA $07C0
+    RTS
 
 
 
 ;===================================
 ;Explosão
 ;===================================
-; Posição
+; Posicão
 ExplosaoPos:
 
 STX $03B0
 
 LDA #$01
-STA $07B0 ; Ativar rotina de animação da explosão 
+STA $07B0 ; Ativar rotina de animacão da explosão 
 :
 RTS
 
 ;====================
-;Animação da explosão
+;Animacão da explosão
 ;====================
 Explosao:
 
@@ -94,7 +91,7 @@ Beq :+
 BRA :-
 :
 
-INC $07B1  ; counter da animação
+INC $07B1  ; counter da animacão
 
 ; frame 1
 LDA $07B1
@@ -194,7 +191,7 @@ STX $0720   ; Tamanho das transferências
 LDX #$0800
 STX $0722   ; Offset da source
 jmp DyRAM1
-:
+; :
 
 ; frame 5
 LDA $07B1
@@ -281,7 +278,7 @@ ExplosaoFrames4spritesV:
 
 ;======================
 ; Setup para DMA de sprite de 32 pixels verticais.
-; Aqui há uma tabela que será mandada para a RAM e depois usada pelo DMA.
+; Aqui ha uma tabela que sera mandada para a RAM e depois usada pelo DMA.
 ;======================
 DyRAM1:
 
@@ -316,7 +313,7 @@ LDX #$0008
 :
 LDA Sprite32dmaORIGEM,x
 CLC
-ADC #DMAExplosao
+ADC #(DMAExplosao_end-DMAExplosao)
 CLC 
 ADC $22
 STA $10,x ; Adress where our data is.
@@ -340,7 +337,7 @@ SEP #$20
 LDA #$80            ; \ Increase on $2119 write.
 STA $2115           ; /
 	
-LDX $0731   ; Counter de repetições + número de offset dos endereços 
+LDX $0731   ; Counter de repeticões + número de offset dos enderecos 
 DEX
 DEX 
 

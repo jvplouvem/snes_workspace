@@ -1540,103 +1540,775 @@
           "Length": 1
         },
         {
-          "Address": 32744,
+          "Address": 93374,
           "MemoryType": "SnesPrgRom",
-          "Label": "",
-          "Comment": "abort native not used *",
+          "Label": "bg2tilemap",
+          "Comment": "",
           "Flags": "None",
           "Length": 1
         },
         {
-          "Address": 32748,
+          "Address": 78494,
           "MemoryType": "SnesPrgRom",
-          "Label": "",
-          "Comment": "RESET native",
+          "Label": "graficos1tilemap",
+          "Comment": "",
           "Flags": "None",
           "Length": 1
         },
         {
-          "Address": 32758,
+          "Address": 110272,
           "MemoryType": "SnesPrgRom",
-          "Label": "",
-          "Comment": " not used",
+          "Label": "graficosprite1",
+          "Comment": "",
           "Flags": "None",
           "Length": 1
         },
         {
-          "Address": 32756,
+          "Address": 95422,
           "MemoryType": "SnesPrgRom",
-          "Label": "",
-          "Comment": "fff4 - emulation mode vectors\r\ncop emulation **",
+          "Label": "graficosbg3",
+          "Comment": "",
           "Flags": "None",
           "Length": 1
         },
         {
-          "Address": 32740,
+          "Address": 80542,
           "MemoryType": "SnesPrgRom",
-          "Label": "",
-          "Comment": "ffe4 - native mode vectors\r\ncop native **",
+          "Label": "bg2tiles",
+          "Comment": "",
           "Flags": "None",
           "Length": 1
         },
         {
-          "Address": 32764,
+          "Address": 65950,
           "MemoryType": "SnesPrgRom",
-          "Label": "",
-          "Comment": "RESET emulation",
+          "Label": "graficos7",
+          "Comment": "",
           "Flags": "None",
           "Length": 1
         },
         {
-          "Address": 32762,
+          "Address": 124608,
           "MemoryType": "SnesPrgRom",
-          "Label": "",
-          "Comment": "nmi emulation",
+          "Label": "spriteHUDcor",
+          "Comment": "",
           "Flags": "None",
           "Length": 1
         },
         {
-          "Address": 32766,
+          "Address": 125122,
           "MemoryType": "SnesPrgRom",
-          "Label": "",
-          "Comment": "irq/brk emulation **",
+          "Label": "dmaCORESsprite2",
+          "Comment": "",
           "Flags": "None",
           "Length": 1
         },
         {
-          "Address": 32746,
+          "Address": 109758,
           "MemoryType": "SnesPrgRom",
-          "Label": "",
-          "Comment": "nmi native ",
+          "Label": "graficosbg3CORES",
+          "Comment": "",
           "Flags": "None",
           "Length": 1
         },
         {
-          "Address": 32760,
+          "Address": 93310,
           "MemoryType": "SnesPrgRom",
-          "Label": "",
-          "Comment": "abort not used *",
+          "Label": "bg2CORES",
+          "Comment": "",
           "Flags": "None",
           "Length": 1
         },
         {
-          "Address": 32736,
+          "Address": 78366,
           "MemoryType": "SnesPrgRom",
-          "Label": "",
-          "Comment": "ffe0 not used",
+          "Label": "grafico7CORES",
+          "Comment": "",
           "Flags": "None",
           "Length": 1
         },
         {
-          "Address": 32742,
+          "Address": 65536,
           "MemoryType": "SnesPrgRom",
-          "Label": "",
-          "Comment": "brk native **",
+          "Label": "lanooutrobanco",
+          "Comment": "===========================\r\n Vou botar meus DMA e HDMA aqui hihi\r\n -------------------------------------\r\n----------------------------",
           "Flags": "None",
           "Length": 1
         },
         {
-          "Address": 32752,
+          "Address": 3056,
+          "MemoryType": "SnesPrgRom",
+          "Label": "RodaUMAvez",
+          "Comment": " Vamos mudar de banco e adicionar nossos arquivos grandes la.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2976,
+          "MemoryType": "SnesPrgRom",
+          "Label": "Onda",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2774,
+          "MemoryType": "SnesPrgRom",
+          "Label": "repetespriteonda1",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2693,
+          "MemoryType": "SnesPrgRom",
+          "Label": "repetespriteonda",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2666,
+          "MemoryType": "SnesPrgRom",
+          "Label": "sprite0",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2641,
+          "MemoryType": "SnesPrgRom",
+          "Label": "hudVpos",
+          "Comment": " HP",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2616,
+          "MemoryType": "SnesPrgRom",
+          "Label": "hudHpos",
+          "Comment": " HP",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2841,
+          "MemoryType": "SnesPrgRom",
+          "Label": "Action",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2538,
+          "MemoryType": "SnesPrgRom",
+          "Label": "RotinadeSprites",
+          "Comment": "==============================\r\nHUD\r\n==============================",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2382,
+          "MemoryType": "SnesPrgRom",
+          "Label": "SetupVideo",
+          "Comment": "A/mem = 8bit, X/Y=16bit",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2346,
+          "MemoryType": "SnesPrgRom",
+          "Label": "FasterVBLANK",
+          "Comment": "A/Mem=16bits, X/Y=16bits",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2293,
+          "MemoryType": "SnesPrgRom",
+          "Label": "xmsb",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2278,
+          "MemoryType": "SnesPrgRom",
+          "Label": "offscreen",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2269,
+          "MemoryType": "SnesPrgRom",
+          "Label": "IniciarSprites",
+          "Comment": " preserve P reg",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2228,
+          "MemoryType": "SnesPrgRom",
+          "Label": "BlueTable",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2189,
+          "MemoryType": "SnesPrgRom",
+          "Label": "GreenTable",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2152,
+          "MemoryType": "SnesPrgRom",
+          "Label": "RedTable",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2095,
+          "MemoryType": "SnesPrgRom",
+          "Label": "Corhdma",
+          "Comment": "primeiro e segundo byte: line counter / terceiro e quarto byte: contagem de quantos valores ir adicionando de 80 \u00E0 8F \r\nSetup",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2052,
+          "MemoryType": "SnesPrgRom",
+          "Label": "loop",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2064,
+          "MemoryType": "SnesPrgRom",
+          "Label": "Corslot",
+          "Comment": "primeiro byte: line counter / segundo e terceiro byte: contagem de quantos valores ir adicionando ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 167936,
+          "MemoryType": "SnesPrgRom",
+          "Label": "DMAExplosao",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 182272,
+          "MemoryType": "SnesPrgRom",
+          "Label": "DMAExplosao_end",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1706,
+          "MemoryType": "SnesPrgRom",
+          "Label": "StartingTileANIME",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1714,
+          "MemoryType": "SnesPrgRom",
+          "Label": "ExplosaoFrames4spritesV",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1710,
+          "MemoryType": "SnesPrgRom",
+          "Label": "ExplosaoFrames4spritesH",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1718,
+          "MemoryType": "SnesPrgRom",
+          "Label": "DyRAM1",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1367,
+          "MemoryType": "SnesPrgRom",
+          "Label": "Explosao",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1358,
+          "MemoryType": "SnesPrgRom",
+          "Label": "ExplosaoPos",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1336,
+          "MemoryType": "SnesPrgRom",
+          "Label": "morreu",
+          "Comment": " Chama explos\u00E3o",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1260,
+          "MemoryType": "SnesPrgRom",
+          "Label": "Inimigo1",
+          "Comment": " a16Bit",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 131072,
+          "MemoryType": "SnesPrgRom",
+          "Label": "DMAMagician",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1200,
+          "MemoryType": "SnesPrgRom",
+          "Label": "Sprite32dmaORIGEM",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1010,
+          "MemoryType": "SnesPrgRom",
+          "Label": "Graficosdeandar",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1212,
+          "MemoryType": "SnesPrgRom",
+          "Label": "Sprite32dmaVRAM",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 989,
+          "MemoryType": "SnesPrgRom",
+          "Label": "loopsprite32",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1248,
+          "MemoryType": "SnesPrgRom",
+          "Label": "AtaqueCimaanimation",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1236,
+          "MemoryType": "SnesPrgRom",
+          "Label": "Ataqueanimation",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1224,
+          "MemoryType": "SnesPrgRom",
+          "Label": "Andaranimation",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 953,
+          "MemoryType": "SnesPrgRom",
+          "Label": "DyRAM",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 938,
+          "MemoryType": "SnesPrgRom",
+          "Label": "DANO",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 923,
+          "MemoryType": "SnesPrgRom",
+          "Label": "ABAIXADO",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 852,
+          "MemoryType": "SnesPrgRom",
+          "Label": "ATACARTERREO",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 889,
+          "MemoryType": "SnesPrgRom",
+          "Label": "ATACARCIMA",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 820,
+          "MemoryType": "SnesPrgRom",
+          "Label": "ANDAR",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 804,
+          "MemoryType": "SnesPrgRom",
+          "Label": "PARADO",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 786,
+          "MemoryType": "SnesPrgRom",
+          "Label": "PointersANISTATE",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1092,
+          "MemoryType": "SnesPrgRom",
+          "Label": "Animeframerate",
+          "Comment": "--------------------------------------------------\r\nobj extra 2\r\n Checando se a animac\u00E3o processada \u00E9 a que necessita da OBJExtra2 \r\n------------------",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 767,
+          "MemoryType": "SnesPrgRom",
+          "Label": "Animation",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 645,
+          "MemoryType": "SnesPrgRom",
+          "Label": "MagicianDMA",
+          "Comment": "Player levando dano",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 552,
+          "MemoryType": "SnesPrgRom",
+          "Label": "projetilmorto",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 637,
+          "MemoryType": "SnesPrgRom",
+          "Label": "projetilhESPELHO",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 511,
+          "MemoryType": "SnesPrgRom",
+          "Label": "projetilnaoespelhado",
+          "Comment": ";;;;;",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 641,
+          "MemoryType": "SnesPrgRom",
+          "Label": "projetilv",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 633,
+          "MemoryType": "SnesPrgRom",
+          "Label": "projetilh",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 441,
+          "MemoryType": "SnesPrgRom",
+          "Label": "projetilespelhado",
+          "Comment": " :\r\nEndereco horizontal temporario do proj\u00E9til ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 327,
+          "MemoryType": "SnesPrgRom",
+          "Label": "Projectile",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 323,
+          "MemoryType": "SnesPrgRom",
+          "Label": "MagicianMETA1hESPELHO",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 319,
+          "MemoryType": "SnesPrgRom",
+          "Label": "MagicianMETA1v",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 315,
+          "MemoryType": "SnesPrgRom",
+          "Label": "MagicianMETA1h",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 141,
+          "MemoryType": "SnesPrgRom",
+          "Label": "MagicianSprite",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1846,
+          "MemoryType": "SnesPrgRom",
+          "Label": "Faster",
+          "Comment": "InitializeSNES\r\nmain:",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 135,
+          "MemoryType": "SnesPrgRom",
+          "Label": "_done",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 124,
+          "MemoryType": "SnesPrgRom",
+          "Label": "_joy2",
+          "Comment": " A = joy state, if any of the bottom 4 bits are on... either nothing is plugged",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32,
+          "MemoryType": "SnesPrgRom",
+          "Label": "_W1",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 27,
+          "MemoryType": "SnesPrgRom",
+          "Label": "GetInput",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 0,
+          "MemoryType": "SnesPrgRom",
+          "Label": "JoyInit",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2342,
+          "MemoryType": "SnesPrgRom",
+          "Label": "VBlank",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33247,
+          "MemoryType": "SnesPrgRom",
+          "Label": "DMAZero",
+          "Comment": "Aliases:\r\nSpriteUpperEmpty",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33249,
+          "MemoryType": "SnesPrgRom",
+          "Label": "SpriteEmptyVal",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 137,
+          "MemoryType": "SnesPrgRom",
+          "Label": "main",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33207,
+          "MemoryType": "SnesPrgRom",
+          "Label": "clear_vram",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33141,
+          "MemoryType": "SnesPrgRom",
+          "Label": "dma_oam",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33075,
+          "MemoryType": "SnesPrgRom",
+          "Label": "clear_oam",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33037,
+          "MemoryType": "SnesPrgRom",
+          "Label": "dma_palette",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32993,
+          "MemoryType": "SnesPrgRom",
+          "Label": "clear_palette",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32923,
+          "MemoryType": "SnesPrgRom",
+          "Label": "clear_wram",
+          "Comment": " A 16 BIT MODE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32772,
+          "MemoryType": "SnesPrgRom",
+          "Label": "reset",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32771,
+          "MemoryType": "SnesPrgRom",
+          "Label": "IRQ_end",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32768,
+          "MemoryType": "SnesPrgRom",
+          "Label": "IRQ",
+          "Comment": "TIMEUP",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2719,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Starting tile #",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 993,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Inserir local da VRAM para escrever",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2154,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65836,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " /",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 311,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " DP = 0000",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65520,
           "MemoryType": "SnesPrgRom",
           "Label": "",
           "Comment": "fff0 not used",
@@ -1644,7 +2316,2263 @@
           "Length": 1
         },
         {
-          "Address": 32750,
+          "Address": 2349,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "preserva o Acumulador de antes de chegar aqui",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2262,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2949,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Counter (-1)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2417,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Espelho da Layer 1 H\r\n1A",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65641,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Set the destination register ( $2122: CG-RAM Write )",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2166,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1661,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Tamanho das transfer\u00EAncias",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65773,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65791,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ Start DMA transfer on channel 0.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2186,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1545,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 1 32X32",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33040,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " X,Y 16 BIT MODE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32950,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "DAS0L",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65742,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " | ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2422,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "1B",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33065,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "DAS0L",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65941,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 37,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "16 bit mem/A, 16 bit X/Y",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1903,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Set BG4\u0027s Character VRAM offset (word address)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33158,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "DMAP0",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2768,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Zerar counters",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32942,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A1T0L",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2232,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 921,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " :",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 158,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65769,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ Set mode to...",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2864,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;\r\nReviver inimigo\r\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1986,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "canais 3, 4, 5 para cada R,G,B. ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1542,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Volta o DP anterior",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33180,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "MDMAEN",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65650,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "---\r\nsprite",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1317,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Animatione",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1805,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Writing to $2118 AND $2119. (4301)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1636,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 128 pixels",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 89,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " joy state = (joy state) or A.... so bit0 of Joy1State = 0 only if it is a valid joypad",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2182,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2199,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33131,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "DAS0L",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 346,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " bit zero \u00E9 o 9 bit (sprite fora da tela) e bit 1 \u00E9 tamanho de sprite. ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65755,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1435,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Tamanho das transfer\u00EAncias",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33197,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "DAS0L",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65602,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Set the DMA mode (byte, normal increment)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65512,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "abort native not used *",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 55,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "store A = (buttons pressed since last clearing reg) and (button is still down)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2842,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;\r\ntransic\u00E3o mosaico com brilho\r\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1881,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Set BG1\u0027s Tile Map VRAM offset",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65565,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Store the data bank holding the tile data",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2242,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65839,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " \\ Set where to write in VRAM...",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1563,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " frame 5",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 5,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "have the automatic read of the SNES read the first pair of JoyPads",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2467,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Espelho da Layer 3 V\r\n$28",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1075,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Tamanho dos nossos dados. (4305)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33169,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A1B0",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2207,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 97,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " A = -bit0 of JoySer1",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2731,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Adiciona 8 para o proximo loop",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65938,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ Size of our data.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2311,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Sprite Y-Coordinate",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33214,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "VMAIN",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65936,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2687,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " DP no $0400",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1169,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Starting tile #",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65550,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Clear the DMA control register",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33152,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "WMADDH",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65862,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ Size of our data.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2744,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "zerando segunda tabela da OAM para usar sprites pequenos e dentro da tela  ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 241,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Soma do tamanho do player (- 10) com o inimigo (- 10). O Carry ativara se colidirem.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2954,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Destino",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2622,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " POW",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1876,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "==============\r\nBG config\r\nSet video mode 1, 8x8 tiles",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2290,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "------------------",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65582,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "start at XX color",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1282,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " a8Bit",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2213,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33078,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " X,Y 16 BIT MODE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1629,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " frame 8",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1870,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "$C00BED Seu codigo vai rodar nessa sub-rotina apenas uma vez.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2794,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Adicionar o valor da tabela na posic\u00E3o Y e incrementar",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2482,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "$16",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1726,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Banco de origem",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 58,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "get JoyPad2",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1020,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Adress where our data is.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65811,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2268,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65478,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " extra chips in cartridge, 00: no extra RAM; 02: RAM with battery",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 46,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "update JoyState",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2938,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Animac\u00E3o do offset de sprite \r\n Mover tabela da ROM para a RAM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2191,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65514,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": ".addr NMI ;nmi native \r\nnmi native ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65858,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " | Bank where our data is.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1447,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " frame 3",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2457,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Espelho da Layer 3 H\r\n$1E",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2225,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 625,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Inimigo fica no modo morto",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2957,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Banco da Source/Banco do Destino",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2011,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Source",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2569,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2184,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65748,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ Size of our data.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65561,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Store the size of the data block",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1407,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 1 32X32",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 714,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "TIMER ATE ACABAR A ANIMAC\u00C3O, N\u00C3O TOCAR OUTRA ANIMAC\u00C3O",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 28,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "8 bit mem/A",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65524,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "fff4 - emulation mode vectors\r\ncop emulation **",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2174,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2178,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 52,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A = ((joy changes) or (buttons pressed)) and (current joy state)  ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65786,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ Size of our data.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1639,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Tamanho das transfer\u00EAncias",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1623,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Offset da source",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33042,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "CGADD",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65822,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2270,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 16bit A/X/Y",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 209,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Starting tile #",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1363,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Ativar rotina de animac\u00E3o da explos\u00E3o ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2765,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "================================\r\nOnda de sprites 2\r\n================================",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65900,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ Size of our data.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33210,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " X,Y 16 BIT MODE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33114,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "MDMAEN",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2172,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2026,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Registro",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2825,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "zerando segunda tabela da OAM para usar sprites pequenos e dentro da tela  \r\n sprites faltantes do texto",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2675,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2308,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Sprite X-Coordinate",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33001,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "WMADDL",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65929,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\  Adress where our data is.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65676,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Set the destination register ( $2122: CG-RAM Write )",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 150,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "direita\r\nJoy1Press ... DP esta no 0300 agora, vamos ter que ser diretos ao usar RAM de 1 so byte fora da DP",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65655,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Clear the DMA control register",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2197,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1893,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "   and the Tile Map size to 32 tiles x 32 tiles",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 382,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "horizontal ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 247,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Player esta levando dano ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2802,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2659,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " VIDAS",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 182,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " bit zero \u00E9 o 9 bit (sprite fora da tela) e bit 1 \u00E9 tamanho de sprite. ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2817,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " incrementar counters",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2948,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Preservar data bank",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2412,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Screen Brightness\r\nE3",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65728,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " /",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1821,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Adress where our data is. (4302)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65898,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65707,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Set the DMA mode (byte, normal increment)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2244,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65869,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2036,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Source",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 214,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " horizontal\r\n Inimigo esta em tela?",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 35,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Wait till automatic JoyPort read is complete",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65696,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Store the data offset into DMA source offset",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 113,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " A = joy state, if any of the bottom 4 bits are on... either nothing is plugged",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32930,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "WMADDM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1771,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Adress where our data is.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1294,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1050,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ...2 regs write once. (4300)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2960,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Recuperar data bank",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65508,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "ffe4 - native mode vectors\r\ncop native **",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2571,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " zera apenas o que for 1 em A para a RAM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 783,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "JMP (PointersANISTATE,x)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1585,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " frame 6",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33237,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A1B0",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2699,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Ir adicionando o valor de $436B em H a cada loop ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2209,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 607,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Pula se carry n\u00E3o for ativado",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65720,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "----------------------------\r\nDMA DE GR\u00C1FICOS PARA A VRAM\r\nBG1\r\n \\ Increase on $2119 write.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 616,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Tamanho horizontal do proj\u00E9til (\u002B 8)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65782,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " | Bank where our data is.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 974,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Quantas vezes repetir DMA ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65670,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Store the data bank holding the tile data",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65620,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Clear the DMA control register",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2965,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Quantas vezes incrementar tabela at\u00E9 zerar",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65606,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Set the destination register ( $2122: CG-RAM Write )",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2348,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "preserva o banco de antes de chegar aqui",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1502,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " DP \u00E9 0300",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65813,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/ Writing to $2118 AND $2119.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1059,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Bank where our data is. (4304)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 180,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Starting tile #",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65690,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Clear the DMA control register",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 364,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " DP \u00E9 0700",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 231,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Pula se carry n\u00E3o for ativado",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65486,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " $FFFF minus checksum",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32936,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "DMAP0",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65907,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 599,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Posic\u00E3o horizontal do inimigo",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 488,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 74,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "store A = (buttons pressed since last clearing reg) and (button is still down)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2662,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ITEM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1601,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Offset da source",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65905,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ Start DMA transfer on channel 0.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1933,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Gradiente HDMA ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 62,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A = A xor JoyState = (changes in joy state)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1530,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33217,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "VMADDL",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2873,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;\r\nMedidor de CPU\r\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1864,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Comparador de animac\u00E3o diferente da inicial para ativar DMA do player",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 102,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " joy state = (joy state) or A.... so bit0 of Joy1State = 0 only if it is a valid joypad",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2376,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Recuperando ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2378,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " que foi",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 243,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Pula se carry n\u00E3o for ativado",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2353,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " mem/A = 8 bit, X/Y = 16 bit",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65479,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ROM size (32 Mbit / 4 MBytes)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33186,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A1T0L",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1098,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "manter off-screen se n\u00E3o utilizado",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 613,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Posic\u00E3o horizontal do inimigo",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65763,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " \\ Set where to write in VRAM...",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65481,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " US",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1457,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Tamanho das transfer\u00EAncias",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65845,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ Set mode to...",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2812,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Adiciona 8 para o proximo loop",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2304,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 16bit A/X/Y",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65912,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " /",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65701,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Store the size of the data block",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1064,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Local da VRAM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65483,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ROM revision number",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2248,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65923,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/ ...2 regs write once.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65780,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " | ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65480,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " backup RAM size",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33202,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "MDMAEN",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2158,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65949,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Retorna da sub-rotina para o banco anterior",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2227,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1667,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Offset da source",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 127,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " into the joy port, or it is not a joypad",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2362,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "rotina dos controles",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33136,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "MDMAEN",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65744,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " | Bank where our data is.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 590,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Posic\u00E3o horizontal do proj\u00E9til normal",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33010,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "DMAP0",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 369,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " :\r\nEndereco horizontal temporario do proj\u00E9til ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2681,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 43xB podem ser usados como FastRAM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1592,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 128 pixels",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2477,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Espelho de Color Math\r\n$15",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1070,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Endereco dos nossos dados. (4302)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65851,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/ Writing to $2118 AND $2119.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65775,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/ Writing to $2118 AND $2119.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65758,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "BG2\r\n \\ Increase on $2119 write.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1607,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " frame 7",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 280,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "horizontal temporario",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 621,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Pula se carry n\u00E3o for ativado",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2537,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/  ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1402,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 1 32X32",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1651,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " frame 9",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65849,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65530,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "nmi emulation",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65528,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "abort not used *",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2358,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "resgata o banco de antes de chegar aqui",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65725,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " \\ Set where to write in VRAM...",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1296,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " seta apenas o que for 1 em A para a RAM TSB",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 238,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Tamanho vertical do player (- 10)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "8 bit mem/A, 16 bit X/Y",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2780,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Ir adicionando o valor de $436B em H a cada loop ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33164,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A1T0L",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65771,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/ ...2 regs write once.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65596,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Store the size of the data block",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1888,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "   and the Tile Map size to 32 tiles x 32 tiles",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 39,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "get JoyPad1",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2771,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 43xB podem ser usados como FastRAM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65532,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "RESET emulation",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65915,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " \\ Set where to write in VRAM...",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32955,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "MDMAEN",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65934,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " | Bank where our data is.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1469,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " frame 4",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32917,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " A,X,Y 16 BIT MODE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2275,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Prepare Loop 1",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65896,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " | Bank where our data is.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2201,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1595,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Tamanho das transfer\u00EAncias",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65661,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Store the data offset into DMA source offset",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2141,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Setup",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 673,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "TIMER ATE ACABAR A ANIMAC\u00C3O, N\u00C3O TOCAR OUTRA ANIMAC\u00C3O",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65880,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " /",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65807,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ Set mode to...",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 229,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Soma do tamanho do player com o inimigo (- 10). O Carry ativara se colidirem.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65815,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\  Adress where our data is.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1312,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "sep #$20",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65631,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Store the size of the data block",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33083,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "WMADDL",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2352,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "preserva o direct page de antes de chegar aqui",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 578,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " horizontal\r\n Inimigo esta em tela?",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 348,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " PROJETIL N\u00C3O UTILIZADO",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65518,
           "MemoryType": "SnesPrgRom",
           "Label": "",
           "Comment": "irq native",
@@ -1652,52 +4580,2916 @@
           "Length": 1
         },
         {
-          "Address": 12,
-          "MemoryType": "SnesWorkRam",
-          "Label": "current_line",
-          "Comment": " offset_linha_vram: .res 4",
+          "Address": 65571,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Set the destination register ( $2122: CG-RAM Write )",
           "Flags": "None",
-          "Length": 4
+          "Length": 1
         },
         {
-          "Address": 10,
-          "MemoryType": "SnesWorkRam",
-          "Label": "pad2_new",
-          "Comment": "",
+          "Address": 2230,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
           "Flags": "None",
-          "Length": 2
+          "Length": 1
         },
         {
-          "Address": 8,
-          "MemoryType": "SnesWorkRam",
-          "Label": "pad2",
-          "Comment": "",
+          "Address": 2236,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
           "Flags": "None",
-          "Length": 2
+          "Length": 1
         },
         {
-          "Address": 6,
-          "MemoryType": "SnesWorkRam",
-          "Label": "pad1_new",
-          "Comment": "",
+          "Address": 65705,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Store the data bank holding the tile data",
           "Flags": "None",
-          "Length": 2
+          "Length": 1
         },
         {
-          "Address": 4,
-          "MemoryType": "SnesWorkRam",
-          "Label": "pad1",
-          "Comment": "",
+          "Address": 1658,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 128 pixels",
           "Flags": "None",
-          "Length": 2
+          "Length": 1
         },
         {
-          "Address": 2,
-          "MemoryType": "SnesWorkRam",
-          "Label": "temp1",
-          "Comment": "",
+          "Address": 65777,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\  Adress where our data is.",
           "Flags": "None",
-          "Length": 2
+          "Length": 1
+        },
+        {
+          "Address": 2217,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33109,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "DAS0L",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2219,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2328,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " seta apenas o que for 1 em A para a RAM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65484,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " checksum of all bytes",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 849,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " :",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 84,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " A = -bit0 of JoySer0",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 958,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " DP \u00E9 0700",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2437,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Espelho da Layer 2 H\r\n$10",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 595,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Posic\u00E3o horizontal do proj\u00E9til espelhado",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 517,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Checa se chegou nas bordas da tela, se sim, esconder sprite.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2553,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " DP \u00E9 0300",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2379,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " preservado",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2396,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Counter de 0 at\u00E9 4 em loop",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1730,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Quantas vezes repetir DMA ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1906,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Turn on BG1",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1032,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Direct page agora s\u00E3o os registros de DMA  ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65739,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\  Adress where our data is.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2215,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1826,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Size of our data. (4305)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1815,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Local da VRAM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1079,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Iniciar DMA canal 0",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1380,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " counter da animac\u00E3o",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1801,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ...2 regs write once. (4300)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33226,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "DMAP0",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32963,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " X,Y 16 BIT MODE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2252,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1392,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Starting tile #",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1299,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " bit zero \u00E9 o 9 bit (sprite fora da tela) e bit 1 \u00E9 tamanho de sprite. ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65685,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "HUD",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2258,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33059,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A1B0",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65856,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " | ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65666,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Store the size of the data block",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2634,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " VIDAS",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33048,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "DMAP0",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2427,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Espelho da Layer 1 V \r\n$1C",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2211,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1744,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Inserir local da VRAM para escrever",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65680,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Initiate the DMA transfer",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1873,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "ativa os controles",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33016,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A1T0L",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2961,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Incrementa para o proximo frame",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2350,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "preserva o index X de antes de chegar aqui",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2512,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " CPU -\u003E PPU, auto inc, $2104 (OAM write)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2503,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\u002B\r\n=================;\r\n DMA sprite data ;\r\n=================;",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65645,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Initiate the DMA transfer",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2168,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1916,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Sprite VRAM = Sprites 16x16/32x32 e VRAM 6000",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2156,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65945,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65635,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Store the data bank holding the tile data",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2180,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 105,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A/mem = 16bit, X/Y = 16bit",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 566,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " bit zero \u00E9 o 9 bit (sprite fora da tela) e bit 1 \u00E9 tamanho de sprite. ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2836,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " sprites faltantes do texto",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65526,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " not used",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33125,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A1B0",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1557,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Offset da source",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 659,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "TIMER ATE ACABAR A ANIMAC\u00C3O, N\u00C3O TOCAR OUTRA ANIMAC\u00C3O",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65482,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " publisher id",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65600,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Store the data bank holding the tile data",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 192,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "--------------------------------------------------\r\nobj extra\r\n------------------",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1526,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Starting tile #",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32994,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " A 8 BIT MODE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33232,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A1T0L",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65504,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "ffe0 not used",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65801,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " \\ Set where to write in VRAM...",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 3060,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Em HI-ROM cada banco tem 64 KB.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2386,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Counter Global ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2162,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65820,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " | Bank where our data is.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33004,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "WMADDH",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 700,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "ataque cima\r\nJoy1Press ... DP esta no 0300 agora, vamos ter que ser diretos ao usar RAM de 1 so byte fora da DP",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 463,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "vertical",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33070,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "MDMAEN",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 24,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Wait for NMI to fill the variables with real JoyPad data",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65556,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Store the data offset into DMA source offset",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65737,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/ Writing to $2118 AND $2119.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65834,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "sprite \r\n \\ Increase on $2119 write.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1853,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "FastROM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2721,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65883,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ Set mode to...",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65867,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ Start DMA transfer on channel 0.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 605,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Soma do tamanho do proj\u00E9til (\u002B 8) com o inimigo (- 10). O Carry ativara se colidirem.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65545,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "DMA DE CORES PARA A CGRAM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65477,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": ".byte $30  ; FastROM | LOROM\r\n FastROM | HIROM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1989,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "HDMA de cores para a BG3",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1432,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 32 pixels",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 981,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Tamanho das transfer\u00EAncias",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 118,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " if it is not a valid joypad put $0001 into the 2 joy state variables",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 21,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Enable JoyPad Read and NMI",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65927,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/ Writing to $2118 AND $2119.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2705,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Ir adicionando o valor da tabela em H a cada loop (levemente a frente do Y)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2351,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "preserva o index Y de antes de chegar aqui",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1193,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " DP no $0000",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1040,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " /",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 226,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Tamanho horizontal do player (- C)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2006,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Source banco",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2690,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Transferir do A 16 bits ao Direct Page ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2355,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "DataBank = $00",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 732,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "TIMER ATE ACABAR A ANIMAC\u00C3O, N\u00C3O TOCAR OUTRA ANIMAC\u00C3O",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33054,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A1T0L",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1425,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " frame 2",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65793,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/ ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2656,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 1UP",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33086,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "WMADDH",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2193,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1548,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 128 pixels",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2381,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Retorna do interrupt (ele vai voltar la naquele loop ali em cima)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65910,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "DMA BG2\r\n \\ Increase on $2119 write.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2359,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "DMA primeiro",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65943,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ Start DMA transfer on channel 0.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 687,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "direita/esquerda\r\nJoy1Press ... DP esta no 0300 agora, vamos ter que ser diretos ao usar RAM de 1 so byte fora da DP",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2374,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A/Mem=16bits, X/Y=16bits",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2188,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1791,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " /",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1747,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " VRAM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65865,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33142,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " A 8 BIT MODE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65456,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "rom name 21 chars",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65885,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/ ...2 regs write once.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 742,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "abaixado\r\nJoy1Press ... DP esta no 0300 agora, vamos ter que ser diretos ao usar RAM de 1 so byte fora da DP",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2246,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 512,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " bit zero \u00E9 o 9 bit (sprite fora da tela) e bit 1 \u00E9 tamanho de sprite. ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2203,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32947,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A1B0",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2001,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Registro",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65877,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " \\ Set where to write in VRAM...",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1901,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Set BG3\u0027s Character VRAM offset (word address)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1858,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "comeca pixelado ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1038,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " \\ Increase on $2119 write.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1271,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Inicia processo de matar sprite ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65932,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " | ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65827,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2500,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "lda $0748   ; Se o player teve DMA, n\u00E3o fazer outro DMA \r\nBNE \u002B",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65735,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32987,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " A,X,Y 16 BIT MODE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2164,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33092,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "DMAP0",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2398,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " limpar high byte ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33032,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "MDMAEN",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1332,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Starting tile #",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33120,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A1T0L",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 295,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "horizontal temporario espelhado",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32996,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " X,Y 16 BIT MODE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65798,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " /",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65585,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Clear the DMA control register",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 172,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2264,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 619,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Soma do tamanho do proj\u00E9til (\u002B 8) com o inimigo (- 10). O Carry ativara se colidirem.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1097,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Transferir do A 16 bits ao Direct Page ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 724,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "ataque terreo\r\nJoy1Press ... DP esta no 0300 agora, vamos ter que ser diretos ao usar RAM de 1 so byte fora da DP",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 602,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Tamanho horizontal do proj\u00E9til (\u002B 8)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65753,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ Start DMA transfer on channel 0.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2401,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "HDMA registro",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1789,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " \\ Increase on $2119 write.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1680,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " bit zero \u00E9 o 9 bit (sprite fora da tela) e bit 1 \u00E9 tamanho de sprite. ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2946,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Colocar valor da tabela \u002B adic\u00E3o em RAM ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 49,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A = (joy changes) or (buttons pressed)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1043,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Counter de repetic\u00F5es \u002B n\u00FAmero de offset dos enderecos ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1397,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65672,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Set the DMA mode (byte, normal increment)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2407,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Mosaic\r\nE2",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2529,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " #$220 bytes to transfer",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65860,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1911,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Turn on BG2",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 416,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33220,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "DAS0L",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65874,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " /",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1939,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " #$88F7",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2762,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " sprites faltantes do texto",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 174,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " zera apenas o que for 1 em A para a RAM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65784,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 236,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Posic\u00E3o vertical do inimigo",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1702,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "N\u00E3o processar mais o sprite ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65626,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Store the data offset into DMA source offset",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65766,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " /",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1891,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Set BG3\u0027s Tile Map VRAM offset",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 233,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " vertical\r\n Posic\u00E3o vertical do player",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33144,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " X,Y 16 BIT MODE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2952,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Source",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1304,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Acompanha layer 1",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33208,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " A 8 BIT MODE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33175,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "DAS0L",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65510,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "brk native **",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1262,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Nao processa sprite ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1413,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Tamanho das transfer\u00EAncias",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 887,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " :",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 116,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " into the joy port, or it is not a joypad",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2371,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "limpar flag NMI",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65617,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "start at XX color",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 996,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " VRAM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 211,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "===========;\r\n;;Colis\u00E3o;;;\r\n===========;",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2326,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2800,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Starting tile #",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65831,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65829,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ Start DMA transfer on channel 0.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1342,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Exclui sprite\r\n bit zero \u00E9 o 9 bit (sprite fora da tela) e bit 1 \u00E9 tamanho de sprite. ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65567,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Set the DMA mode (byte, normal increment)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 970,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Banco de origem",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 221,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Posic\u00E3o horizontal do player",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65903,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2637,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ITEM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2223,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2195,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65687,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "start at XX color",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1830,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Iniciar DMA canal 0",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2250,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33149,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "WMADDL",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2631,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 1UP",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2452,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "$18",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 418,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " zera apenas o que for 1 em A para a RAM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 303,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "vertical temporario",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1783,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Direct page agora s\u00E3o os registros de DMA  ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2713,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Adicionar o valor da tabela na posic\u00E3o Y e incrementar",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65889,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/ Writing to $2118 AND $2119.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1121,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " a8Bit",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 609,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " vertical\r\n Posic\u00E3o horizontal do proj\u00E9til espelhado",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2234,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1570,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 128 pixels",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 164,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "esquerda\r\nJoy1Press",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65809,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/ ...2 regs write once.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2205,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 224,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Posic\u00E3o horizontal do inimigo",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2377,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " tudo aquilo",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2647,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " POW",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1723,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " DP \u00E9 0700",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2462,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "$1F",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1405,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " bit zero \u00E9 o 9 bit (sprite fora da tela) e bit 1 \u00E9 tamanho de sprite. ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2056,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Medidor de CPU ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32984,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "MEMSEL",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65921,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ Set mode to...",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2736,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " incrementar counters",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65894,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " | ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32925,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " X,Y 8 BIT MODE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65842,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " /",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1383,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " frame 1",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33242,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "MDMAEN",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2883,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;\r\nModo SlowROM\r\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2472,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "$29",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65872,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "----------------------------\r\nDMA DA TILEMAP PARA A VRAM\r\n \\ Increase on $2119 write.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2844,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "dividir frames",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2302,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 16bit A/X/Y",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1410,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 32 pixels",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1794,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Counter de repetic\u00F5es \u002B n\u00FAmero de offset dos enderecos ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1108,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "----",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2432,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "$1D",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65925,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2221,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65534,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "irq/brk emulation **",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 454,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "horizontal ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 68,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A = (joy changes) or (buttons pressed)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2170,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1579,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Offset da source",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33098,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A1T0L",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2786,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Ir adicionando o valor da tabela em H a cada loop (levemente a frente do Y)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 43,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A = A xor JoyState = (changes in joy state)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65887,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2509,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "stz $2103\r\n Writes #$00 to $4300, #$04 to $4301",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65760,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " /",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2442,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "$11",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 391,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "vertical",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 187,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "reseta obj extra 2 se n\u00E3o usado\r\n bit zero \u00E9 o 9 bit (sprite fora da tela) e bit 1 \u00E9 tamanho de sprite. ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 365,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": ";;;;;",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2176,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65818,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " | ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1054,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Writing to $2118 AND $2119. (4301)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32980,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " A 8 BIT MODE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1325,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Starting tile #",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2944,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Adicionar valor \u00E0 tabela",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2240,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2160,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2447,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Espelho da Layer 2 V \r\n$17",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1086,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Registrar frame que foi feito DMA",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1181,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " bit zero \u00E9 o 9 bit (sprite fora da tela) e bit 1 \u00E9 tamanho de sprite. ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65733,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/ ...2 regs write once.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65847,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/ ...2 regs write once.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2368,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Seu codigo vai rodar nessa sub-rotina em todos os frames.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65731,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ Set mode to...",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2238,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65853,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\  Adress where our data is.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2266,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2254,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2331,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " bit zero \u00E9 o 9 bit (sprite fora da tela) e bit 1 \u00E9 tamanho de sprite. ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1543,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " bit zero \u00E9 o 9 bit (sprite fora da tela) e bit 1 \u00E9 tamanho de sprite. ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65610,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Initiate the DMA transfer",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1860,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "comeca com tela escura ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1886,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Set BG2\u0027s Tile Map VRAM offset",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65751,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65918,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " /",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 706,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Joy1Press ... DP esta no 0300 agora, vamos ter que ser diretos ao usar RAM de 1 so byte fora da DP",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1617,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Tamanho das transfer\u00EAncias",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33076,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " A 8 BIT MODE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1673,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " FIM TESTE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1186,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " bit zero \u00E9 o 9 bit (sprite fora da tela) e bit 1 \u00E9 tamanho de sprite. ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 71,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A = ((joy changes) or (buttons pressed)) and (current joy state)  ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65715,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Initiate the DMA transfer",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2608,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " bit zero \u00E9 o 9 bit (sprite fora da tela) e bit 1 \u00E9 tamanho de sprite. ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1198,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Transferir do A 16 bits ao Direct Page ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65789,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2523,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " CPU address 7E:0000 - Work RAM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2567,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Starting tile #",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2900,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;\r\nMovimento de c\u00E2mera ligada ao sprite jogavel\r\n;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1898,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Set BG2\u0027s Character VRAM offset (word address)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "update JoyState",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 77,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A/mem = 8bit, X/Y = 8bit",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33027,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "DAS0L",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65711,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Set the destination register ( $2122: CG-RAM Write )",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65580,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "BG2",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1454,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 32 pixels",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65615,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "BG3",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1400,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " bit zero \u00E9 o 9 bit (sprite fora da tela) e bit 1 \u00E9 tamanho de sprite. ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1551,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Tamanho das transfer\u00EAncias",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 147,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Transferir do A 16 bits ao Direct Page ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65796,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "BG3 \u002B tilemap\r\n \\ Increase on $2119 write.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2913,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "parar sprite de ir pra direita",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33103,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A1B0",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1645,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Offset da source",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 129,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " if it is not a valid joypad put $0001 into the 2 joy state variables",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1883,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "   and the Tile Map size to 32 tiles x 32 tiles",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 144,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " DP no $0300",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33038,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " A 8 BIT MODE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65591,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Store the data offset into DMA source offset",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2487,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Layer 2 rola a 1/4 da velocidade da Layer 1",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1573,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Tamanho das transfer\u00EAncias",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1810,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Bank where our data is. (4304)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2321,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33191,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A1B0",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2260,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2031,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Source banco",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65516,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "RESET native",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2357,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "preserva o Acumulador de antes de chegar aqui",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32849,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " A 8 BIT MODE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65824,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\ Size of our data.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 585,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " O proj\u00E9til esta espelhado?",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32927,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "WMADDL",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 32961,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " A 8 BIT MODE",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2318,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Starting tile #",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 160,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " seta apenas o que for 1 em A para a RAM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65891,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "\\  Adress where our data is.",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65722,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " /",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 755,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "nada\r\nJoy1Press",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1896,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Set BG1\u0027s Character VRAM offset (word address)",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 1614,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " 128 pixels",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65652,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "start at XX color",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2678,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " Zerar counters",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65804,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " /",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65746,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "/",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65575,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Initiate the DMA transfer",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2932,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "parar sprite de ir pra esquerda",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 33021,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "A1B0",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2380,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " anteriormente...",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65547,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "start at XX color",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 2256,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " ",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65539,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " DP \u00E9 4200",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 490,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": " zera apenas o que for 1 em A para a RAM",
+          "Flags": "None",
+          "Length": 1
+        },
+        {
+          "Address": 65637,
+          "MemoryType": "SnesPrgRom",
+          "Label": "",
+          "Comment": "Set the DMA mode (byte, normal increment)",
+          "Flags": "None",
+          "Length": 1
         },
         {
           "Address": 1312,
@@ -1732,7 +7524,15 @@
           "Length": 512
         },
         {
-          "Address": 0,
+          "Address": 34,
+          "MemoryType": "SnesWorkRam",
+          "Label": "teste_variavel",
+          "Comment": "",
+          "Flags": "None",
+          "Length": 2
+        },
+        {
+          "Address": 32,
           "MemoryType": "SnesWorkRam",
           "Label": "in_nmi",
           "Comment": "",
@@ -1742,70 +7542,15 @@
       ],
       "Breakpoints": [
         {
-          "BreakOnRead": true,
-          "BreakOnWrite": true,
-          "BreakOnExec": true,
-          "Enabled": false,
-          "MarkEvent": false,
-          "MemoryType": "SnesRegister",
-          "StartAddress": 8470,
-          "EndAddress": 8470,
-          "CpuType": "Snes",
-          "AnyAddress": false,
-          "IsAssert": false,
-          "Condition": ""
-        },
-        {
           "BreakOnRead": false,
           "BreakOnWrite": false,
           "BreakOnExec": true,
-          "Enabled": false,
+          "Enabled": true,
           "MarkEvent": false,
+          "IgnoreDummyOperations": true,
           "MemoryType": "SnesPrgRom",
-          "StartAddress": 33362,
-          "EndAddress": 33362,
-          "CpuType": "Snes",
-          "AnyAddress": false,
-          "IsAssert": false,
-          "Condition": ""
-        },
-        {
-          "BreakOnRead": false,
-          "BreakOnWrite": false,
-          "BreakOnExec": true,
-          "Enabled": false,
-          "MarkEvent": false,
-          "MemoryType": "SnesPrgRom",
-          "StartAddress": 33256,
-          "EndAddress": 33256,
-          "CpuType": "Snes",
-          "AnyAddress": false,
-          "IsAssert": false,
-          "Condition": ""
-        },
-        {
-          "BreakOnRead": false,
-          "BreakOnWrite": false,
-          "BreakOnExec": true,
-          "Enabled": false,
-          "MarkEvent": false,
-          "MemoryType": "SnesPrgRom",
-          "StartAddress": 33312,
-          "EndAddress": 33312,
-          "CpuType": "Snes",
-          "AnyAddress": false,
-          "IsAssert": false,
-          "Condition": ""
-        },
-        {
-          "BreakOnRead": false,
-          "BreakOnWrite": false,
-          "BreakOnExec": true,
-          "Enabled": false,
-          "MarkEvent": false,
-          "MemoryType": "SnesPrgRom",
-          "StartAddress": 33303,
-          "EndAddress": 33303,
+          "StartAddress": 35092,
+          "EndAddress": 35092,
           "CpuType": "Snes",
           "AnyAddress": false,
           "IsAssert": false,
@@ -1817,9 +7562,85 @@
           "BreakOnExec": true,
           "Enabled": true,
           "MarkEvent": false,
+          "IgnoreDummyOperations": true,
           "MemoryType": "SnesPrgRom",
-          "StartAddress": 558,
-          "EndAddress": 558,
+          "StartAddress": 35113,
+          "EndAddress": 35113,
+          "CpuType": "Snes",
+          "AnyAddress": false,
+          "IsAssert": false,
+          "Condition": ""
+        },
+        {
+          "BreakOnRead": false,
+          "BreakOnWrite": false,
+          "BreakOnExec": true,
+          "Enabled": true,
+          "MarkEvent": false,
+          "IgnoreDummyOperations": true,
+          "MemoryType": "SnesPrgRom",
+          "StartAddress": 1842,
+          "EndAddress": 1842,
+          "CpuType": "Snes",
+          "AnyAddress": false,
+          "IsAssert": false,
+          "Condition": ""
+        },
+        {
+          "BreakOnRead": false,
+          "BreakOnWrite": false,
+          "BreakOnExec": true,
+          "Enabled": true,
+          "MarkEvent": false,
+          "IgnoreDummyOperations": true,
+          "MemoryType": "SnesPrgRom",
+          "StartAddress": 1866,
+          "EndAddress": 1866,
+          "CpuType": "Snes",
+          "AnyAddress": false,
+          "IsAssert": false,
+          "Condition": ""
+        },
+        {
+          "BreakOnRead": false,
+          "BreakOnWrite": false,
+          "BreakOnExec": true,
+          "Enabled": true,
+          "MarkEvent": false,
+          "IgnoreDummyOperations": true,
+          "MemoryType": "SnesPrgRom",
+          "StartAddress": 1863,
+          "EndAddress": 1863,
+          "CpuType": "Snes",
+          "AnyAddress": false,
+          "IsAssert": false,
+          "Condition": ""
+        },
+        {
+          "BreakOnRead": false,
+          "BreakOnWrite": false,
+          "BreakOnExec": true,
+          "Enabled": true,
+          "MarkEvent": false,
+          "IgnoreDummyOperations": true,
+          "MemoryType": "SnesPrgRom",
+          "StartAddress": 137,
+          "EndAddress": 137,
+          "CpuType": "Snes",
+          "AnyAddress": false,
+          "IsAssert": false,
+          "Condition": ""
+        },
+        {
+          "BreakOnRead": false,
+          "BreakOnWrite": false,
+          "BreakOnExec": true,
+          "Enabled": true,
+          "MarkEvent": false,
+          "IgnoreDummyOperations": true,
+          "MemoryType": "SnesPrgRom",
+          "StartAddress": 25,
+          "EndAddress": 25,
           "CpuType": "Snes",
           "AnyAddress": false,
           "IsAssert": false,

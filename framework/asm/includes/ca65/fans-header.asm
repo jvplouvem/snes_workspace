@@ -24,7 +24,8 @@
 .addr IRQ_end  ;cop native **
 .addr IRQ_end  ;brk native **
 .addr $0000  ;abort native not used *
-.addr NMI ;nmi native 
+;.addr NMI ;nmi native 
+.addr VBlank ;nmi native 
 .addr reset ;RESET native
 .addr IRQ ;irq native
 
