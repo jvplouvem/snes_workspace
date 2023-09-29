@@ -21,7 +21,7 @@
 
 .include "../../framework/asm/includes/ca65/fans-library.asm"
 
-.segment "CODE"
+
 
 ; .INCLUDE "show.inc"
 .INCLUDE "defines.asm"
@@ -45,6 +45,7 @@ DesativaFastROM = $41
 ; O que tem aqui é so um loop que dura até chegar na scanline 225, daí repete o que esta em "VBlank" e volta pro loop.
 ;==============================================================================
 
+.segment "CODE"
 main:
 JML Faster
 ;.BASE $C0        ; Pular para banco rapido
@@ -58,7 +59,8 @@ Faster:
 
 	a8Bit
 	lda #$01
-	sta $420d ;FastROM
+	;sta $420d ;FastROM
+	sta f:MEMSEL
 
 	lda #$ff
 	sta $E2   ;comeca pixelado	
@@ -75,30 +77,30 @@ Faster:
 	;==============
 	;BG config
 	lda #$01		;Set video mode 1, 8x8 tiles
-	sta $2105         
+	sta f:$2105         
 
 	lda #$54		;Set BG1's Tile Map VRAM offset
-	sta $2107		;   and the Tile Map size to 32 tiles x 32 tiles
+	sta f:$2107		;   and the Tile Map size to 32 tiles x 32 tiles
 
 	lda #$58		;Set BG2's Tile Map VRAM offset
-	sta $2108		;   and the Tile Map size to 32 tiles x 32 tiles
+	sta f:$2108		;   and the Tile Map size to 32 tiles x 32 tiles
 
 	lda #$50		;Set BG3's Tile Map VRAM offset
-	sta $2109		;   and the Tile Map size to 32 tiles x 32 tiles
+	sta f:$2109		;   and the Tile Map size to 32 tiles x 32 tiles
 
 	lda #$20		;Set BG1's Character VRAM offset (word address)
-	sta $210B		;Set BG2's Character VRAM offset (word address)
+	sta f:$210B		;Set BG2's Character VRAM offset (word address)
 	lda #$04		;Set BG3's Character VRAM offset (word address)
-	sta $210C		;Set BG4's Character VRAM offset (word address)
+	sta f:$210C		;Set BG4's Character VRAM offset (word address)
 
 	lda #%00010111		;Turn on BG1
-	sta $212C
+	sta f:$212C
 
 	lda #$02		;Turn on BG2
-	sta $212d
+	sta f:$212d
 
 	lda #%00100011		;Sprite VRAM = Sprites 16x16/32x32 e VRAM 6000
-	sta $2101
+	sta f:$2101
 
 	LDA #%00100000
 	STA ColorMath1
@@ -110,59 +112,62 @@ Faster:
 
 ;Gradiente HDMA 
 	LDX #$3200
-	STX $4330
+	STX a:$4330
 	LDX #.loword(RedTable) ; #$88F7
-	STX $4332
-	LDA #$C0
-	STA $4334
+	STX a:$4332
+	;LDA #$C0
+	LDA #.BANKBYTE(RedTable)
+	STA f:$4334
 	LDX #$3200
-	STX $4340
+	STX a:$4340
 	LDX #.loword(GreenTable)
-	STX $4342
-	LDA #$C0
-	STA $4344
+	STX a:$4342
+	; LDA #$C0
+	LDA #.BANKBYTE(GreenTable)
+	STA f:$4344
 	LDX #$3200
-	STX $4350
+	STX a:$4350
 	LDX #.loword(BlueTable)
-	STX $4352
-	LDA #$C0
-	STA $4354
+	STX a:$4352
+	; LDA #$C0
+	LDA #.BANKBYTE(BlueTable)
+	STA f:$4354
 	LDA #$38
 	TSB $0D9F   ;canais 3, 4, 5 para cada R,G,B. 
 
 ;HDMA de cores para a BG3
-LDX #$0001
-SEP #$30
-  LDA #$00
-  STA $4360
-  LDA #$21
-  STA $4361   ;Registro
-  LDA #$C0
-  STA $4364  ;Source banco
-REP #$30
-  LDA #.loword(Corslot)  ;Source
-  STA $4362
-  SEP #$30
-  
-  LDA #$02
-  STA $4370
-  LDA #$22
-  STA $4371   ;Registro
-  LDA #$C0
-  STA $4374  ;Source banco
-REP #$30
-  LDA #.loword(Corhdma)  ;Source
-  STA $4372
-  LDA #%11000000
-  TSB $0D9F
-REP #$10
-SEP #$20
+	LDX #$0001
+	SEP #$30
+	LDA #$00
+	STA f:$4360
+	LDA #$21
+	STA f:$4361   ;Registro
+	LDA #.BANKBYTE(Corslot)
+	STA f:$4364  ;Source banco
+	REP #$30
+	LDA #.loword(Corslot)  ;Source
+	STA $4362
+	SEP #$30
+
+	LDA #$02
+	STA f:$4370
+	LDA #$22
+	STA f:$4371   ;Registro
+	LDA #.BANKBYTE(Corhdma)
+	STA f:$4374  ;Source banco
+	REP #$30
+	LDA #.loword(Corhdma)  ;Source
+	STA f:$4372
+	LDA #%11000000
+	TSB $0D9F
+	REP #$10
+	SEP #$20
 
 loop:
 LDA Ativaomedidor
 BEQ :+
 lda #$08  ; Medidor de CPU 
-sta $2100 ;
+sta f:$2100 ;
 :
 wai
 bra loop
@@ -334,9 +339,11 @@ RTS
 ; Quando o NMI for ativado, isto é, chegar na scanline 225, tudo sera interrompido para rodar isso:
 ;==========================================================================================
 
+.segment "LIBSFX"
 VBlank:
 JML FasterVBLANK
 ;.org $C0        ; Pular para banco rapido
+.segment "CODE"
 FasterVBLANK:
 	rep #$30		;A/Mem=16bits, X/Y=16bits
 	phb       ;preserva o banco de antes de chegar aqui
@@ -360,7 +367,7 @@ JSR RotinadeSprites
 JSR Action    ;Seu codigo vai rodar nessa sub-rotina em todos os frames.
 
 
-	lda $4210		;limpar flag NMI
+	lda f:$4210		;limpar flag NMI
 	rep #$30		;A/Mem=16bits, X/Y=16bits
 	
 	pld        ; Recuperando 
@@ -392,48 +399,48 @@ XBA
 
 ;HDMA registro
     LDA $0D9F
-    STA $420C   
+    STA f:$420C
 ;Mosaic
     LDA Mosaico          ;E2
-    STA $2106
+    STA f:$2106
 ;Screen Brightness
     LDA Brilho           ;E3
-    STA $2100 
+    STA f:$2100 
 ;Espelho da Layer 1 H
 	LDA BG1Hlow        ;1A
-	STA $210D
+	STA f:$210D
 	LDA BG1Hhigh       ;1B
 	STA $210D
 ;Espelho da Layer 1 V	
 	LDA BG1Vlow       ;$1C
-	STA $210E
+	STA f:$210E
 	LDA BG1Vhigh      ;$1D
-	STA $210E
+	STA f:$210E
 ;Espelho da Layer 2 H
 	LDA BG2Hlow        ;$10
-	STA $210F
+	STA f:$210F
 	LDA BG2Hhigh       ;$11
-	STA $210F
+	STA f:$210F
 ;Espelho da Layer 2 V	
 	LDA BG2Vlow        ;$17
-	STA $2110
+	STA f:$2110
 	LDA BG2Vhigh       ;$18
-	STA $2110
+	STA f:$2110
 ;Espelho da Layer 3 H
 	 LDA BG3Hlow      ;$1E
-	 STA $2111
+	 STA f:$2111
 	 LDA BG3Hhigh     ;$1F
 	 STA $2111 
 ;Espelho da Layer 3 V
 	 LDA BG3Vlow      ;$28
-	 STA $2112
+	 STA f:$2112
 	 LDA BG3Vhigh     ;$29
-	 STA $2112
+	 STA f:$2112
 ;Espelho de Color Math
 	 LDA ColorMath0    ;$15
-	 STA $2130
+	 STA f:$2130
 	 LDA ColorMath1    ;$16
-	 STA $2131
+	 STA f:$2131
 
 ; Layer 2 rola a 1/4 da velocidade da Layer 1
 REP #$20       
@@ -457,18 +464,18 @@ JSR Explosao
 ; DMA sprite data ;
 ;=================;
 ldx #$6000
-stx $2102
+stx a:$2102
 ;stz $2103
     ldy #$0400          ; Writes #$00 to $4300, #$04 to $4301
-    sty $4300           ; CPU -> PPU, auto inc, $2104 (OAM write)
+    sty a:$4300           ; CPU -> PPU, auto inc, $2104 (OAM write)
     ldx #$0300
-    stx $4302
+    stx a:$4302
     lda #$7E
-    sta $4304           ; CPU address 7E:0000 - Work RAM
+    sta f:$4304           ; CPU address 7E:0000 - Work RAM
     ldy #$0220
-    sty $4305           ; #$220 bytes to transfer
+    sty a:$4305           ; #$220 bytes to transfer
     lda #%0000001
-    sta $420B
+    sta f:$420B
 
    	RTS                       ;/  
 ;;;;;;;;;;;;;;;;
@@ -794,202 +801,219 @@ lanooutrobanco:
 
 	;DMA DE CORES PARA A CGRAM
 	lda #$20
-	sta $2121	;start at XX color
-	stz $420B	;Clear the DMA control register
+	sta f:$2121	;start at XX color
+	;stz $420B	;Clear the DMA control register
+	ldaSta #$00, f:$420B	;Clear the DMA control register
 	ldx #.loword(grafico7CORES)
 	stx $02	;Store the data offset into DMA source offset
 	ldx #$0080
 	stx $05   ;Store the size of the data block
-	lda #$C1
-	sta $04	;Store the data bank holding the tile data
+	;lda #$C1
+	;sta $04	;Store the data bank holding the tile data
+	ldaSta #.BANKBYTE(grafico7CORES), $04
+
 	lda #$00	;Set the DMA mode (byte, normal increment)
 	sta $00       
 	lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
 	sta $01      
 	lda #$01    ;Initiate the DMA transfer
-	sta $420B
+	sta f:$420B
 
 
 	;BG2
 	lda #$60
-	sta $2121	;start at XX color
-	stz $420B	;Clear the DMA control register
+	sta f:$2121	;start at XX color
+	;stz  $420B	;Clear the DMA control register
+	ldaSta #$00, f:$420B	;Clear the DMA control register
 	ldx #.loword(bg2CORES)
 	stx $02	;Store the data offset into DMA source offset
 	ldx #$0060
 	stx $05   ;Store the size of the data block
-	lda #$C1
-	sta $04	;Store the data bank holding the tile data
+	; lda #$C1
+	; sta $04	;Store the data bank holding the tile data
+	ldaSta #.BANKBYTE(bg2CORES), $04
 	lda #$00	;Set the DMA mode (byte, normal increment)
 	sta $00       
 	lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
 	sta $01      
 	lda #$01    ;Initiate the DMA transfer
-	sta $420B
+	sta f:$420B
 
 	;BG3
 	lda #$00
-	sta $2121	;start at XX color
-	stz $420B	;Clear the DMA control register
+	sta f:$2121	;start at XX color
+	; stz $420B	;Clear the DMA control register
+	ldaSta #$00, f:$420B	;Clear the DMA control register
 	ldx #.loword(graficosbg3CORES)
 	stx $02	;Store the data offset into DMA source offset
 	ldx #$0040
 	stx $05   ;Store the size of the data block
-	lda #$C1
-	sta $04	;Store the data bank holding the tile data
+	; lda #$C1
+	; sta $04	;Store the data bank holding the tile data
+	ldaSta #.BANKBYTE(graficosbg3CORES), $04
 	lda #$00	;Set the DMA mode (byte, normal increment)
 	sta $00       
 	lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
 	sta $01      
 	lda #$01    ;Initiate the DMA transfer
-	sta $420B
+	sta f:$420B
 
 	;---
 	;sprite
 	lda #$80
-	sta $2121	;start at XX color
-	stz $420B	;Clear the DMA control register
+	sta f:$2121	;start at XX color
+	;stz $420B	;Clear the DMA control register
+	ldaSta #$00, f:$420B	;Clear the DMA control register
 	ldx #.loword(dmaCORESsprite2)
 	stx $02	;Store the data offset into DMA source offset
 	ldx #$0020
 	stx $05   ;Store the size of the data block
-	lda #$C1
-	sta $04	;Store the data bank holding the tile data
+	; lda #$C1
+	; sta $04	;Store the data bank holding the tile data
+	ldaSta #.BANKBYTE(dmaCORESsprite2), $04
 	lda #$00	;Set the DMA mode (byte, normal increment)
 	sta $00       
 	lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
 	sta $01      
 	lda #$01    ;Initiate the DMA transfer
-	sta $420B
+	sta f:$420B
 
 	;HUD
 	lda #$90
-	sta $2121	;start at XX color
-	stz $420B	;Clear the DMA control register
+	sta f:$2121	;start at XX color
+	;stz $420B	;Clear the DMA control register
+	ldaSta #$00, f:$420B	;Clear the DMA control register
 	ldx #.loword(spriteHUDcor)
 	stx $02	;Store the data offset into DMA source offset
 	ldx #$0080
 	stx $05   ;Store the size of the data block
-	lda #$C1
-	sta $04	;Store the data bank holding the tile data
+	; lda #$C1
+	; sta $04	;Store the data bank holding the tile data
+	ldaSta #.BANKBYTE(spriteHUDcor), $04
 	lda #$00	;Set the DMA mode (byte, normal increment)
 	sta $00       
 	lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
 	sta $01      
 	lda #$01    ;Initiate the DMA transfer
-	sta $420B
+	sta f:$420B
 
 
 	;----------------------------
 	;DMA DE GRÁFICOS PARA A VRAM
 	;BG1
 	LDA #$80            ; \ Increase on $2119 write.
-	STA $2115           ; /
+	STA f:$2115           ; /
 	LDX #$0000			; \ Set where to write in VRAM...
-	STX $2116			; /
+	STX a:$2116			; /
 	LDA #$01            ;\ Set mode to...
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 
 	STA $01           ;/ Writing to $2118 AND $2119.
 	LDX #.loword(graficos7)       ;\  Adress where our data is.
 	STX $02          				 ; | 
-	LDA #$C1   ; | Bank where our data is.
-	STA $04          				 ;/
+	; LDA #$C1   ; | Bank where our data is.
+	; STA $04          				 ;/
+	ldaSta #.BANKBYTE(graficos7), $04
 	LDX #$3800          ;\ Size of our data.
 	STX $05           ;/
 	LDA #$01	   ;\ Start DMA transfer on channel 0.
-	STA $420B	   ;/
+	STA f:$420B	   ;/
 
 	;BG2
 	LDA #$80            ; \ Increase on $2119 write.
-	STA $2115           ; /
+	STA f:$2115           ; /
 	LDX #$2000			; \ Set where to write in VRAM...
-	STX $2116			; /
+	STX a:$2116			; /
 	LDA #$01            ;\ Set mode to...
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 
 	STA $01           ;/ Writing to $2118 AND $2119.
 	LDX #.loword(bg2tiles)       ;\  Adress where our data is.
 	STX $02          				 ; | 
-	LDA #$C1   ; | Bank where our data is.
-	STA $04          				 ;/
+	; LDA #$C1   ; | Bank where our data is.
+	; STA $04          				 ;/
+	ldaSta #.BANKBYTE(bg2tiles), $04
 	LDX #$3800          ;\ Size of our data.
 	STX $05           ;/
 	LDA #$01	   ;\ Start DMA transfer on channel 0.
-	STA $420B	   ;/	
+	STA f:$420B	   ;/	
 
 	;BG3 + tilemap
 	LDA #$80            ; \ Increase on $2119 write.
-	STA $2115           ; /
+	STA f:$2115           ; /
 	LDX #$4000			; \ Set where to write in VRAM...
-	STX $2116			; /
+	STX a:$2116			; /
 	LDA #$01            ;\ Set mode to...
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 
 	STA $01           ;/ Writing to $2118 AND $2119.
 	LDX #.loword(graficosbg3)       ;\  Adress where our data is.
 	STX $02          				 ; | 
-	LDA #$C1   ; | Bank where our data is.
-	STA $04          				 ;/
+	; LDA #$C1   ; | Bank where our data is.
+	; STA $04          				 ;/
+	ldaSta #.BANKBYTE(graficosbg3), $04
 	LDX #$2800          ;\ Size of our data.
 	STX $05           ;/
 	LDA #$01	   ;\ Start DMA transfer on channel 0.
-	STA $420B	   ;/
+	STA f:$420B	   ;/
 
 	;sprite 
 	LDA #$80            ; \ Increase on $2119 write.
-	STA $2115           ; /
+	STA f:$2115           ; /
 	LDX #$6000			; \ Set where to write in VRAM...
-	STX $2116			; /
+	STX a:$2116			; /
 	LDA #$01            ;\ Set mode to...
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 
 	STA $01           ;/ Writing to $2118 AND $2119.
 	LDX #.loword(graficosprite1)       ;\  Adress where our data is.
 	STX $02          				 ; | 
-	LDA #$C1   ; | Bank where our data is.
-	STA $04          				 ;/
+	; LDA #$C1   ; | Bank where our data is.
+	; STA $04          				 ;/
+	ldaSta #.BANKBYTE(graficosprite1), $04
 	LDX #$3000          ;\ Size of our data.
 	STX $05           ;/
 	LDA #$01	   ;\ Start DMA transfer on channel 0.
-	STA $420B	   ;/
+	STA f:$420B	   ;/
 
 	;----------------------------
 	;DMA DA TILEMAP PARA A VRAM
 	LDA #$80            ; \ Increase on $2119 write.
-	STA $2115           ; /
+	STA f:$2115           ; /
 	LDX #$5400			; \ Set where to write in VRAM...
-	STX $2116			; /
+	STX a:$2116			; /
 	LDA #$01            ;\ Set mode to...
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 
 	STA $01           ;/ Writing to $2118 AND $2119.
 	LDX #.loword(graficos1tilemap)       ;\  Adress where our data is.
 	STX $02          				 ; | 
-	LDA #$C1   ; | Bank where our data is.
-	STA $04          				 ;/
+	; LDA #$C1   ; | Bank where our data is.
+	; STA $04          				 ;/
+	ldaSta #.BANKBYTE(graficos1tilemap), $04
 	LDX #$0800          ;\ Size of our data.
 	STX $05           ;/
 	LDA #$01	   ;\ Start DMA transfer on channel 0.
-	STA $420B	   ;/
+	STA f:$420B	   ;/
 
 	;DMA BG2
 	LDA #$80            ; \ Increase on $2119 write.
-	STA $2115           ; /
+	STA f:$2115           ; /
 	LDX #$5800			; \ Set where to write in VRAM...
-	STX $2116			; /
+	STX a:$2116			; /
 	LDA #$01            ;\ Set mode to...
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 
 	STA $01           ;/ Writing to $2118 AND $2119.
 	LDX #.loword(bg2tilemap)       ;\  Adress where our data is.
 	STX $02          				 ; | 
-	LDA #$C1   ; | Bank where our data is.
-	STA $04          				 ;/
+	; LDA #$C1   ; | Bank where our data is.
+	; STA $04          				 ;/
+	ldaSta #.BANKBYTE(bg2tilemap), $04
 	LDX #$0800          ;\ Size of our data.
 	STX $05           ;/
 	LDA #$01	   ;\ Start DMA transfer on channel 0.
-	STA $420B	   ;/
+	STA f:$420B	   ;/
 	PLD
 	RTL                ; Retorna da sub-rotina para o banco anterior
 
@@ -1042,7 +1066,6 @@ dmaCORESsprite2:
 ;.BANK 2 SLOT 0
 ;.ORG 0
 ;.SECTION "BancodosGraficos2" SEMIFREE
-
 .segment "RODATA2"
 DMAMagician:
 .incbin "GFX/MLmagocompacto.bin"

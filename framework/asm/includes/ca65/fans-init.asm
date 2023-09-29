@@ -8,7 +8,7 @@
 IRQ:
 bit $4211 ;TIMEUP
 
-IRQ_end:
+EmptyHandler:
 rti
 
 reset:

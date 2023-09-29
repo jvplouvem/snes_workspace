@@ -7213,12 +7213,12 @@
         "Condition": ""
       },
       "WindowSize": {
-        "Width": 958,
-        "Height": 1018
+        "Width": 960,
+        "Height": 1027
       },
       "WindowLocation": {
-        "X": 0,
-        "Y": 0
+        "X": 958,
+        "Y": -8
       },
       "WindowIsMaximized": false
     },
@@ -7681,7 +7681,7 @@
                 "Children": [
                   {
                     "Type": "ToolDock",
-                    "Proportion": 0.6025806451612905,
+                    "Proportion": 0.6,
                     "Orientation": "Horizontal",
                     "Name": "",
                     "ToolTypeName": "",
@@ -7718,7 +7718,7 @@
                   },
                   {
                     "Type": "ProportionalDock",
-                    "Proportion": 0.39741935483870955,
+                    "Proportion": 0.4,
                     "Orientation": "Vertical",
                     "Name": "",
                     "ToolTypeName": "",
@@ -7758,7 +7758,7 @@
                         "Orientation": "Horizontal",
                         "Name": "",
                         "ToolTypeName": "",
-                        "SelectedIndex": 1,
+                        "SelectedIndex": 0,
                         "Children": [
                           {
                             "Type": "Tool",
@@ -7766,6 +7766,15 @@
                             "Orientation": "Horizontal",
                             "Name": "Labels",
                             "ToolTypeName": "LabelListViewModel",
+                            "SelectedIndex": 0,
+                            "Children": null
+                          },
+                          {
+                            "Type": "Tool",
+                            "Proportion": 0,
+                            "Orientation": "Horizontal",
+                            "Name": "Functions",
+                            "ToolTypeName": "FunctionListViewModel",
                             "SelectedIndex": 0,
                             "Children": null
                           },
@@ -7808,11 +7817,11 @@
                 "Orientation": "Horizontal",
                 "Name": "",
                 "ToolTypeName": "",
-                "SelectedIndex": 2,
+                "SelectedIndex": 0,
                 "Children": [
                   {
                     "Type": "ToolDock",
-                    "Proportion": 0.5,
+                    "Proportion": 0.33333333333333337,
                     "Orientation": "Horizontal",
                     "Name": "",
                     "ToolTypeName": "",
@@ -7840,7 +7849,7 @@
                   },
                   {
                     "Type": "ToolDock",
-                    "Proportion": 0.5,
+                    "Proportion": 0.33333333333333337,
                     "Orientation": "Horizontal",
                     "Name": "",
                     "ToolTypeName": "",
@@ -7852,6 +7861,34 @@
                         "Orientation": "Horizontal",
                         "Name": "Breakpoints",
                         "ToolTypeName": "BreakpointListViewModel",
+                        "SelectedIndex": 0,
+                        "Children": null
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Splitter",
+                    "Proportion": 0,
+                    "Orientation": "Horizontal",
+                    "Name": "",
+                    "ToolTypeName": "",
+                    "SelectedIndex": 0,
+                    "Children": null
+                  },
+                  {
+                    "Type": "ToolDock",
+                    "Proportion": 0.33333333333333337,
+                    "Orientation": "Horizontal",
+                    "Name": "",
+                    "ToolTypeName": "",
+                    "SelectedIndex": 0,
+                    "Children": [
+                      {
+                        "Type": "Tool",
+                        "Proportion": 0,
+                        "Orientation": "Horizontal",
+                        "Name": "Call Stack",
+                        "ToolTypeName": "CallStackViewModel",
                         "SelectedIndex": 0,
                         "Children": null
                       }
@@ -7941,7 +7978,7 @@
       "LabelListColumnWidths": [
         100,
         80,
-        80,
+        147,
         100
       ],
       "FunctionListColumnWidths": [
@@ -7970,14 +8007,14 @@
         300
       ],
       "WindowSize": {
-        "Width": 960,
-        "Height": 1027
+        "Width": 1408,
+        "Height": 1018
       },
       "WindowLocation": {
-        "X": 7,
+        "X": 509,
         "Y": 0
       },
-      "WindowIsMaximized": true
+      "WindowIsMaximized": false
     },
     "TilemapViewer": {
       "ShowSettingsPanel": true,
@@ -8018,7 +8055,7 @@
       "Background": "Default",
       "RowCount": 16,
       "ColumnCount": 16,
-      "StartAddress": 0,
+      "StartAddress": 49152,
       "UseGrayscalePalette": false,
       "RefreshTiming": {
         "RefreshOnBreakPause": true,
@@ -8028,13 +8065,13 @@
       },
       "WindowSize": {
         "Width": 958,
-        "Height": 749
+        "Height": 994
       },
       "WindowLocation": {
-        "X": 433,
-        "Y": 98
+        "X": 765,
+        "Y": 41
       },
-      "WindowIsMaximized": true
+      "WindowIsMaximized": false
     },
     "PaletteViewer": {
       "ShowSettingsPanel": true,
@@ -8218,12 +8255,12 @@
     },
     "DebugLog": {
       "WindowSize": {
-        "Width": 400,
-        "Height": 400
+        "Width": 958,
+        "Height": 1018
       },
       "WindowLocation": {
-        "X": 32,
-        "Y": 26
+        "X": 959,
+        "Y": 0
       },
       "WindowIsMaximized": false
     },

@@ -40,17 +40,18 @@ JoyInit:
 	php	
 
 	rep	#$10	;8 bit mem/A, 16 bit X/Y
-	sep	#$20
+	sep	#$20 ; a8Bit
 
 	lda #$C0	;have the automatic read of the SNES read the first pair of JoyPads
-	sta WRIO
+	sta f:WRIO
 
 	ldx #$0000
 	stx Joy1Press
 	stx Joy2Press
 
 	LDA #$81
-	STA $4200   ;Enable JoyPad Read and NMI
+	;STA $4200   ;Enable JoyPad Read and NMI
+	STA f:NMITIMEN ;Enable JoyPad Read and NMI
 
 	WAI		;Wait for NMI to fill the variables with real JoyPad data
 
@@ -108,13 +109,13 @@ _W1:	bit $4212
 	; ********** Make sure Joypads 1,2 are valid
 
 	sep #$30		;A/mem = 8bit, X/Y = 8bit
-	lda JOYSER0
+	lda f:JOYSER0
 	eor #$01
 	and #$01		; A = -bit0 of JoySer0
 	ora Joy1		
 	sta Joy1		; joy state = (joy state) or A.... so bit0 of Joy1State = 0 only if it is a valid joypad
 
-	lda JOYSER1
+	lda f:JOYSER1
 	eor #$01
 	and #$01		; A = -bit0 of JoySer1
 	ora Joy2		

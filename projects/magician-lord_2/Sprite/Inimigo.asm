@@ -1,4 +1,3 @@
-
 Inimigo1:
     a16Bit
     LDA $07C0   ; Nao processa sprite 
@@ -6,12 +5,12 @@ Inimigo1:
     BNE :+
     RTS
 
-:
+    :
     LDA $07C0   ; Inicia processo de matar sprite 
     CMP #$02
     BNE :+
     BRL morreu
-:
+    :
     a8Bit
     LDA #$C0
     STA $03C0
@@ -34,19 +33,18 @@ Inimigo1:
     a8Bit
     STA $03C0
 
-;Animatione
-LDA $13
-and #%00000100
-beq :+
-lda #$00
-sta $03C2           ; Starting tile #
-BRA :++
-:
-lda #$04
-sta $03C2           ; Starting tile #
-:
-
-RTS
+    ;Animatione
+    LDA $13
+    and #%00000100
+    beq :+
+    lda #$00
+    sta $03C2           ; Starting tile #
+    BRA :++
+    :
+    lda #$04
+    sta $03C2           ; Starting tile #
+    :
+    RTS
 
 morreu:
     ; Chama explosão
@@ -335,7 +333,7 @@ TCD
 SEP #$20
 
 LDA #$80            ; \ Increase on $2119 write.
-STA $2115           ; /
+STA f:$2115           ; /
 	
 LDX $0731   ; Counter de repeticões + número de offset dos enderecos 
 DEX
@@ -346,16 +344,18 @@ STA $00    ; ...2 regs write once. (4300)
 LDA #$18
 STA $01    ; Writing to $2118 AND $2119. (4301)
 LDA $0730
-STA $04      ; Bank where our data is. (4304)
+;STA a:$04      ; Bank where our data is. (4304)
+STA a:$4304      ; Bank where our data is. (4304)
 :
 LDY $0700,x
-STY $2116    ; Local da VRAM
+STY a:$2116    ; Local da VRAM
 LDY $0710,x
 STY $02      ; Adress where our data is. (4302)
 LDY $0720
-STY $05      ; Size of our data. (4305)
+;STY $05      ; Size of our data. (4305)
+STY a:$4305      ; Size of our data. (4305)
 LDA #$01
-STA $420B    ; Iniciar DMA canal 0
+STA f:$420B    ; Iniciar DMA canal 0
 DEX
 DEX
 BPL :-

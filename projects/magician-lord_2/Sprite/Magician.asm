@@ -602,7 +602,7 @@ TCD
 SEP #$20
 
 LDA #$80            ; \ Increase on $2119 write.
-STA $2115           ; /
+STA f:$2115           ; /
 	
 LDX $0731   ; Counter de repeticões + número de offset dos enderecos 
 DEX
@@ -612,13 +612,14 @@ LDA #$01
 STA $00    ; ...2 regs write once. (4300)
 LDA #$18
 STA $01    ; Writing to $2118 AND $2119. (4301)
-LDA $0730
+;LDA $0730
+LDA #.BANKBYTE($0730)
 STA $04      ; Bank where our data is. (4304)
 
 :
 
 LDY $0700,x
-STY $2116    ; Local da VRAM
+STY a:$2116    ; Local da VRAM
 LDY $0710,x
 STY $02      ; Endereco dos nossos dados. (4302)
 LDY $0720
