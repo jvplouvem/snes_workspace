@@ -458,7 +458,7 @@ BRL DyRAM
 ANDAR:
 rep #$20
 LDX $0740
-LDA f:Andaranimation,x
+LDA .loword(Andaranimation),x
 STA $0722
 INX
 INX
@@ -476,7 +476,7 @@ BRL DyRAM
 ATACARTERREO:
 rep #$20
 LDX $0740
-LDA f:Ataqueanimation,x
+LDA .loword(Ataqueanimation),x
 STA $0722
 INX
 INX
@@ -496,7 +496,7 @@ BRA DyRAM
 ATACARCIMA:
 rep #$20
 LDX $0740
-LDA f:AtaqueCimaanimation,x
+LDA .loword(AtaqueCimaanimation),x
 STA $0722
 INX
 INX
@@ -559,7 +559,7 @@ STA $20   ; Tamanho das transferências
 LDY #$0000
 LDX #$0008
 loopsprite32:
-LDA f:Sprite32dmaVRAM,x
+LDA .loword(Sprite32dmaVRAM),x
 clc
 ADC #$6300       ; Inserir local da VRAM para escrever
 STA $00,x ; VRAM
@@ -572,7 +572,7 @@ BPL loopsprite32
 LDY #$0000
 LDX #$0008
 Graficosdeandar:
-LDA f:Sprite32dmaORIGEM,x
+LDA .loword(Sprite32dmaORIGEM),x
 CLC
 ADC #.loword(DMAMagician)
 CLC 
