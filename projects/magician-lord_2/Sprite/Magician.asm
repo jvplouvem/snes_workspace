@@ -545,7 +545,8 @@ BNE :+
 BRL Animeframerate
 :
 
-LDA #$C2
+;LDA #$C2
+LDA #.BANKBYTE(DMAMagician)
 STA $30  ; Banco de origem
 
 lda #$08
@@ -605,8 +606,8 @@ LDA #$01
 STA $00    ; ...2 regs write once. (4300)
 LDA #$18
 STA $01    ; Writing to $2118 AND $2119. (4301)
-;LDA $0730
-LDA #.BANKBYTE($0730)
+LDA $0730
+;LDA #.BANKBYTE($0730)
 STA $04      ; Bank where our data is. (4304)
 
 :

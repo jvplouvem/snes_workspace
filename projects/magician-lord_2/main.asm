@@ -112,23 +112,23 @@ Faster:
 
 ;Gradiente HDMA 
 	LDX #$3200
-	STX a:$4330
+	STX $4330
 	LDX #.loword(RedTable) ; #$88F7
-	STX a:$4332
+	STX $4332
 	;LDA #$C0
 	LDA #.BANKBYTE(RedTable)
 	STA f:$4334
 	LDX #$3200
-	STX a:$4340
+	STX $4340
 	LDX #.loword(GreenTable)
-	STX a:$4342
+	STX $4342
 	; LDA #$C0
 	LDA #.BANKBYTE(GreenTable)
 	STA f:$4344
 	LDX #$3200
-	STX a:$4350
+	STX $4350
 	LDX #.loword(BlueTable)
-	STX a:$4352
+	STX $4352
 	; LDA #$C0
 	LDA #.BANKBYTE(BlueTable)
 	STA f:$4354
@@ -464,16 +464,16 @@ JSR Explosao
 ; DMA sprite data ;
 ;=================;
 ldx #$6000
-stx a:$2102
+stx $2102
 ;stz $2103
     ldy #$0400          ; Writes #$00 to $4300, #$04 to $4301
-    sty a:$4300           ; CPU -> PPU, auto inc, $2104 (OAM write)
+    sty $4300           ; CPU -> PPU, auto inc, $2104 (OAM write)
     ldx #$0300
-    stx a:$4302
+    stx $4302
     lda #$7E
     sta f:$4304           ; CPU address 7E:0000 - Work RAM
     ldy #$0220
-    sty a:$4305           ; #$220 bytes to transfer
+    sty $4305           ; #$220 bytes to transfer
     lda #%0000001
     sta f:$420B
 
@@ -505,7 +505,7 @@ lda f:$436b
 sta $02,x           ; Starting tile #
 lda #%00110010   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
 STA $03,x          ; zera apenas o que for 1 em A para a RAM
-inc a:$436b
+inc $436b
 INX
 INX
 INX
@@ -909,7 +909,7 @@ lanooutrobanco:
 	LDA #$80            ; \ Increase on $2119 write.
 	STA f:$2115           ; /
 	LDX #$0000			; \ Set where to write in VRAM...
-	STX a:$2116			; /
+	STX $2116			; /
 	LDA #$01            ;\ Set mode to...
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 
@@ -928,7 +928,7 @@ lanooutrobanco:
 	LDA #$80            ; \ Increase on $2119 write.
 	STA f:$2115           ; /
 	LDX #$2000			; \ Set where to write in VRAM...
-	STX a:$2116			; /
+	STX $2116			; /
 	LDA #$01            ;\ Set mode to...
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 
@@ -947,7 +947,7 @@ lanooutrobanco:
 	LDA #$80            ; \ Increase on $2119 write.
 	STA f:$2115           ; /
 	LDX #$4000			; \ Set where to write in VRAM...
-	STX a:$2116			; /
+	STX $2116			; /
 	LDA #$01            ;\ Set mode to...
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 
@@ -966,7 +966,7 @@ lanooutrobanco:
 	LDA #$80            ; \ Increase on $2119 write.
 	STA f:$2115           ; /
 	LDX #$6000			; \ Set where to write in VRAM...
-	STX a:$2116			; /
+	STX $2116			; /
 	LDA #$01            ;\ Set mode to...
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 
@@ -986,7 +986,7 @@ lanooutrobanco:
 	LDA #$80            ; \ Increase on $2119 write.
 	STA f:$2115           ; /
 	LDX #$5400			; \ Set where to write in VRAM...
-	STX a:$2116			; /
+	STX $2116			; /
 	LDA #$01            ;\ Set mode to...
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 
@@ -1005,7 +1005,7 @@ lanooutrobanco:
 	LDA #$80            ; \ Increase on $2119 write.
 	STA f:$2115           ; /
 	LDX #$5800			; \ Set where to write in VRAM...
-	STX a:$2116			; /
+	STX $2116			; /
 	LDA #$01            ;\ Set mode to...
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 
