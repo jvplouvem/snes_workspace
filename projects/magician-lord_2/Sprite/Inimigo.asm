@@ -148,7 +148,7 @@ STA $03B0
 LDX #$0000
 LDY #$0000
 LDA #$C0
-STA $436B
+STA f:$436B
 
 PHD
 LDA #$03
@@ -167,7 +167,7 @@ STA $B1,x
 
 LDA StartingTileANIME,Y
 CLC 
-ADC $436B
+ADC f:$436B
 STA $B2,x           ; Starting tile #
 
 LDA #%00111000
@@ -311,7 +311,8 @@ LDX #$0008
 :
 LDA Sprite32dmaORIGEM,x
 CLC
-ADC #(DMAExplosao_end-DMAExplosao)
+;ADC #(DMAExplosao_end-DMAExplosao)
+ADC #.loword(DMAExplosao)
 CLC 
 ADC $22
 STA $10,x ; Adress where our data is.

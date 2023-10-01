@@ -82,7 +82,8 @@ GetInput:
 	sep 	#$20	;8 bit mem/A
 
 	lda #$01
-_W1:	bit $4212
+_W1:
+	bit a:HVBJOY
 	bne _W1		;Wait till automatic JoyPort read is complete
 	
 
@@ -90,7 +91,7 @@ _W1:	bit $4212
 
 	; ********** Get Joypads 1,2
 
-	lda JOY1L		;get JoyPad1
+	lda f:JOY1L		;get JoyPad1
 	tax 			
 	eor Joy1		;A = A xor JoyState = (changes in joy state)
 	stx Joy1		;update JoyState
@@ -98,7 +99,7 @@ _W1:	bit $4212
 	and Joy1		;A = ((joy changes) or (buttons pressed)) and (current joy state)  
 	sta Joy1Press	;store A = (buttons pressed since last clearing reg) and (button is still down)
 
-	lda JOY2L		;get JoyPad2
+	lda f:JOY2L		;get JoyPad2
 	tax 			
 	eor Joy2		;A = A xor JoyState = (changes in joy state)
 	stx Joy2		;update JoyState

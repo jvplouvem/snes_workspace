@@ -410,7 +410,7 @@ XBA
 	LDA BG1Hlow        ;1A
 	STA f:$210D
 	LDA BG1Hhigh       ;1B
-	STA $210D
+	STA f:$210D
 ;Espelho da Layer 1 V	
 	LDA BG1Vlow       ;$1C
 	STA f:$210E
@@ -430,7 +430,7 @@ XBA
 	 LDA BG3Hlow      ;$1E
 	 STA f:$2111
 	 LDA BG3Hhigh     ;$1F
-	 STA $2111 
+	 STA f:$2111 
 ;Espelho da Layer 3 V
 	 LDA BG3Vlow      ;$28
 	 STA f:$2112
@@ -486,7 +486,8 @@ RotinadeSprites:
 ;==============================
 ;HUD
 ;==============================
-stz $436b
+;stz $436b
+ldaSta #$00, f:$436b
 ldx #$0000
 ldy #$0000
 
@@ -500,11 +501,11 @@ LDA hudHpos,y
 STA $00,x
 LDA hudVpos,y
 STA $01,x
-lda $436b
+lda f:$436b
 sta $02,x           ; Starting tile #
 lda #%00110010   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
 STA $03,x          ; zera apenas o que for 1 em A para a RAM
-inc $436b
+inc a:$436b
 INX
 INX
 INX
@@ -562,7 +563,8 @@ JSR Inimigo1
 
 LDX #$0000           ; 
 LDY #$0000           ; Zerar counters
-STZ $436B            ; 43xB podem ser usados como FastRAM
+;STZ $436B            ; 43xB podem ser usados como FastRAM
+ldaSta #$00, f:$436B
 
 PHD
 rep #$20
@@ -574,7 +576,7 @@ repetespriteonda:
 
 LDA #$00
 CLC
-ADC $436B
+ADC f:$436B
 STA $50,x           ; Ir adicionando o valor de $436B em H a cada loop 
 CLC
 ADC $1008,y
@@ -589,10 +591,10 @@ adc #$80
 sta $52,x           ; Starting tile #
 LDA #%00110100   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
 STA $53,x          ;
-LDA $436B
+LDA f:$436B
 CLC
 ADC #$08
-STA $436B           ; Adiciona 8 para o proximo loop
+STA f:$436B           ; Adiciona 8 para o proximo loop
 INX
 INX
 INX           ; incrementar counters
@@ -617,12 +619,13 @@ STZ $051B        ; sprites faltantes do texto
 ;================================
 LDX #$0000           ; 
 LDY #$0000           ; Zerar counters
-STZ $436B            ; 43xB podem ser usados como FastRAM
+;STZ $436B            ; 43xB podem ser usados como FastRAM
+ldaSta #$00, f:$436B
 repetespriteonda1:
 
 LDA #$50
 CLC
-ADC $436B
+ADC f:$436B
 STA $C8,x           ; Ir adicionando o valor de $436B em H a cada loop 
 CLC
 ADC $1018,y
@@ -637,10 +640,10 @@ adc #$A0
 sta $CA,x           ; Starting tile #
 LDA #%00110100   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
 STA $CB,x          ;
-LDA $436B
+LDA f:$436B
 CLC
 ADC #$08
-STA $436B           ; Adiciona 8 para o proximo loop
+STA f:$436B           ; Adiciona 8 para o proximo loop
 INX
 INX
 INX           ; incrementar counters
@@ -714,7 +717,8 @@ Action:
 	:
 	LDA DesativaFastROM
 	BEQ :+
-	STZ $420D
+	;STZ $420D
+	ldaSta #$00, f:MEMSEL
 	:
 
 
@@ -753,7 +757,8 @@ Action:
 	LDA #$002F         ;Counter (-1)
 	LDX $F3            ;Source
 	LDY #$1000           ;Destino
-	MVN $c0, $7e       ;Banco da Source/Banco do Destino
+	;MVN $c0, $7e       ;Banco da Source/Banco do Destino
+	MVN #.BANKBYTE(Onda), $7e       ;Banco da Source/Banco do Destino
 	PLB                ; Recuperar data bank
 
 	INC $F1            ; Incrementa para o proximo frame
@@ -1074,8 +1079,3 @@ DMAExplosao:
 .incbin "GFX/Explosao.bin"
 DMAExplosao_end:
 ;.ENDS
-
-
-;.segment "CODE1"
-; .INCLUDE "Sprite/Magician.asm"
-; .INCLUDE "Sprite/Inimigo.asm"

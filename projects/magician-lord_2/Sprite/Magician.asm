@@ -437,22 +437,15 @@ LDA $00
 ASL A
 TAX
 ;JMP (PointersANISTATE,x)
-JMP PointersANISTATE
+JMP (.loword(PointersANISTATE),x)
 
 PointersANISTATE:
-;.WORD PARADO
-;.WORD ANDAR
-;.WORD ATACARCIMA
-;.WORD ATACARTERREO
-;.WORD ABAIXADO
-;.WORD DANO
-
-jmp PARADO
-jmp ANDAR
-jmp ATACARCIMA
-jmp ATACARTERREO
-jmp ABAIXADO
-jmp DANO
+.WORD .loword(PARADO)
+.WORD .loword(ANDAR)
+.WORD .loword(ATACARCIMA)
+.WORD .loword(ATACARTERREO)
+.WORD .loword(ABAIXADO)
+.WORD .loword(DANO)
 
 PARADO:
 rep #$20
@@ -520,20 +513,20 @@ sep #$20
 BRA DyRAM
 
 ABAIXADO:
-rep #$20
-STZ $0740
-LDA #$3800
-STA $0722
-sep #$20
-BRA DyRAM
+	rep #$20
+	STZ $0740
+	LDA #$3800
+	STA $0722
+	sep #$20
+	BRA DyRAM
 
 DANO:
-rep #$20
-STZ $0740
-LDA #$7900
-STA $0722
-sep #$20
-BRA DyRAM
+	rep #$20
+	STZ $0740
+	LDA #$7900
+	STA $0722
+	sep #$20
+	BRA DyRAM
 
 ;======================
 ; Setup para DMA de sprite de 32 pixels verticais.
@@ -625,7 +618,7 @@ STY $02      ; Endereco dos nossos dados. (4302)
 LDY $0720
 STY $05      ; Tamanho dos nossos dados. (4305)
 LDA #$01
-STA $420B    ; Iniciar DMA canal 0
+STA f:$420B    ; Iniciar DMA canal 0
 DEX
 DEX
 BPL :-
@@ -715,6 +708,7 @@ Animeframerate:
 	
 Sprite32dmaORIGEM:
 .word $0600, $0400, $0200, $0000, $FE00, $FC00
+
 Sprite32dmaVRAM:
 .word $0300, $0200, $0100, $0000, $FF00, $FE00
 
