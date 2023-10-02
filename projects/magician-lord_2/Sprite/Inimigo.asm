@@ -67,7 +67,6 @@ morreu:
 ;===================================
 ; Posicão
 ExplosaoPos:
-
 STX $03B0
 
 LDA #$01
@@ -296,7 +295,7 @@ REP #$20
 LDY #$0000
 LDX #$0008
 :
-LDA .loword(Sprite32dmaVRAM),x
+LDA f:Sprite32dmaVRAM,x
 clc
 ADC #$6C00       ; Inserir local da VRAM para escrever
 STA $00,x ; VRAM
@@ -309,9 +308,8 @@ BPL :-
 LDY #$0000
 LDX #$0008
 :
-LDA .loword(Sprite32dmaORIGEM),x
+LDA f:Sprite32dmaORIGEM,x
 CLC
-;ADC #(DMAExplosao_end-DMAExplosao)
 ADC #.loword(DMAExplosao)
 CLC 
 ADC $22
