@@ -55,7 +55,7 @@ main:
 							   ;the size of the tiles for us
 	stx $4305 ; length
 	lda #1
-	sta MDMAEN ; $420b start dma, channel 0	
+	sta f:MDMAEN ; $420b start dma, channel 0	
 	
 ;$2101 sssnn-bb
 ;sss = sprite sizes, 000 = 8x8 and 16x16 sprites

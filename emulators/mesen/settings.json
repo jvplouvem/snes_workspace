@@ -7681,7 +7681,7 @@
                 "Children": [
                   {
                     "Type": "ToolDock",
-                    "Proportion": 0.6,
+                    "Proportion": 0.8800000000000001,
                     "Orientation": "Horizontal",
                     "Name": "",
                     "ToolTypeName": "",
@@ -7718,7 +7718,7 @@
                   },
                   {
                     "Type": "ProportionalDock",
-                    "Proportion": 0.4,
+                    "Proportion": 0.12,
                     "Orientation": "Vertical",
                     "Name": "",
                     "ToolTypeName": "",
@@ -7955,7 +7955,7 @@
       "BringToFrontOnBreak": true,
       "BringToFrontOnPause": false,
       "UnidentifiedBlockDisplay": "Hide",
-      "VerifiedDataDisplay": "Hide",
+      "VerifiedDataDisplay": "Show",
       "BreakOnValue": 0,
       "BreakInCount": 1,
       "BreakInMetric": "CpuInstructions",
@@ -8007,12 +8007,12 @@
         300
       ],
       "WindowSize": {
-        "Width": 1408,
-        "Height": 1018
+        "Width": 683,
+        "Height": 715
       },
       "WindowLocation": {
-        "X": 509,
-        "Y": 0
+        "X": -2,
+        "Y": -8
       },
       "WindowIsMaximized": false
     },
@@ -8047,15 +8047,15 @@
       "ShowSettingsPanel": true,
       "ImageScale": 3,
       "ShowTileGrid": true,
-      "SelectedPreset": "OAM1",
+      "SelectedPreset": "BG1",
       "Source": "SnesVideoRam",
       "Format": "Bpp4",
       "Layout": "Normal",
       "Filter": "None",
       "Background": "Default",
-      "RowCount": 16,
+      "RowCount": 64,
       "ColumnCount": 16,
-      "StartAddress": 49152,
+      "StartAddress": 0,
       "UseGrayscalePalette": false,
       "RefreshTiming": {
         "RefreshOnBreakPause": true,
@@ -8064,12 +8064,12 @@
         "RefreshCycle": 0
       },
       "WindowSize": {
-        "Width": 958,
-        "Height": 994
+        "Width": 681,
+        "Height": 706
       },
       "WindowLocation": {
-        "X": 765,
-        "Y": 41
+        "X": 682,
+        "Y": 0
       },
       "WindowIsMaximized": false
     },
@@ -8429,8 +8429,8 @@
       "Height": 697
     },
     "WindowLocation": {
-      "X": 539,
-      "Y": 310
+      "X": 596,
+      "Y": 185
     },
     "WindowIsMaximized": false
   },

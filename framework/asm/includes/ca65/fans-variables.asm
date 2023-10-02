@@ -1,6 +1,5 @@
 .segment "ZEROPAGE"
 in_nmi: .res 2
-teste_variavel: .res 2
 
 .segment "BSS"
 palette_buffer: .res 512 ;palette

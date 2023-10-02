@@ -296,7 +296,7 @@ REP #$20
 LDY #$0000
 LDX #$0008
 :
-LDA Sprite32dmaVRAM,x
+LDA .loword(Sprite32dmaVRAM),x
 clc
 ADC #$6C00       ; Inserir local da VRAM para escrever
 STA $00,x ; VRAM
@@ -309,7 +309,7 @@ BPL :-
 LDY #$0000
 LDX #$0008
 :
-LDA Sprite32dmaORIGEM,x
+LDA .loword(Sprite32dmaORIGEM),x
 CLC
 ;ADC #(DMAExplosao_end-DMAExplosao)
 ADC #.loword(DMAExplosao)
