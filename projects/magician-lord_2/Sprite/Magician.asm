@@ -160,7 +160,7 @@ TCD        ; DP é 0700
 LDA $49
 BEQ projetilespelhado
 ; :
-LDA .loword(projetilh),y      ;Endereco horizontal temporario do projétil 
+LDA projetilh,y      ;Endereco horizontal temporario do projétil 
 CLC
 ADC $45
 STA $43
@@ -170,7 +170,7 @@ CLC
 ADC $44
 STA $03A0,x ;horizontal 
 
-LDA .loword(projetilv),y
+LDA projetilv,y
 CLC 
 ADC $46
 STA $03A1,x ;vertical
@@ -209,7 +209,7 @@ BRA projetilnaoespelhado
 ;;;;;;
 projetilespelhado:
 ; :
-LDA .loword(projetilhESPELHO),y      ;Endereco horizontal temporario do projétil 
+LDA projetilhESPELHO,y      ;Endereco horizontal temporario do projétil 
 CLC
 ADC $45
 STA $43
@@ -219,7 +219,7 @@ CLC
 ADC $44
 STA $03A0,x ;horizontal 
 
-LDA .loword(projetilv),y
+LDA projetilv,y
 CLC 
 ADC $46
 STA $03A1,x ;vertical
@@ -277,17 +277,18 @@ CMP #$F6
 beq projetilmorto
 CMP #$F7 
 bne :+
+
 projetilmorto:
-LDA #$80
-STA $03A0
-STA $03A4
-STA $03A8
-STA $03AC
-lda #%01010101  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
-sta $050A
-STZ $0742
-STZ $0744
-RTS 
+	LDA #$80
+	STA $03A0
+	STA $03A4
+	STA $03A8
+	STA $03AC
+	lda #%01010101  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
+	sta $050A
+	STZ $0742
+	STZ $0744
+	RTS 
 :
 ;===========;
 ;;;Colisão;;;
@@ -448,69 +449,69 @@ PointersANISTATE:
 .WORD .loword(DANO)
 
 PARADO:
-rep #$20
-STZ $0740
-LDA #$1800
-STA $0722
-sep #$20
-BRL DyRAM
+	rep #$20
+	STZ $0740
+	LDA #$1800
+	STA $0722
+	sep #$20
+	BRL DyRAM
 
 ANDAR:
-rep #$20
-LDX $0740
-LDA f:Andaranimation,x
-STA $0722
-INX
-INX
-STX $0740
+	rep #$20
+	LDX $0740
+	LDA f:Andaranimation,x
+	STA $0722
+	INX
+	INX
+	STX $0740
 
-LDA $0740
-CMP #$000c
-BMI :+
-STZ $0740
-:
-sep #$20
-; :
-BRL DyRAM
+	LDA $0740
+	CMP #$000c
+	BMI :+
+	STZ $0740
+	:
+	sep #$20
+	; :
+	BRL DyRAM
 
 ATACARTERREO:
-rep #$20
-LDX $0740
-LDA f:Ataqueanimation,x
-STA $0722
-INX
-INX
-STX $0740
+	rep #$20
+	LDX $0740
+	LDA f:Ataqueanimation,x
+	STA $0722
+	INX
+	INX
+	STX $0740
 
-LDA $0740
-CMP #$0006
-BMI :+
-STZ $0740
-STZ $0725
-STZ $073e 
-:
-sep #$20
-; :
-BRA DyRAM
+	LDA $0740
+	CMP #$0006
+	BMI :+
+	STZ $0740
+	STZ $0725
+	STZ $073e 
+	:
+	sep #$20
+	; :
+	BRA DyRAM
 
 ATACARCIMA:
-rep #$20
-LDX $0740
-LDA f:AtaqueCimaanimation,x
-STA $0722
-INX
-INX
-STX $0740
+	rep #$20
+	LDX $0740
+	LDA f:AtaqueCimaanimation,x
+	STA $0722
+	INX
+	INX
+	STX $0740
 
-LDA $0740
-CMP #$0006
-BMI :+
-STZ $0740
-STZ $073e 
-:
-sep #$20
-; :
-BRA DyRAM
+	LDA $0740
+	CMP #$0006
+	BMI :+
+	STZ $0740
+	STZ $073e 
+	:
+	sep #$20
+	; :
+	BRA DyRAM
 
 ABAIXADO:
 	rep #$20

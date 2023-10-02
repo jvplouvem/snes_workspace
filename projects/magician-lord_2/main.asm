@@ -482,51 +482,51 @@ stx $2102
 
 
 RotinadeSprites:
+	;==============================
+	;HUD
+	;==============================
+	;stz $436b
+	ldaSta #$00, f:$436b
+	ldx #$0000
+	ldy #$0000
 
-;==============================
-;HUD
-;==============================
-;stz $436b
-ldaSta #$00, f:$436b
-ldx #$0000
-ldy #$0000
+	PHD
+	LDA #$03
+	XBA
+	LDA #$00
+	TCD        ; DP é 0300
+	:
+	LDA hudHpos,y
+	STA $00,x
+	LDA hudVpos,y
+	STA $01,x
+	lda f:$436b
+	sta $02,x           ; Starting tile #
+	lda #%00110010   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
+	STA $03,x          ; zera apenas o que for 1 em A para a RAM
+	inc $436b
+	INX
+	INX
+	INX
+	INX
+	INY
+	CPY #$0019
+	BNE :-
+	;stz $436b
+	ldaSta #$00, f:$436b
+	PLD 
 
-PHD
-LDA #$03
-XBA
-LDA #$00
-TCD        ; DP é 0300
-:
-LDA hudHpos,y
-STA $00,x
-LDA hudVpos,y
-STA $01,x
-lda f:$436b
-sta $02,x           ; Starting tile #
-lda #%00110010   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
-STA $03,x          ; zera apenas o que for 1 em A para a RAM
-inc $436b
-INX
-INX
-INX
-INX
-INY
-CPY #$0019
-BNE :-
-stz $436b
-PLD 
+	STZ $0500
+	STZ $0501
+	STZ $0502
+	STZ $0503
+	STZ $0504
+	STZ $0505
+	lda #%01010100  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
+	sta $0506
 
-STZ $0500
-STZ $0501
-STZ $0502
-STZ $0503
-STZ $0504
-STZ $0505
-lda #%01010100  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
-sta $0506
-
-BRA sprite0
-RTS
+	BRA sprite0
+	RTS
 
 hudHpos:
 .byte $10, $18, $20, $28, $30, $38                         ; HP
