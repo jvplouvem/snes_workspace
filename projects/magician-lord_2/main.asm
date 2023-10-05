@@ -144,7 +144,7 @@ Faster:
 	STA f:$4361   ;Registro
 	LDA #.BANKBYTE(Corslot)
 	STA f:$4364  ;Source banco
-	REP #$30
+	REP #$30 ; A,X,Y 16 BIT MODE
 	LDA #.loword(Corslot)  ;Source
 	STA $4362
 	SEP #$30
@@ -464,7 +464,7 @@ JSR Explosao
 ; DMA sprite data ;
 ;=================;
 ldx #$6000
-stx $2102
+stx OAMADDL
 ;stz $2103
     ldy #$0400          ; Writes #$00 to $4300, #$04 to $4301
     sty $4300           ; CPU -> PPU, auto inc, $2104 (OAM write)
@@ -530,17 +530,17 @@ RotinadeSprites:
 
 hudHpos:
 .byte $10, $18, $20, $28, $30, $38                         ; HP
-.byte $A8, $B0, $B8, $C0, $C8, $D0, $D8, $E0, $E8           ; POW
+.byte $A8, $B0, $B8, $C0, $C8, $D0, $D8, $E0, $E8          ; POW
 .byte $10, $18, $20                                        ; 1UP
 .byte $c0, $c8, $d0                                        ; VIDAS
-.byte $e0, $e8, $e0, $e8                                    ; ITEM
+.byte $e0, $e8, $e0, $e8                                   ; ITEM
 
 hudVpos:
 .byte $D0, $D0, $D0, $D0, $D0, $D0                         ; HP
-.byte $D0, $D0, $D0, $D0, $D0, $D0, $D0, $D0, $D0           ; POW
+.byte $D0, $D0, $D0, $D0, $D0, $D0, $D0, $D0, $D0          ; POW
 .byte $10, $10, $10                                        ; 1UP
 .byte $10, $10, $10                                        ; VIDAS
-.byte $10, $10, $18, $18                                    ; ITEM
+.byte $10, $10, $18, $18                                   ; ITEM
 
 sprite0:
 ;==============================
@@ -747,7 +747,7 @@ Action:
 	; Animacão do offset de sprite 
 	; Mover tabela da ROM para a RAM
 	;
-	REP #A_8BIT
+	REP #A_8BIT ; A 16 BIT
 	LDA #.loword(Onda)
 	CLC
 	ADC $F1            ; Adicionar valor à tabela
@@ -964,9 +964,9 @@ lanooutrobanco:
 
 	;sprite 
 	LDA #$80            ; \ Increase on $2119 write.
-	STA f:$2115           ; /
+	STA f:VMAIN           ; /
 	LDX #$6000			; \ Set where to write in VRAM...
-	STX $2116			; /
+	STX VMADDL			; /
 	LDA #$01            ;\ Set mode to...
 	STA $00           ;/ ...2 regs write once.
 	LDA #$18            ;\ 

@@ -15,10 +15,10 @@
 ; 
 ; .ENDE
 
-Joy1 = $2000
-Joy2 = $2001
-Joy1Press = $2002
-Joy2Press = $2003
+Joy1 = $0020
+Joy2 = $0022
+Joy1Press = $0024
+Joy2Press = $0026
 
 
 ;.DEFINE HVBJOY	$4212
@@ -50,7 +50,6 @@ JoyInit:
 	stx Joy2Press
 
 	LDA #$81
-	;STA $4200   ;Enable JoyPad Read and NMI
 	STA f:NMITIMEN ;Enable JoyPad Read and NMI
 
 	WAI		;Wait for NMI to fill the variables with real JoyPad data
