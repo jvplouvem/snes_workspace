@@ -185,7 +185,6 @@ Corslot:
 .byte $14, $80, $83
 .byte $01, $02, $03
 .byte $00
-Corslot_end:
 
 
 Corhdma:   ;16 bits
@@ -201,7 +200,6 @@ Corhdma:   ;16 bits
 .byte $14, $00, $00, $83 ;Setup
 .byte $2B, $5A, $12, $73, $76, $7B
 .byte $00
-Corhdma_end:
 
 
 RedTable:           ; 
@@ -224,7 +222,6 @@ RedTable:           ;
 .byte $05,  $37   ; 
 .byte $69,  $27   ; 
 .byte $00            ; 
-RedTable_end:
 
 GreenTable:         ; 
 .byte $3F,  $50   ; 
@@ -247,7 +244,6 @@ GreenTable:         ;
 .byte $06,  $4B   ; 
 .byte $69,  $47   ; 
 .byte $00            ; 
-GreenTable_end:
 
 BlueTable:          ; 
 .byte $3F,  $95   ; 
@@ -271,7 +267,6 @@ BlueTable:          ;
 .byte $06,  $8B   ; 
 .byte $69,  $8B   ; 
 .byte $00         ; 
-BlueTable_end:
 
 
 
@@ -343,7 +338,7 @@ RTS
 VBlank:
 JML FasterVBLANK
 ;.org $C0        ; Pular para banco rapido
-.segment "CODE"
+;.segment "CODE"
 FasterVBLANK:
 	rep #$30		;A/Mem=16bits, X/Y=16bits
 	phb       ;preserva o banco de antes de chegar aqui
@@ -482,11 +477,12 @@ stx OAMADDL
 
 
 RotinadeSprites:
+
 	;==============================
 	;HUD
 	;==============================
 	;stz $436b
-	ldaSta #$00, f:$436b
+	ldaSta #$00, $436b
 	ldx #$0000
 	ldy #$0000
 
@@ -500,7 +496,7 @@ RotinadeSprites:
 	STA $00,x
 	LDA hudVpos,y
 	STA $01,x
-	lda f:$436b
+	lda $436b
 	sta $02,x           ; Starting tile #
 	lda #%00110010   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
 	STA $03,x          ; zera apenas o que for 1 em A para a RAM
@@ -513,7 +509,7 @@ RotinadeSprites:
 	CPY #$0019
 	BNE :-
 	;stz $436b
-	ldaSta #$00, f:$436b
+	ldaSta #$00, $436b
 	PLD 
 
 	STZ $0500
@@ -564,7 +560,7 @@ JSR Inimigo1
 LDX #$0000           ; 
 LDY #$0000           ; Zerar counters
 ;STZ $436B            ; 43xB podem ser usados como FastRAM
-ldaSta #$00, f:$436B
+ldaSta #$00, $436b
 
 PHD
 rep #$20
@@ -576,7 +572,7 @@ repetespriteonda:
 
 LDA #$00
 CLC
-ADC f:$436B
+ADC $436b
 STA $50,x           ; Ir adicionando o valor de $436B em H a cada loop 
 CLC
 ADC $1008,y
@@ -591,10 +587,10 @@ adc #$80
 sta $52,x           ; Starting tile #
 LDA #%00110100   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
 STA $53,x          ;
-LDA f:$436B
+LDA $436b
 CLC
 ADC #$08
-STA f:$436B           ; Adiciona 8 para o proximo loop
+STA $436b           ; Adiciona 8 para o proximo loop
 INX
 INX
 INX           ; incrementar counters
@@ -620,12 +616,12 @@ STZ $051B        ; sprites faltantes do texto
 LDX #$0000           ; 
 LDY #$0000           ; Zerar counters
 ;STZ $436B            ; 43xB podem ser usados como FastRAM
-ldaSta #$00, f:$436B
+ldaSta #$00, $436b
 repetespriteonda1:
 
 LDA #$50
 CLC
-ADC f:$436B
+ADC $436b
 STA $C8,x           ; Ir adicionando o valor de $436B em H a cada loop 
 CLC
 ADC $1018,y
@@ -640,10 +636,10 @@ adc #$A0
 sta $CA,x           ; Starting tile #
 LDA #%00110100   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
 STA $CB,x          ;
-LDA f:$436B
+LDA $436b
 CLC
 ADC #$08
-STA f:$436B           ; Adiciona 8 para o proximo loop
+STA $436b           ; Adiciona 8 para o proximo loop
 INX
 INX
 INX           ; incrementar counters
@@ -782,7 +778,6 @@ Onda:
 .byte $06, $05, $04, $03, $02, $02, $01, $01
 .byte $01, $02, $02, $03, $04, $05, $06, $07
 .byte $08, $09, $0A, $0B, $0C, $0C, $0D, $0D
-Onda_end:
 
 RodaUMAvez:
 	JSL lanooutrobanco    ; Vamos mudar de banco e adicionar nossos arquivos grandes la.

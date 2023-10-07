@@ -147,7 +147,7 @@ STA $03B0
 LDX #$0000
 LDY #$0000
 LDA #$C0
-STA f:$436B
+STA $436b
 
 PHD
 LDA #$03
@@ -166,7 +166,7 @@ STA $B1,x
 
 LDA StartingTileANIME,Y
 CLC 
-ADC f:$436B
+ADC $436b
 STA $B2,x           ; Starting tile #
 
 LDA #%00111000

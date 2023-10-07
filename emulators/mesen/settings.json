@@ -7681,7 +7681,7 @@
                 "Children": [
                   {
                     "Type": "ToolDock",
-                    "Proportion": 0.8800000000000001,
+                    "Proportion": 0.6843758043758045,
                     "Orientation": "Horizontal",
                     "Name": "",
                     "ToolTypeName": "",
@@ -7718,7 +7718,7 @@
                   },
                   {
                     "Type": "ProportionalDock",
-                    "Proportion": 0.12,
+                    "Proportion": 0.3156241956241955,
                     "Orientation": "Vertical",
                     "Name": "",
                     "ToolTypeName": "",
@@ -7758,7 +7758,7 @@
                         "Orientation": "Horizontal",
                         "Name": "",
                         "ToolTypeName": "",
-                        "SelectedIndex": 0,
+                        "SelectedIndex": 1,
                         "Children": [
                           {
                             "Type": "Tool",
@@ -7766,15 +7766,6 @@
                             "Orientation": "Horizontal",
                             "Name": "Labels",
                             "ToolTypeName": "LabelListViewModel",
-                            "SelectedIndex": 0,
-                            "Children": null
-                          },
-                          {
-                            "Type": "Tool",
-                            "Proportion": 0,
-                            "Orientation": "Horizontal",
-                            "Name": "Functions",
-                            "ToolTypeName": "FunctionListViewModel",
                             "SelectedIndex": 0,
                             "Children": null
                           },
@@ -7954,7 +7945,7 @@
       "RefreshWhileRunning": false,
       "BringToFrontOnBreak": true,
       "BringToFrontOnPause": false,
-      "UnidentifiedBlockDisplay": "Hide",
+      "UnidentifiedBlockDisplay": "Show",
       "VerifiedDataDisplay": "Show",
       "BreakOnValue": 0,
       "BreakInCount": 1,
@@ -8007,14 +7998,14 @@
         300
       ],
       "WindowSize": {
-        "Width": 683,
-        "Height": 715
+        "Width": 958,
+        "Height": 749
       },
       "WindowLocation": {
-        "X": -2,
-        "Y": -8
+        "X": 554,
+        "Y": 33
       },
-      "WindowIsMaximized": false
+      "WindowIsMaximized": true
     },
     "TilemapViewer": {
       "ShowSettingsPanel": true,
@@ -8047,15 +8038,15 @@
       "ShowSettingsPanel": true,
       "ImageScale": 3,
       "ShowTileGrid": true,
-      "SelectedPreset": "BG1",
+      "SelectedPreset": "OAM1",
       "Source": "SnesVideoRam",
       "Format": "Bpp4",
       "Layout": "Normal",
       "Filter": "None",
       "Background": "Default",
-      "RowCount": 64,
+      "RowCount": 16,
       "ColumnCount": 16,
-      "StartAddress": 0,
+      "StartAddress": 49152,
       "UseGrayscalePalette": false,
       "RefreshTiming": {
         "RefreshOnBreakPause": true,
@@ -8068,8 +8059,8 @@
         "Height": 706
       },
       "WindowLocation": {
-        "X": 682,
-        "Y": 0
+        "X": 586,
+        "Y": 113
       },
       "WindowIsMaximized": false
     },
@@ -8102,8 +8093,8 @@
         "Height": 600
       },
       "WindowLocation": {
-        "X": 807,
-        "Y": 398
+        "X": 1139,
+        "Y": 228
       },
       "WindowIsMaximized": false
     },
@@ -8132,7 +8123,7 @@
       "Source": "SpriteRam",
       "SourceOffset": 0,
       "ShowListView": true,
-      "ListViewHeight": 448,
+      "ListViewHeight": 272,
       "ColumnWidths": [
         50,
         82,
@@ -8151,12 +8142,12 @@
         "RefreshCycle": 0
       },
       "WindowSize": {
-        "Width": 600,
-        "Height": 600
+        "Width": 958,
+        "Height": 749
       },
       "WindowLocation": {
-        "X": 637,
-        "Y": 131
+        "X": 301,
+        "Y": 0
       },
       "WindowIsMaximized": true
     },
@@ -8248,8 +8239,8 @@
         "Height": 500
       },
       "WindowLocation": {
-        "X": 790,
-        "Y": 374
+        "X": 481,
+        "Y": 166
       },
       "WindowIsMaximized": false
     },
@@ -8425,12 +8416,12 @@
   },
   "MainWindow": {
     "WindowSize": {
-      "Width": 768,
-      "Height": 697
+      "Width": 512,
+      "Height": 473
     },
     "WindowLocation": {
-      "X": 596,
-      "Y": 185
+      "X": 582,
+      "Y": 175
     },
     "WindowIsMaximized": false
   },

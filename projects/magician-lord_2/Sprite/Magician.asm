@@ -722,3 +722,4 @@ Ataqueanimation:
 
 AtaqueCimaanimation:
 .word $2900, $3000, $3100, $0000, $0000, $0000
+
