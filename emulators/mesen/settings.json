@@ -3,7 +3,7 @@
   "Video": {
     "CustomAspectRatio": 1,
     "VideoFilter": "None",
-    "AspectRatio": "NoStretching",
+    "AspectRatio": "Standard",
     "UseBilinearInterpolation": false,
     "UseSrgbTextureFormat": false,
     "VerticalSync": false,
@@ -8416,12 +8416,12 @@
   },
   "MainWindow": {
     "WindowSize": {
-      "Width": 512,
+      "Width": 598,
       "Height": 473
     },
     "WindowLocation": {
-      "X": 582,
-      "Y": 175
+      "X": 512,
+      "Y": 169
     },
     "WindowIsMaximized": false
   },

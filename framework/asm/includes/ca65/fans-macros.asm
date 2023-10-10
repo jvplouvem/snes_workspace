@@ -67,27 +67,27 @@
 	plb
 .endmacro
 
-.macro dmaToCgram source, address, length
+.macro dmaToCgram source, address, length, channel
 	ldaSta address, f:CGADD
-	dma source, CGDATA, length, #$00
+	dma source, CGDATA, length, #$00, channel
 .endmacro
 
-.macro dmaToOam source, address, length
+.macro dmaToOam source, address, length, channel
 	ldxStx address, a:OAMADDL
-	dma source, OAMDATA, length, #$00
+	dma source, OAMDATA, length, #$00, channel
 .endmacro
 
-.macro dmaToVram source, address, length
+.macro dmaToVram source, address, length, channel
 	ldxStx address, a:VMADDL
-	dma source, VMDATAL, length, #$01
+	dma source, VMDATAL, length, #$01, channel
 .endmacro
 
-.macro dma source, target, length, transferMode
-	ldaSta transferMode, f:DMAPx
-	ldaSta #.lobyte(target), f:BBADx ; TARGET
-	ldxStx #.loword(source), a:A1TxL; $004302 SOURCE
-	ldaSta #^source, f:A1Bx ; BANK
-	ldxStx length, a:DASxL;$004305 ;DASxL
+.macro dma source, target, length, transferMode, channel
+	ldaSta transferMode, f:DMAPx+channel
+	ldaSta #.lobyte(target), f:BBADx+channel ; TARGET
+	ldxStx #.loword(source), a:A1TxL+channel; $004302 SOURCE
+	ldaSta #^source, f:A1Bx+channel ; BANK
+	ldxStx length, a:DASxL+channel;$004305 ;DASxL
 	ldaSta #%1, f:MDMAEN
 .endmacro
 
@@ -145,6 +145,10 @@
 	ldaSta value, f:TM
 .endmacro
 
+
+.macro enableSubScreenDesignation value
+	ldaSta value, f:TS
+.endmacro
 
 .macro enableNmiAndAutoJoypadRead
 	ldaSta #NMITIMENConstants_ENABLE_NMI_AND_AUTO_JOYPAD_READ, f:NMITIMEN
