@@ -644,220 +644,43 @@ lanooutrobanco:
 	SEP #$20
 
 	;DMA DE CORES PARA A CGRAM
-	lda #$20
-	sta f:$2121	;start at XX color
-	;stz $420B	;Clear the DMA control register
-	ldaSta #$00, f:$420B	;Clear the DMA control register
-	ldx #.loword(grafico7CORES)
-	stx $02	;Store the data offset into DMA source offset
-	ldx #$0080
-	stx $05   ;Store the size of the data block
-	;lda #$C1
-	;sta $04	;Store the data bank holding the tile data
-	ldaSta #.BANKBYTE(grafico7CORES), $04
-
-	lda #$00	;Set the DMA mode (byte, normal increment)
-	sta $00       
-	lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
-	sta $01      
-	lda #$01    ;Initiate the DMA transfer
-	sta f:$420B
-
+	dmaToCgram grafico7CORES, #$20, #$0080, CHANNEL_0
 
 	;BG2
-	lda #$60
-	sta f:$2121	;start at XX color
-	;stz  $420B	;Clear the DMA control register
-	ldaSta #$00, f:$420B	;Clear the DMA control register
-	ldx #.loword(bg2CORES)
-	stx $02	;Store the data offset into DMA source offset
-	ldx #$0060
-	stx $05   ;Store the size of the data block
-	; lda #$C1
-	; sta $04	;Store the data bank holding the tile data
-	ldaSta #.BANKBYTE(bg2CORES), $04
-	lda #$00	;Set the DMA mode (byte, normal increment)
-	sta $00       
-	lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
-	sta $01      
-	lda #$01    ;Initiate the DMA transfer
-	sta f:$420B
+	dmaToCgram bg2CORES, #$60, #$0060, CHANNEL_0
 
 	;BG3
-	lda #$00
-	sta f:$2121	;start at XX color
-	; stz $420B	;Clear the DMA control register
-	ldaSta #$00, f:$420B	;Clear the DMA control register
-	ldx #.loword(graficosbg3CORES)
-	stx $02	;Store the data offset into DMA source offset
-	ldx #$0040
-	stx $05   ;Store the size of the data block
-	; lda #$C1
-	; sta $04	;Store the data bank holding the tile data
-	ldaSta #.BANKBYTE(graficosbg3CORES), $04
-	lda #$00	;Set the DMA mode (byte, normal increment)
-	sta $00       
-	lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
-	sta $01      
-	lda #$01    ;Initiate the DMA transfer
-	sta f:$420B
+	dmaToCgram graficosbg3CORES, #$00, #$0040, CHANNEL_0
 
 	;---
 	;sprite
-	lda #$80
-	sta f:$2121	;start at XX color
-	;stz $420B	;Clear the DMA control register
-	ldaSta #$00, f:$420B	;Clear the DMA control register
-	ldx #.loword(dmaCORESsprite2)
-	stx $02	;Store the data offset into DMA source offset
-	ldx #$0020
-	stx $05   ;Store the size of the data block
-	; lda #$C1
-	; sta $04	;Store the data bank holding the tile data
-	ldaSta #.BANKBYTE(dmaCORESsprite2), $04
-	lda #$00	;Set the DMA mode (byte, normal increment)
-	sta $00       
-	lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
-	sta $01      
-	lda #$01    ;Initiate the DMA transfer
-	sta f:$420B
+	dmaToCgram dmaCORESsprite2, #$80, #$0020, CHANNEL_0
 
 	;HUD
-	lda #$90
-	sta f:$2121	;start at XX color
-	;stz $420B	;Clear the DMA control register
-	ldaSta #$00, f:$420B	;Clear the DMA control register
-	ldx #.loword(spriteHUDcor)
-	stx $02	;Store the data offset into DMA source offset
-	ldx #$0080
-	stx $05   ;Store the size of the data block
-	; lda #$C1
-	; sta $04	;Store the data bank holding the tile data
-	ldaSta #.BANKBYTE(spriteHUDcor), $04
-	lda #$00	;Set the DMA mode (byte, normal increment)
-	sta $00       
-	lda #$22    ;Set the destination register ( $2122: CG-RAM Write )
-	sta $01      
-	lda #$01    ;Initiate the DMA transfer
-	sta f:$420B
+	dmaToCgram spriteHUDcor, #$90, #$0080, CHANNEL_0
 
 
 	;----------------------------
 	;DMA DE GRÁFICOS PARA A VRAM
 	;BG1
-	LDA #$80            ; \ Increase on $2119 write.
-	STA f:$2115           ; /
-	LDX #$0000			; \ Set where to write in VRAM...
-	STX $2116			; /
-	LDA #$01            ;\ Set mode to...
-	STA $00           ;/ ...2 regs write once.
-	LDA #$18            ;\ 
-	STA $01           ;/ Writing to $2118 AND $2119.
-	LDX #.loword(graficos7)       ;\  Adress where our data is.
-	STX $02          				 ; | 
-	; LDA #$C1   ; | Bank where our data is.
-	; STA $04          				 ;/
-	ldaSta #.BANKBYTE(graficos7), $04
-	LDX #$3800          ;\ Size of our data.
-	STX $05           ;/
-	LDA #$01	   ;\ Start DMA transfer on channel 0.
-	STA f:$420B	   ;/
+	dmaToVram graficos7, #$0000, #$3800, CHANNEL_0
 
 	;BG2
-	LDA #$80            ; \ Increase on $2119 write.
-	STA f:$2115           ; /
-	LDX #$2000			; \ Set where to write in VRAM...
-	STX $2116			; /
-	LDA #$01            ;\ Set mode to...
-	STA $00           ;/ ...2 regs write once.
-	LDA #$18            ;\ 
-	STA $01           ;/ Writing to $2118 AND $2119.
-	LDX #.loword(bg2tiles)       ;\  Adress where our data is.
-	STX $02          				 ; | 
-	; LDA #$C1   ; | Bank where our data is.
-	; STA $04          				 ;/
-	ldaSta #.BANKBYTE(bg2tiles), $04
-	LDX #$3800          ;\ Size of our data.
-	STX $05           ;/
-	LDA #$01	   ;\ Start DMA transfer on channel 0.
-	STA f:$420B	   ;/	
+	dmaToVram bg2tiles, #$2000, #$3800, CHANNEL_0
 
 	;BG3 + tilemap
-	LDA #$80            ; \ Increase on $2119 write.
-	STA f:$2115           ; /
-	LDX #$4000			; \ Set where to write in VRAM...
-	STX $2116			; /
-	LDA #$01            ;\ Set mode to...
-	STA $00           ;/ ...2 regs write once.
-	LDA #$18            ;\ 
-	STA $01           ;/ Writing to $2118 AND $2119.
-	LDX #.loword(graficosbg3)       ;\  Adress where our data is.
-	STX $02          				 ; | 
-	; LDA #$C1   ; | Bank where our data is.
-	; STA $04          				 ;/
-	ldaSta #.BANKBYTE(graficosbg3), $04
-	LDX #$2800          ;\ Size of our data.
-	STX $05           ;/
-	LDA #$01	   ;\ Start DMA transfer on channel 0.
-	STA f:$420B	   ;/
+	dmaToVram graficosbg3, #$4000, #$2800, CHANNEL_0
 
 	;sprite 
-	LDA #$80            ; \ Increase on $2119 write.
-	STA f:VMAIN           ; /
-	LDX #$6000			; \ Set where to write in VRAM...
-	STX VMADDL			; /
-	LDA #$01            ;\ Set mode to...
-	STA $00           ;/ ...2 regs write once.
-	LDA #$18            ;\ 
-	STA $01           ;/ Writing to $2118 AND $2119.
-	LDX #.loword(graficosprite1)       ;\  Adress where our data is.
-	STX $02          				 ; | 
-	; LDA #$C1   ; | Bank where our data is.
-	; STA $04          				 ;/
-	ldaSta #.BANKBYTE(graficosprite1), $04
-	LDX #$3000          ;\ Size of our data.
-	STX $05           ;/
-	LDA #$01	   ;\ Start DMA transfer on channel 0.
-	STA f:$420B	   ;/
+	dmaToVram graficosprite1, #$6000, #$3000, CHANNEL_0
 
 	;----------------------------
 	;DMA DA TILEMAP PARA A VRAM
-	LDA #$80            ; \ Increase on $2119 write.
-	STA f:$2115           ; /
-	LDX #$5400			; \ Set where to write in VRAM...
-	STX $2116			; /
-	LDA #$01            ;\ Set mode to...
-	STA $00           ;/ ...2 regs write once.
-	LDA #$18            ;\ 
-	STA $01           ;/ Writing to $2118 AND $2119.
-	LDX #.loword(graficos1tilemap)       ;\  Adress where our data is.
-	STX $02          				 ; | 
-	; LDA #$C1   ; | Bank where our data is.
-	; STA $04          				 ;/
-	ldaSta #.BANKBYTE(graficos1tilemap), $04
-	LDX #$0800          ;\ Size of our data.
-	STX $05           ;/
-	LDA #$01	   ;\ Start DMA transfer on channel 0.
-	STA f:$420B	   ;/
+	dmaToVram graficos1tilemap, #$5400, #$0800, CHANNEL_0
 
 	;DMA BG2
-	LDA #$80            ; \ Increase on $2119 write.
-	STA f:$2115           ; /
-	LDX #$5800			; \ Set where to write in VRAM...
-	STX $2116			; /
-	LDA #$01            ;\ Set mode to...
-	STA $00           ;/ ...2 regs write once.
-	LDA #$18            ;\ 
-	STA $01           ;/ Writing to $2118 AND $2119.
-	LDX #.loword(bg2tilemap)       ;\  Adress where our data is.
-	STX $02          				 ; | 
-	; LDA #$C1   ; | Bank where our data is.
-	; STA $04          				 ;/
-	ldaSta #.BANKBYTE(bg2tilemap), $04
-	LDX #$0800          ;\ Size of our data.
-	STX $05           ;/
-	LDA #$01	   ;\ Start DMA transfer on channel 0.
-	STA f:$420B	   ;/
+	dmaToVram bg2tilemap, #$5800, #$0800, CHANNEL_0
+
 	PLD
 	RTL                ; Retorna da sub-rotina para o banco anterior
 
