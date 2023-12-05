@@ -85,9 +85,18 @@
 .macro dma source, target, length, transferMode, channel
 	ldaSta transferMode, f:DMAPx+channel
 	ldaSta #.lobyte(target), f:BBADx+channel ; TARGET
-	ldxStx #.loword(source), a:A1TxL+channel; $004302 SOURCE
+	ldxStx #.loword(source), a:A1TxL+channel ; SOURCE
 	ldaSta #^source, f:A1Bx+channel ; BANK
-	ldxStx length, a:DASxL+channel;$004305 ;DASxL
+	ldxStx length, a:DASxL+channel ; LENGTH
+	ldaSta #%1, f:MDMAEN
+.endmacro
+
+.macro dma2 source, target, length, transferMode, channel
+	ldaSta transferMode, f:DMAPx+channel
+	ldaSta #.lobyte(target), f:BBADx+channel ; TARGET
+	ldxStx #.loword(source), a:A1TxL+channel ; SOURCE
+	ldaSta #^source, f:A1Bx+channel ; BANK
+	ldxStx length, a:DASxL+channel ; LENGTH
 	ldaSta #%1, f:MDMAEN
 .endmacro
 
@@ -188,6 +197,11 @@
 .macro add by
 	clc
 	adc by
+.endmacro
+
+.macro addSta by, to
+	add by
+	sta to
 .endmacro
 
 TOTAL_BYSTES_LINHA_VRAM = 512 ; total de bytes de cada linha da VRAM

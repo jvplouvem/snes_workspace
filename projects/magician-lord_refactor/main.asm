@@ -1,5 +1,3 @@
-
-
 ;------------------------------------------------------------------------
 ;-  Escrito por Maxwel Olinda, aproveitando exemplos do Neviksti.
 ;- 
@@ -18,21 +16,11 @@
 
 .p816
 .smart
-
 .include "../../framework/asm/includes/ca65/fans-library.asm"
-
-
-
 
 .include "defines.asm"
 .include "2input.asm"
 .include "includes/macros.asm"
-
-;=== Espelhos para a RAM ===
-;.ENUM $40                  ; Isso vai usar da RAM $D0 em sequencia para inserir essas variaveis. Uma funcão legal desse debugger. :)
-;Ativaomedidor   db
-;DesativaFastROM db
-;.ENDE
 
 Ativaomedidor = $40
 DesativaFastROM = $41
@@ -47,22 +35,15 @@ DesativaFastROM = $41
 .segment "CODE"
 main:
 JML Faster
-;.BASE $C0        ; Pular para banco rapido
-;.org $C0
+
 .INCLUDE "Sprite/Magician.asm"
 .INCLUDE "Sprite/Inimigo.asm"
 Faster:
-	;InitializeSNES
-;main:
 	JSR IniciarSprites
 
 	a8Bit
-	lda #$01
-	;sta $420d ;FastROM
-	sta f:MEMSEL
-
-	lda #$ff
-	sta $E2   ;comeca pixelado	
+	ldaSta #$01, f:MEMSEL
+	ldaSta #$ff, $E2 ;comeca pixelado	
 
 	stz $E3   ;comeca com tela escura	
 
@@ -88,13 +69,10 @@ Faster:
 	
 	setObjectAndCharacterSize #%00100011 ;Sprite VRAM = Sprites 16x16/32x32 e VRAM 6000
 
-	LDA #%00100000
-	STA ColorMath1
+	ldaSta #%00100000, ColorMath1
 
-    LDA #$FF
-    STA BG1Vlow
-    LDA #$1c
-    STA BG2Vlow
+    ldaSta #$FF, BG1Vlow
+    ldaSta #$1c, BG2Vlow
 
 ;Gradiente HDMA 
 	hdmaGradiente RedTable, #$3200, CHANNEL_3
@@ -114,23 +92,20 @@ Faster:
 	axy16Bit
 	LDA #%11000000
 	TSB $0D9F
-	REP #$10
-	SEP #$20
-
+	xy16Bit
+	a8Bit
+	
 loop:
 LDA Ativaomedidor
 BEQ :+
 lda #$08  ; Medidor de CPU 
-sta f:$2100 ;
+sta f:INIDISP
 :
 wai
 bra loop
 
 .include "includes/color-tables.asm"
 
-;======================
-;Iniciar Sprites
-;======================
 IniciarSprites:
     php             ; preserve P reg
 
@@ -156,8 +131,8 @@ xmsb:
     bne xmsb
 ;------------------
 
-    rep #$10        ; 16bit A/X/Y
-    sep #$20        ; 16bit A/X/Y
+    xy16Bit
+    a8Bit
 	
 lda #(256/2 - 16)
 sta $0380           ; Sprite X-Coordinate
@@ -193,8 +168,7 @@ RTS
 .segment "LIBSFX"
 VBlank:
 JML FasterVBLANK
-;.org $C0        ; Pular para banco rapido
-;.segment "CODE"
+
 FasterVBLANK:
 	rep #$30		;A/Mem=16bits, X/Y=16bits
 	phb       ;preserva o banco de antes de chegar aqui
@@ -203,7 +177,7 @@ FasterVBLANK:
 	phy       ;preserva o index Y de antes de chegar aqui
 	phd       ;preserva o direct page de antes de chegar aqui
 
-	sep #$20		; mem/A = 8 bit, X/Y = 16 bit
+	a8Bit
 
 	lda #$00		;DataBank = $00
 	pha       ;preserva o Acumulador de antes de chegar aqui
@@ -226,14 +200,12 @@ JSR Action    ;Seu codigo vai rodar nessa sub-rotina em todos os frames.
 	plx        ; que foi
 	pla        ; preservado
 	plb        ; anteriormente...
-      rti      ; Retorna do interrupt (ele vai voltar la naquele loop ali em cima)
+    rti      ; Retorna do interrupt (ele vai voltar la naquele loop ali em cima)
 
 
 SetupVideo:
-
-
-	rep #$10		;A/mem = 8bit, X/Y=16bit
-	sep #$20
+	xy16Bit
+	a8Bit
 	
 INC Counter ; Counter Global	
 
@@ -249,8 +221,7 @@ XBA
 
 
 ;HDMA registro
-    LDA $0D9F
-    STA f:$420C
+    ldaSta $0D9F, f:HDMAEN
 ;Mosaic
     LDA Mosaico          ;E2
     STA f:$2106
@@ -299,7 +270,7 @@ LDA BG1Hlow
 LSR A
 LSR A
 STA BG2Hlow
-SEP #$20
+a8Bit
 
 ;====================;
 ; Dynamic DMA sprite ;
@@ -410,7 +381,7 @@ PHD
 rep #$20
 LDA #$0400    ; DP no $0400
 TCD           ; Transferir do A 16 bits ao Direct Page 
-sep #$20
+a8Bit
 
 repetespriteonda:
 
@@ -570,7 +541,7 @@ Action:
 	bmi :+
 	REP #$20
 	inc BG1Hlow 
-	SEP #$20
+	a8Bit
 	dec $0380   ;parar sprite de ir pra direita
 	dec $0384
 	:
@@ -579,7 +550,7 @@ Action:
 	bpl :+
 	REP #$20
 	DEC BG1Hlow 
-	SEP #$20
+	a8Bit
 	inc $0380   ;parar sprite de ir pra esquerda
 	inc $0384
 	:
@@ -626,11 +597,7 @@ Onda:
 RodaUMAvez:
 	JSL lanooutrobanco    ; Vamos mudar de banco e adicionar nossos arquivos grandes la.
 	RTS                   ; Em HI-ROM cada banco tem 64 KB.
-;.ENDS
 
-;.BANK 1 SLOT 0
-;.ORG 0
-;.SECTION "BancodosGraficos" SEMIFREE
 .segment "RODATA1"
 lanooutrobanco:
 	;===========================
@@ -641,7 +608,7 @@ lanooutrobanco:
 	REP #$20
 	LDA #$4300 ; DP é 4200
 	TCD 
-	SEP #$20
+	a8Bit
 
 	;DMA DE CORES PARA A CGRAM
 	dmaToCgram grafico7CORES, #$20, #$0080, CHANNEL_0
