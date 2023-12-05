@@ -384,28 +384,25 @@ TCD           ; Transferir do A 16 bits ao Direct Page
 a8Bit
 
 repetespriteonda:
-
 LDA #$00
-CLC
-ADC $436b
-STA $50,x           ; Ir adicionando o valor de $436B em H a cada loop 
+addSta $436b, {$50,x}
+
 CLC
 ADC $1008,y
 STA $50,x           ; Ir adicionando o valor da tabela em H a cada loop (levemente a frente do Y)
+
 LDA #$AC
 CLC
 ADC $1000,y
 STA $51,x           ; Adicionar o valor da tabela na posicão Y e incrementar
 tya
-clc
-adc #$80
-sta $52,x           ; Starting tile #
-LDA #%00110100   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
-STA $53,x          ;
+
+addSta #$80, {$52,x} ; Starting tile #
+ldaSta #%00110100, {$53,x}   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
+
 LDA $436b
-CLC
-ADC #$08
-STA $436b           ; Adiciona 8 para o proximo loop
+addSta #$08, $436b ; Adiciona 8 para o proximo loop
+
 INX
 INX
 INX           ; incrementar counters
