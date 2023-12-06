@@ -432,26 +432,24 @@ ldaSta #$00, $436b
 repetespriteonda1:
 
 LDA #$50
-CLC
-ADC $436b
-STA $C8,x           ; Ir adicionando o valor de $436B em H a cada loop 
+addSta $436b, {$C8,x}; Ir adicionando o valor de $436B em H a cada loop 
+
 CLC
 ADC $1018,y
 STA $C8,x           ; Ir adicionando o valor da tabela em H a cada loop (levemente a frente do Y)
 LDA #$BC
+
 CLC
 ADC $1020,y
 STA $C9,x           ; Adicionar o valor da tabela na posicão Y e incrementar
 tya
-clc
-adc #$A0
-sta $CA,x           ; Starting tile #
+
+addSta #$A0, {$CA,x} ; Starting tile #
 LDA #%00110100   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
 STA $CB,x          ;
+
 LDA $436b
-CLC
-ADC #$08
-STA $436b           ; Adiciona 8 para o proximo loop
+addSta #$08, $436b ; Adiciona 8 para o proximo loop
 INX
 INX
 INX           ; incrementar counters
@@ -464,12 +462,10 @@ BNE repetespriteonda1
 STZ $051C        ; sprites faltantes do texto
 STZ $051D
 STZ $051E
-LDA #%01010000
-STA $051F        ; sprites faltantes do texto
+ldaSta #%01010000, $051F ; sprites faltantes do texto
 ;---------------------------------------------------
 
 PLD
-
 rts
 
 
@@ -520,8 +516,7 @@ Action:
 	lda $20
 	bit #$10
 	beq :+
-	LDA #$01
-	STA DesativaFastROM
+	ldaSta #$01, DesativaFastROM
 	:
 	LDA DesativaFastROM
 	BEQ :+
