@@ -43,12 +43,9 @@ Faster:
 
 	a8Bit
 	ldaSta #$01, f:MEMSEL
-	ldaSta #$ff, $E2 ;comeca pixelado	
-
-	stz $E3   ;comeca com tela escura	
-
-	LDA #$FF
-	STA $0734 ; Comparador de animacão diferente da inicial para ativar DMA do player
+	ldaSta #$ff, Mosaico ;comeca pixelado	
+	stz Brilho   ;comeca com tela escura	
+	ldaSta #$FF, $0734 ; Comparador de animacão diferente da inicial para ativar DMA do player
 
 	JSR MagicianDMA
 	JSR RodaUMAvez ;$C00BED Seu codigo vai rodar nessa sub-rotina apenas uma vez.
@@ -67,14 +64,14 @@ Faster:
 	enableMainScreenDesignation #%00010111 ;Turn on BG1
 	enableSubScreenDesignation #$02 ;Turn on BG2
 	
-	setObjectAndCharacterSize #%00100011 ;Sprite VRAM = Sprites 16x16/32x32 e VRAM 6000
+	setObjectSizeAndCharacterAddress #%00100011 ;Sprite VRAM = Sprites 16x16/32x32 e VRAM 6000
 
 	ldaSta #%00100000, ColorMath1
 
     ldaSta #$FF, BG1Vlow
     ldaSta #$1c, BG2Vlow
 
-;Gradiente HDMA 
+	;Gradiente HDMA 
 	hdmaGradiente RedTable, #$3200, CHANNEL_3
 	hdmaGradiente GreenTable, #$3200, CHANNEL_4
 	hdmaGradiente BlueTable, #$3200, CHANNEL_5
@@ -82,7 +79,7 @@ Faster:
 	LDA #$38
 	TSB $0D9F   ;canais 3, 4, 5 para cada R,G,B. 
 
-;HDMA de cores para a BG3
+	;HDMA de cores para a BG3
 	LDX #$0001
 
 	axy8Bit
@@ -96,66 +93,46 @@ Faster:
 	a8Bit
 	
 loop:
-LDA Ativaomedidor
-BEQ :+
-lda #$08  ; Medidor de CPU 
-sta f:INIDISP
-:
-wai
+	LDA Ativaomedidor
+	BEQ :+
+	ldaSta #$08, f:INIDISP ; Medidor de CPU 
+	:
+	wai
 bra loop
 
 .include "includes/color-tables.asm"
 
+; =========================================================================================================================
 IniciarSprites:
     php             ; preserve P reg
-
-    rep #$30        ; 16bit A/X/Y
-
-    ldx #$0180
-    lda #$0181        ; Prepare Loop 1
+    axy16Bit
+    ldx #$0180 ; x = 384
+    lda #$0181 ; a = 385
 offscreen:
     sta $0180, X
-    inx
-    inx
-    inx
-    inx
+	incrementX 4
     cpx #$0500
     bne offscreen
-;------------------
     lda #$5555
 xmsb:
     sta $0000, X
-    inx
-    inx
+	incrementX 2
     cpx #$0520
     bne xmsb
-;------------------
 
-    xy16Bit
-    a8Bit
-	
-lda #(256/2 - 16)
-sta $0380           ; Sprite X-Coordinate
+	xy16Bit
+	a8Bit
+	ldaSta #(256/2 - 16), $0380 ; Sprite X-Coordinate
+	ldaSta #(224/2 - 16), $0381   ; Sprite Y-Coordinate
+	ldaSta #$00, $0382           ; Starting tile #
+	ldaSta #%00110000, $0383 ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
+	ldaSta #%00110010, $038B   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page, seta apenas o que for 1 em A para a RAM
+	ldaSta #%01011010, $0508  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
 
-lda #(224/2 - 16)   ; Sprite Y-Coordinate
-sta $0381
-
-lda #$00
-sta $0382           ; Starting tile #
-
-lda #%00110000   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
-sta $0383
-
-lda #%00110010   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
-sta $038B          ; seta apenas o que for 1 em A para a RAM
-
-lda #%01011010  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
-sta $0508
-
-lda #$01
-sta SP1DMAframe
-plp
-RTS
+	ldaSta #$01, SP1DMAframe
+	plp
+rts
+; =========================================================================================================================
 
 
 
@@ -183,71 +160,57 @@ FasterVBLANK:
 	pha       ;preserva o Acumulador de antes de chegar aqui
 	plb       ;resgata o banco de antes de chegar aqui
 
-JSR SetupVideo ;DMA primeiro
-
-JSR GetInput  ;rotina dos controles
-
-JSR RotinadeSprites
-
-JSR Action    ;Seu codigo vai rodar nessa sub-rotina em todos os frames.
+	JSR SetupVideo ;DMA primeiro
+	JSR GetInput  ;rotina dos controles
+	JSR RotinadeSprites
+	JSR Action    ;Seu codigo vai rodar nessa sub-rotina em todos os frames.
 
 
-	lda f:$4210		;limpar flag NMI
-	rep #$30		;A/Mem=16bits, X/Y=16bits
+	lda f:RDNMI		;limpar flag NMI
+	axy16Bit
 	
 	pld        ; Recuperando 
 	ply        ; tudo aquilo
 	plx        ; que foi
 	pla        ; preservado
 	plb        ; anteriormente...
-    rti      ; Retorna do interrupt (ele vai voltar la naquele loop ali em cima)
+rti      ; Retorna do interrupt (ele vai voltar la naquele loop ali em cima)
 
 
 SetupVideo:
 	xy16Bit
 	a8Bit
 	
-INC Counter ; Counter Global	
+	INC Counter ; Counter Global	
 
-INC $14
-LDA $14
-CMP #$05
-BNE :+
-STZ $14 ; Counter de 0 até 4 em loop
-:
+	INC $14
+	LDA $14
+	CMP #$05
+	BNE :+
+	STZ $14 ; Counter de 0 até 4 em loop
+	:
 
-LDA #$00 ; limpar high byte 
-XBA 
+	LDA #$00 ; limpar high byte 
+	XBA
 
-
-;HDMA registro
     ldaSta $0D9F, f:HDMAEN
-;Mosaic
-    LDA Mosaico          ;E2
-    STA f:$2106
-;Screen Brightness
-    LDA Brilho           ;E3
-    STA f:$2100 
-;Espelho da Layer 1 H
-	LDA BG1Hlow        ;1A
-	STA f:$210D
-	LDA BG1Hhigh       ;1B
-	STA f:$210D
-;Espelho da Layer 1 V	
-	LDA BG1Vlow       ;$1C
-	STA f:$210E
-	LDA BG1Vhigh      ;$1D
-	STA f:$210E
-;Espelho da Layer 2 H
-	LDA BG2Hlow        ;$10
-	STA f:$210F
-	LDA BG2Hhigh       ;$11
-	STA f:$210F
+    ldaSta Mosaico, f:MOSAIC          ;E2
+    ldaSta Brilho, f:INIDISP           ;E3
+
+	;Espelho da Layer 1 H
+	ldaSta BG1Hlow, f:BG1HOFS;1A
+	ldaSta BG1Hhigh, f:BG1HOFS ;1B
+
+	;Espelho da Layer 1 V	
+	ldaSta BG1Vlow, f:BG1VOFS ;$1C
+	ldaSta BG1Vhigh, f:BG1VOFS ;$1D
+
+	;Espelho da Layer 2 H
+	ldaSta BG2Hlow, f:BG2HOFS;$10
+	ldaSta BG2Hhigh, f:BG2HOFS;$11
 ;Espelho da Layer 2 V	
-	LDA BG2Vlow        ;$17
-	STA f:$2110
-	LDA BG2Vhigh       ;$18
-	STA f:$2110
+	ldaSta BG2Vlow, f:BG2VOFS ;$17
+	ldaSta BG2Vhigh, f:BG2VOFS ;$18
 ;Espelho da Layer 3 H
 	 LDA BG3Hlow      ;$1E
 	 STA f:$2111
@@ -259,10 +222,8 @@ XBA
 	 LDA BG3Vhigh     ;$29
 	 STA f:$2112
 ;Espelho de Color Math
-	 LDA ColorMath0    ;$15
-	 STA f:$2130
-	 LDA ColorMath1    ;$16
-	 STA f:$2131
+	 ldaSta ColorMath0, f:CGWSEL ;$15
+	 ldaSta ColorMath1, f:CGADSUB ;$16
 
 ; Layer 2 rola a 1/4 da velocidade da Layer 1
 REP #$20       
@@ -285,8 +246,7 @@ JSR Explosao
 ;=================;
 ; DMA sprite data ;
 ;=================;
-ldx #$6000
-stx OAMADDL
+ldxStx #$6000, OAMADDL
 ;stz $2103
     ldy #$0400          ; Writes #$00 to $4300, #$04 to $4301
     sty $4300           ; CPU -> PPU, auto inc, $2104 (OAM write)
@@ -328,10 +288,7 @@ RotinadeSprites:
 	lda #%00110010   ; vhoopppc    v: vertical flip h: horizontal flip  o: priority bits p: palette c:GFX page
 	STA $03,x          ; zera apenas o que for 1 em A para a RAM
 	inc $436b
-	INX
-	INX
-	INX
-	INX
+	incrementX 4
 	INY
 	CPY #$0019
 	BNE :-
@@ -345,8 +302,7 @@ RotinadeSprites:
 	STZ $0503
 	STZ $0504
 	STZ $0505
-	lda #%01010100  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
-	sta $0506
+	ldaSta #%01010100, $0506  ; bit zero é o 9 bit (sprite fora da tela) e bit 1 é tamanho de sprite. 
 
 	BRA sprite0
 	RTS
@@ -403,10 +359,7 @@ ldaSta #%00110100, {$53,x}   ; vhoopppc    v: vertical flip h: horizontal flip  
 LDA $436b
 addSta #$08, $436b ; Adiciona 8 para o proximo loop
 
-INX
-INX
-INX           ; incrementar counters
-INX
+incrementX 4 ; incrementar counters
 INY
 CPY #$001E
 BNE repetespriteonda
@@ -450,10 +403,8 @@ STA $CB,x          ;
 
 LDA $436b
 addSta #$08, $436b ; Adiciona 8 para o proximo loop
-INX
-INX
-INX           ; incrementar counters
-INX
+
+incrementX 4 ; incrementar counters
 INY
 CPY #$000C
 BNE repetespriteonda1
@@ -480,15 +431,15 @@ Action:
 	lda Counter
 	and #$03  ;dividir frames
 	beq :+
-	ldx $E3
-	lda $E2
+	ldx Brilho
+	lda Mosaico
 	cmp #$0f
 	beq :+
 	sec
 	sbc #$10
-	sta $E2
+	sta Mosaico
 	inx
-	stx $E3
+	stx Brilho
 	:
 
 	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -520,7 +471,6 @@ Action:
 	:
 	LDA DesativaFastROM
 	BEQ :+
-	;STZ $420D
 	ldaSta #$00, f:MEMSEL
 	:
 
@@ -641,6 +591,6 @@ lanooutrobanco:
 	dmaToVram bg2tilemap, #$5800, #$0800, CHANNEL_0
 
 	PLD
-	RTL                ; Retorna da sub-rotina para o banco anterior
+rtl                ; Retorna da sub-rotina para o banco anterior
 
 .include "includes/gfx-references.asm"

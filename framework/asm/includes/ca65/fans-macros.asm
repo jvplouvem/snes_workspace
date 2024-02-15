@@ -120,7 +120,27 @@
 	    bne :-
 .endmacro
 
-.macro setObjectAndCharacterSize value
+; OBJSEL - Object size and Character address ($2101 write)
+; 7  bit  0
+; ---- ----
+; SSSN NbBB
+; |||| ||||
+; |||| |+++- Name base address (word address = bBB << 13)
+; |||+-+---- Name select (word offset = (NN+1) << 12)
+; +++------- Object size:
+;             0:  8x8  and 16x16
+;             1:  8x8  and 32x32
+;             2:  8x8  and 64x64
+;             3: 16x16 and 32x32
+;             4: 16x16 and 64x64
+;             5: 32x32 and 64x64
+;             6: 16x32 and 32x64
+;             7: 16x32 and 32x32
+; Name base address selects a 16 KiB-aligned quarter of VRAM for the first 8 KiB of available sprite tiles. Bit 2 was reserved for a planned but never implemented expansion to 128 KiB VRAM, so is normally 0.
+; Name select controls a relative offset from the name base address in NN+1 8 KiB increments, selecting a second 8 KiB of available sprite tiles. With name select of 0, the second half follows the base 8 KiB contiguously.
+; Object size controls the sizes available for sprites. The two modes featuring rectangular sizes (6, 7) were not documented by the SNES development manual.
+; Fullsnes refers to this register as OBSEL.
+.macro setObjectSizeAndCharacterAddress value
 	ldaSta value, f:OBSEL
 .endmacro
 
@@ -244,4 +264,10 @@ OFFSET_LINHA_VRAM = 256 ; 100 em hex
 
 .macro teste3 paramTeste
 	ldx paramTeste
+.endmacro
+
+.macro incrementX manyTimes
+	.repeat manyTimes, I
+		inx
+	.endrep
 .endmacro

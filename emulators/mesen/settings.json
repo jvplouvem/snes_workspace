@@ -7695,15 +7695,6 @@
                         "ToolTypeName": "DisassemblyViewModel",
                         "SelectedIndex": 0,
                         "Children": null
-                      },
-                      {
-                        "Type": "Tool",
-                        "Proportion": 0,
-                        "Orientation": "Horizontal",
-                        "Name": "Source View",
-                        "ToolTypeName": "SourceViewViewModel",
-                        "SelectedIndex": 0,
-                        "Children": null
                       }
                     ]
                   },
@@ -8029,8 +8020,8 @@
         "Height": 600
       },
       "WindowLocation": {
-        "X": 632,
-        "Y": 381
+        "X": 567,
+        "Y": 286
       },
       "WindowIsMaximized": false
     },
@@ -8038,15 +8029,15 @@
       "ShowSettingsPanel": true,
       "ImageScale": 3,
       "ShowTileGrid": true,
-      "SelectedPreset": "OAM1",
-      "Source": "SnesVideoRam",
-      "Format": "Bpp4",
+      "SelectedPreset": "ROM",
+      "Source": "SnesPrgRom",
+      "Format": "Bpp2",
       "Layout": "Normal",
       "Filter": "None",
       "Background": "Default",
-      "RowCount": 16,
+      "RowCount": 32,
       "ColumnCount": 16,
-      "StartAddress": 49152,
+      "StartAddress": 0,
       "UseGrayscalePalette": false,
       "RefreshTiming": {
         "RefreshOnBreakPause": true,
@@ -8059,8 +8050,8 @@
         "Height": 706
       },
       "WindowLocation": {
-        "X": 586,
-        "Y": 113
+        "X": 513,
+        "Y": 153
       },
       "WindowIsMaximized": false
     },
@@ -8099,7 +8090,12 @@
       "WindowIsMaximized": false
     },
     "RegisterViewer": {
-      "ColumnWidths": [],
+      "ColumnWidths": [
+        92,
+        173,
+        63,
+        67
+      ],
       "RefreshTiming": {
         "RefreshOnBreakPause": true,
         "AutoRefresh": true,
@@ -8107,12 +8103,12 @@
         "RefreshCycle": 0
       },
       "WindowSize": {
-        "Width": 0,
-        "Height": 0
+        "Width": 461,
+        "Height": 723
       },
       "WindowLocation": {
-        "X": 0,
-        "Y": 0
+        "X": 581,
+        "Y": 170
       },
       "WindowIsMaximized": false
     },
@@ -8290,6 +8286,30 @@
       },
       {
         "RomFile": {
+          "Path": "C:\\ambiente_desenvolvimento\\test\\Sprite_POST1\\Moeda.sfc",
+          "InnerFile": "",
+          "InnerFileIndex": 0
+        },
+        "PatchFile": null
+      },
+      {
+        "RomFile": {
+          "Path": "C:\\ambiente_desenvolvimento\\test\\snes_workspace\\EarthquakeSNESDemo.smc",
+          "InnerFile": "",
+          "InnerFileIndex": 0
+        },
+        "PatchFile": null
+      },
+      {
+        "RomFile": {
+          "Path": "C:\\Users\\joao.louvem\\Downloads\\EarthquakeSNESDemo.smc",
+          "InnerFile": "",
+          "InnerFileIndex": 0
+        },
+        "PatchFile": null
+      },
+      {
+        "RomFile": {
           "Path": "C:\\ambiente_desenvolvimento\\test\\wla_snes_workspace\\projects\\magician-lord\\rom.sfc",
           "InnerFile": "",
           "InnerFileIndex": 0
@@ -8331,30 +8351,6 @@
       {
         "RomFile": {
           "Path": "C:\\ambiente_desenvolvimento\\test\\SNES-starterkit\\show.fig",
-          "InnerFile": "",
-          "InnerFileIndex": 0
-        },
-        "PatchFile": null
-      },
-      {
-        "RomFile": {
-          "Path": "C:\\ambiente_desenvolvimento\\test\\SNES-starterkit\\walker.fig",
-          "InnerFile": "",
-          "InnerFileIndex": 0
-        },
-        "PatchFile": null
-      },
-      {
-        "RomFile": {
-          "Path": "C:\\ambiente_desenvolvimento\\test\\asssembly_workspace\\output\\rom.sfc",
-          "InnerFile": "",
-          "InnerFileIndex": 0
-        },
-        "PatchFile": null
-      },
-      {
-        "RomFile": {
-          "Path": "C:\\ambiente_desenvolvimento\\test\\Magician Lord SNES Demo.smc",
           "InnerFile": "",
           "InnerFileIndex": 0
         },
